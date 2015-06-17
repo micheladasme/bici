@@ -28,7 +28,7 @@ function muestraCliente($start,$reg)
     $sql=("SELECT * FROM cliente ORDER BY cli_rut ASC
 			LIMIT " . $start . "," . $reg);
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -44,7 +44,7 @@ function buscaClienterut($codigo)
     $x=0;
     $sql=("SELECT * FROM cliente WHERE cli_rut = '$codigo'");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;

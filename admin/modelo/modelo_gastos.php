@@ -39,7 +39,7 @@ function muestraGastos_Venta($fecha)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -59,7 +59,7 @@ function muestraGastos_Venta2($fecha1,$fecha2)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -79,7 +79,7 @@ function muestraGastos_Local($fecha)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -99,7 +99,7 @@ function muestraGastos_Local2($fecha1,$fecha2)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -119,7 +119,7 @@ function muestraGastos_Merma($fecha)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -139,7 +139,7 @@ function muestraGastos_Merma2($fecha1,$fecha2)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -158,7 +158,7 @@ function muestraGastos_Mercaderia($fecha)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -177,7 +177,7 @@ function muestraGastos_Mercaderia2($fecha1,$fecha2)
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 
 
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -196,7 +196,7 @@ function muestraGasto($start,$reg)
 			ORDER BY gas_fecha DESC
 			   LIMIT " . $start . "," . $reg);
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -225,7 +225,7 @@ function muestraGastofecha($fecha)
 			WHERE g.tg_id = tg.tg_id
 			AND gas_fecha= $fecha");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;

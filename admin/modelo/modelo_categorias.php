@@ -16,7 +16,7 @@ function muestraCategorias($start,$reg)
     $sql=("SELECT * FROM categorias ORDER BY cat_nombre ASC
 			LIMIT " . $start . "," . $reg);
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -56,7 +56,7 @@ function muestraCategoriaCod($codigo)
     $x=0;
     $sql=("SELECT * FROM categorias WHERE cat_id = '$codigo'");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -72,7 +72,7 @@ function buscaCategoriasnom($codigo)
     $x=0;
     $sql2 ="SELECT * FROM categorias WHERE cat_nombre like '%$codigo%'";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
-    while($f=mysql_fetch_array($res2))
+    while($f=mysql_fetch_assoc($res2))
     {
         $a[$x]=$f;
         $x++;
@@ -107,7 +107,7 @@ function muestraSubCategorias($start,$reg)
     $sql=("SELECT sub.subcat_id,sub.subcat_nombre,cat.cat_nombre FROM subcategoria sub, categorias cat WHERE sub.subcat_id = cat.cat_id ORDER BY subcat_id ASC
 			LIMIT " . $start . "," . $reg);
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -147,7 +147,7 @@ function muestraSubCategoriaCod($codigo)
     $x=0;
     $sql=("SELECT * FROM subcategoria WHERE subcat_id = '$codigo'");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -163,7 +163,7 @@ function buscaSubCategoriasnom($codigo)
     $x=0;
     $sql2 ="SELECT sub.subcat_id,sub.subcat_nombre,cat.cat_nombre FROM subcategoria sub, categorias cat WHERE sub.subcat_id = cat.cat_id AND sub.subcat_nombre like '%$codigo%'";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
-    while($f=mysql_fetch_array($res2))
+    while($f=mysql_fetch_assoc($res2))
     {
         $a[$x]=$f;
         $x++;

@@ -50,7 +50,7 @@ function retornaidenc()
     $x = 0;
     $sql = ("SELECT max(com_id)FROM compra;");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -66,7 +66,7 @@ function retornaproc($id)
     $x = 0;
     $sql = ("SELECT * FROM venta where v_vendedor = $id;");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -136,7 +136,7 @@ function consultaVenta($id)
     $x = 0;
     $sql = ("SELECT * FROM venta WHERE v_vendedor = '$id'");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -155,7 +155,7 @@ function detalleVenta($id)
 			AND mp.id_modo = c.id_modo
 			AND c.com_id = $id");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -176,7 +176,7 @@ function detalleVenta2($id)
 				AND p.pro_cod = b.pro_cod
 				AND b.com_id = $id");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -247,7 +247,7 @@ function devuelvemodo()
     $x = 0;
     $sql = ("SELECT * from modo_pago;");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -262,7 +262,7 @@ function consultasubtotal()
     $x = 0;
     $sql = ("SELECT SUM( v_subtotal )FROM venta;");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while ($f = mysql_fetch_array($res)) {
+    while ($f = mysql_fetch_assoc($res)) {
         $a[$x] = $f;
         $x++;
     }
@@ -278,7 +278,7 @@ function buscaProducto($codigo)
     $x = 0;
     $sql2 = "SELECT * FROM productos WHERE pro_cod = '$codigo' AND pro_estado = 1";
     $res2 = mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
-    while ($f = mysql_fetch_array($res2)) {
+    while ($f = mysql_fetch_assoc($res2)) {
         $a[$x] = $f;
         $x++;
 
@@ -299,7 +299,7 @@ function buscaProductoDetalle($codigo)
         WHERE pr.pro_cod = $codigo
         AND pr.cat_id = cat.cat_id";
     $res2 = mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
-    while ($f = mysql_fetch_array($res2)) {
+    while ($f = mysql_fetch_assoc($res2)) {
         $a[$x] = $f;
         $x++;
 
@@ -314,11 +314,25 @@ function existeStock2($codigo, $ubicacion)
     $link = conectar();
     $sql = "SELECT * FROM producto_ubicacion WHERE pro_cod = '$codigo' AND ubc_id = '$ubicacion'";
     $resultado = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    $a = mysql_fetch_assoc($resultado);
     mysql_close($link);
-    if (mysql_num_rows($resultado) > 0) {
-        return '1';
-    }
+    return $a;
+}
 
+function registraVentaProducto($cod,$nom,$cant,$val,$subt,$vende)
+{
+
+    $x=0;
+    $link=conectar();
+    $sql="INSERT INTO venta (v_codigo,v_nombre,v_cantidad,v_valor,v_subtotal,v_vendedor) VALUES ('$cod', '$nom', $cant, $val, $subt,$vende)";
+    $res=mysql_query($sql,$link) or die("Error en: " . mysql_error());
+    // Verificamos si se realizo el insert
+    if(mysql_affected_rows()>0)
+    {
+        $x=1;
+    }
+    return $x;
+    mysql_close($link);
 }
 
 

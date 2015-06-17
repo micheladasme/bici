@@ -45,7 +45,7 @@ function buscaProducto($codigo){
     $x=0;
     $sql2 = "SELECT * FROM productos WHERE pro_cod = '$codigo' AND pro_estado = 1";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
-    while($f=mysql_fetch_array($res2))
+    while($f=mysql_fetch_assoc($res2))
     {
         $a[$x]=$f;
         $x++;
@@ -66,7 +66,7 @@ function buscaProductoDetalle($codigo){
         WHERE pr.pro_cod = $codigo
         AND pr.cat_id = cat.cat_id";
     $res2= mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
-    while($f=mysql_fetch_array($res2))
+    while($f=mysql_fetch_assoc($res2))
     {
         $a[$x]=$f;
         $x++;
@@ -86,7 +86,7 @@ function muestraProductos($start,$reg)
     $sql=("SELECT * FROM productos WHERE pro_estado = 1 ORDER BY pro_nombre ASC
 			LIMIT " . $start . "," . $reg);
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -114,7 +114,7 @@ function muestraProductosCod($codigo)
     $x=0;
     $sql=("SELECT * FROM productos WHERE pro_cod = '$codigo' AND pro_estado = 1");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
@@ -130,7 +130,7 @@ function muestraProductosNom($nombre)
     $x=0;
     $sql=("SELECT * FROM productos WHERE pro_nombre LIKE '%$nombre%' AND pro_estado = 1");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;

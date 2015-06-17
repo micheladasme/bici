@@ -22,7 +22,7 @@ AND pu.ubc_id = ubc.ubc_id
 ORDER BY pro_nombre ASC
 LIMIT " . $start . "," . $reg);
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -41,7 +41,7 @@ WHERE pr.pro_id = pu.pro_id
 AND pu.ubc_id = ubc.ubc_id
 AND pr.pro_nombre like '%$nombre%' ");
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -62,7 +62,7 @@ AND pu.ubc_id = ubc.ubc_id
 AND pu.ubc_id = 1
 AND pr.pro_nombre like '%$nombre%' ");
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -83,7 +83,7 @@ AND pu.ubc_id = ubc.ubc_id
 AND pu.ubc_id = 2
 AND pr.pro_nombre like '%$nombre%' ");
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -105,7 +105,7 @@ AND pu.pu_cantidad <= 2
 ORDER BY pro_nombre ASC");
 
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -128,7 +128,7 @@ AND pu.ubc_id = 1
 ORDER BY pro_nombre ASC
 LIMIT " . $start . "," . $reg);
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -162,7 +162,7 @@ AND pu.ubc_id = 2
 ORDER BY pro_nombre ASC
 LIMIT " . $start . "," . $reg);
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-while($f=mysql_fetch_array($res))
+while($f=mysql_fetch_assoc($res))
 {
 $a[$x]=$f;
 $x++;
@@ -277,7 +277,7 @@ function existeStockBodega($codigo)
 			   AND pu.ubc_id = 2
 			   AND pu.pro_cod = $codigo";
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
-    while($f=mysql_fetch_array($res))
+    while($f=mysql_fetch_assoc($res))
     {
         $a[$x]=$f;
         $x++;
