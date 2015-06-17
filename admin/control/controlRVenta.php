@@ -15,7 +15,8 @@ $vende = $_SESSION['id_usuario'];
 <?php
 
 $stock = existeStock2($cod, 1);
-if ($stock == '1') {
+
+if ($stock['pu_cantidad'] > $_POST['txt_cantidad']) {
     // Ejecutamos las funciones.
     $venta = registraVentaProducto($cod, $nom, $cant, $val, $subt, $vende);
     // Verificamos que se hallan insertado los datos.
