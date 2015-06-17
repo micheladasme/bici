@@ -263,10 +263,11 @@ if ($last != 1) {
                          
                     <div class="col-md-4">
 
-            <?php if (isset($b["pro_imagen"])) {
-                echo('<img src="../../' . $b["pro_imagen"] . '" alt="imagen" class="img-thumbnail">');
-            } else {
+            <?php if (($b["pro_imagen"]==NULL) || ($b["pro_imagen"]=='')) {
                 echo('<img src="../img/no_imagen.png" alt="imagen" class="img-thumbnail">');
+            } else {
+
+                echo('<img src="../../' . $b["pro_imagen"] . '" alt="imagen" class="img-thumbnail">');
             }
             ?>
            </div>
