@@ -1,13 +1,17 @@
 <?php
 	// Incluir Funciones.
 	include_once('../modelo/modelo_productos.php');
-    
-    $rutaEnServidor='imagenes';
-	$rutaTemporal=$_FILES['imagen']['tmp_name'];
-	$nombreImagen=$_FILES['imagen']['name'];
-	$rutaDestinoImg='../../../'.$rutaEnServidor.'/'.$nombreImagen;
-	$rutaDestino=$rutaEnServidor.'/'.$nombreImagen;
-	move_uploaded_file($rutaTemporal,$rutaDestinoImg);
+
+    if($_FILES['imagen']['name']=='') {
+        $rutaDestino = NULL;
+    }else{
+        $rutaEnServidor = 'imagenes';
+        $rutaTemporal = $_FILES['imagen']['tmp_name'];
+        $nombreImagen = $_FILES['imagen']['name'];
+        $rutaDestinoImg = '../../' . $rutaEnServidor . '/' . $nombreImagen;
+        $rutaDestino = $rutaEnServidor . '/' . $nombreImagen;
+        move_uploaded_file($rutaTemporal, $rutaDestinoImg);
+    }
 
 	// Obtenemos los Datos.
 	$codigo = $_POST['txt_cod'];
@@ -41,7 +45,7 @@
 		<script>
 			alert('ERROR: El producto con codigo <?php echo $codigo;?> ya existe.');
 
-			window.location="../../vista/superadmin/vista_ingresar_producto.php";
+			window.location="../vista/vista_ingresar_producto.php";
 		</script>
 <?php
 	}
@@ -58,7 +62,7 @@
 			alert('El producto <?php echo $nombre;?> ha sido registrado correctamente.');
 
 			// Redirigmos a ver Productos.
-			window.location="../../vista/superadmin/vista_ingresar_producto.php";
+			window.location="../vista/vista_ingresar_producto.php";
 		</script>
 <?php
 	}
