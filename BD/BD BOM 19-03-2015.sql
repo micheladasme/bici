@@ -44,6 +44,7 @@ CREATE TABLE Compra
   com_id Int NOT NULL AUTO_INCREMENT,
   com_total Int,
   com_fecha Date,
+  com_nula Int,
   usu_id Int,
   id_modo Int,
  PRIMARY KEY (com_id)
@@ -883,4 +884,6 @@ INSERT INTO `comuna` (`comu_id`, `comu_nombre`, `region_id`) VALUES
 INSERT INTO `cliente` (`cli_id`, `cli_rut`, `cli_nombre`, `cli_apellido`, `cli_direccion`, `cli_telefono`, `cli_correo`, `cli_nick`, `cli_pass`, `comu_id`) VALUES
 (1, 180647945, 'Michel', 'Adasme', 'Las Guias 7555, Naltagua', '51194592', 'mic.adasme@gmail.com', 'mic.adasme', '12345', 87);
 
-
+INSERT INTO `ubicacion` VALUES
+(1, 'Tienda'),
+(2, 'Bodega');
