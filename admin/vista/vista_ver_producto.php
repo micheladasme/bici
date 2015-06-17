@@ -198,14 +198,14 @@ if ($last != 1) {
 
 
         foreach ($res3 as $b) {
+        ?>
 
-
-            echo('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="glyphicon-shopping-remove"></i></button>
-                    <h4 class="modal-title" id="myModalLabel"><i class="text-muted glyphicon glyphicon-shopping-cart"></i> <strong>02051</strong> -' . $b["pro_nombre"] . '</h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="text-muted glyphicon glyphicon-shopping-cart"></i> <strong><?php print($b["pro_cod"])?></strong><?php print(' - ' . $b["pro_nombre"]) ?></h4>
                   </div>
                   <div class="modal-body">
                   
@@ -214,25 +214,25 @@ if ($last != 1) {
                              <tr>
                                  <td class="h6"><strong>Codigo</strong></td>
                                  <td> </td>
-                                 <td class="h5">' . $b["pro_cod"] . '</td>
+                                 <td class="h5"><?php print($b["pro_cod"])?></td>
                              </tr>
                              
                              <tr>
                                  <td class="h6"><strong>Nombre</strong></td>
                                  <td> </td>
-                                 <td class="h5">' . $b["pro_nombre"] . '</td>
+                                 <td class="h5"><?php print($b["pro_nombre"]) ?> </td>
                              </tr>
                              
                              <tr>
                                  <td class="h6"><strong>Categoria</strong></td>
                                  <td> </td>
-                                 <td class="h5">' . $b["cat_nombre"] . '</td>
+                                 <td class="h5"><?php print($b["cat_nombre"]) ?> </td>
                              </tr>
                              
                              <tr>
                                  <td class="h6"><strong>Peso Producto</strong></td>
                                  <td> </td>
-                                 <td class="h5">' . $b["pro_peso"] . ' grs</td>
+                                 <td class="h5"><?php print($b["pro_peso"].' ')?>grs</td>
                              </tr>
                            
 
@@ -261,29 +261,26 @@ if ($last != 1) {
                     </table>
                              
                          
-                    <div class="col-md-4">');
-            if (isset($b["pro_imagen"])) {
+                    <div class="col-md-4">
+
+            <?php if (isset($b["pro_imagen"])) {
                 echo('<img src="../../' . $b["pro_imagen"] . '" alt="imagen" class="img-thumbnail">');
             } else {
                 echo('<img src="../img/no_imagen.png" alt="imagen" class="img-thumbnail">');
             }
-            echo(
-                '</div>
+            ?>
+           </div>
                     
                     <div class="clearfix"></div>
-                   <p class="open_info hide">' . $b["pro_descripcion"] . '.</p>
+                   <p class="open_info hide"><?php print(isset($b["pro_descripcion"])?$b["pro_descripcion"]:' ') ?></p>
                   </div>
                     
                   <div class="modal-footer">       
-                      
-                    <div class="text-right pull-right col-md-3">
-                        Precio Compra : <br/> 
-                        <span class="h3 text-muted"><strong>$ ' . $b["pro_precio_compra"] . '</strong></span></span>
-                    </div> 
+
                       
                     <div class="text-right pull-right col-md-3">
                         Precio Venta : <br/> 
-                        <span class="h3 text-muted"><strong>$ ' . $b["pro_precio_venta"] . '</strong></span>
+                        <span class="h3 text-muted"><strong><?php print('$ '. $b["pro_precio_venta"]) ?></strong></span>
                     </div>
                      
                 </div>
@@ -294,8 +291,8 @@ if ($last != 1) {
              $("#myModal").modal("show");
 
             </script>
-<!-- fin Modal--> ');
-        }
+    <?php
+       }
     } ?>
 
 </body>

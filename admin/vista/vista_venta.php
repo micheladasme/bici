@@ -40,14 +40,11 @@ if(!isset($_SESSION['usu_nombre']))
              resu.value = total;
          }
          function borarlinea(id) {
-             var ref = "../../control/superadmin/control_borrav.php?id=" + id;
+             var ref = "../control/control_borrav.php?id=" + id;
             
             window.location = ref;
 
          }
-
-     </script>
-     <script>
          
     function asd()
     {
@@ -55,58 +52,6 @@ if(!isset($_SESSION['usu_nombre']))
      
     }
 
-    
-
-  function Save(){
-    var par = $(this).parent().parent(); //tr
-    var tdButtons = par.children("td:nth-child(6)");
-
-    //$("#tdx").find("INPUT[type=text]").attr("disabled", "disabled"); 
-
-    tdButtons.html("<input type='button' class='btnDelete' value='Borrar'/>  <input type='button' class='btnEdit' value='Editar'/>");
-     <?php  
-            //$cod = ;
-            //$nom = ;
-            //$cant = ;
-           // $val = ;
-
-           // registraVentaProducto($cod,$nom,$cant,$val,$subt);
-     //$_SESSION['i']++; 
-       ?>
-              
-    $(".btnEdit").bind("click", Edit);
-    $(".btnDelete").bind("click", Delete);
-    
-
-  };
-
-  function Edit(){
-    var par = $(this).parent().parent(); //tr
-
-    var tdButtons = par.children("td:nth-child(6)");
- 
-     $("#tdx").find("INPUT[type=text]").attr("enabled", "enabled"); 
-    tdButtons.html("<input type='button' class='btnSave' value='Guardar'/>");
- 
-    $(".btnSave").bind("click", Save);
-    $(".btnEdit").bind("click", Edit);
-    $(".btnDelete").bind("click", Delete);
-};
-function Delete(){
-    var par = $(this).parent().parent(); //tr
-    par.remove();
-    
-
-}; 
-$(function(){
-    //Add, Save, Edit and Delete functions code
-    $(".btnEdit").bind("click", Edit);
-    $(".btnDelete").bind("click", Delete);
-    $("#btnAdd").bind("click", Add);
-});
-    </script>
-
-           <script>
         function calculo(cantidad,precio,inputtext,totaltext){
   
             // Calculo del subtotal
@@ -221,7 +166,7 @@ $(function(){
               <?php $subtotal=consultasubtotal();?>
              
              <div class="row pull-right" style="margin-right:50px">
-                 <form name="f1" action="../control/superadmin/controlpaga.php" method="post" >
+                 <form name="f1" action="../control/controlPaga.php" method="post" >
                   <?php foreach ($subtotal as $g) {
            echo "<p>Total Compra :   <input type='text' id='txt_compra' name='txt_compra' class='form-control' value='".$g['SUM( v_subtotal )']."' readonly/></p>";
  } ?>
