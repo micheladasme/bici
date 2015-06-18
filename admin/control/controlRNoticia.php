@@ -1,24 +1,31 @@
-  <?php //agrega noticias
-        if(isset($_POST['añadir'])) // Si el boton de "añadir" fué presionado ejecuta el resto del código
+<?php
+session_start();
+include('../modelo/modelo_noticias.php');
+include_once('../modelo/modelo_imagenes.php');
+?>
 
-        {
-            $titulo = $_POST['titulo']; // Recibimos el valor del <input name="titulo"...
-            $texto = $_POST['cuerpo'];   // Recibimos el valor de la <textarea name="titulo"...
-            if(!empty($titulo) && !empty($texto)) // Comprobamos que los valores recibidos no son NULL
-            {
-                $query_NuevaNoticia = mysql_query("INSERT INTO noticias SET no_titulo = '".$titulo."', no_fecha = SYSDATE(),no_cuerpo = '".$texto."'"); // Realizamos una consulta a la base de datos para insertar la nueva notica
+<?php
 
-                if($query_NuevaNoticia)
-                {
-                  
-   
-                    echo  "<script>alert('Noticia Publicada!');</script>";  // Si el registro (la noticia) se insertó en la base de datos, mostramos este mensaje
-                }
-                else
-                {
-                   echo  "<script>alert('Noticia NO Publicada!');</script>"; // Si el registro (la noticia) no se insertó en la base de datos, mostramos este mensaje
-                }
-            }
+$titulo = $_POST['not_titulo']; // Recibimos el valor del <input name="titulo"...
+$subtitulo = $_POST['not_subtitulo'];   // Recibimos el valor de la <textarea name="titulo"...
+$contenido = $_POST['not_contenido'];
+$usu_id = $_SESSION['id_usuario'];
 
-        }
-    ?>
+
+    $respuesta = registraNoticias($titulo, $subtitulo, $contenido, $rutaDestino, $usu_id);
+
+    if ($respuesta == 1) { ?>
+        <script>alert('Noticia Publicada!');
+            window.location='../vista/vista_ingresar_noticia.php';
+        </script>
+    <?php
+    } else {
+        ?>
+        <script>alert('Noticia NO Publicada!, Intente Nuevamente');
+            window.location='../vista/vista_ingresar_noticia.php';
+        </script>
+   <?php }
+
+
+
+?>

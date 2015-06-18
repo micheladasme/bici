@@ -1,18 +1,8 @@
 <?php
 	// Incluir Funciones.
 	include_once('../modelo/modelo_productos.php');
-
-    if($_FILES['imagen']['name']=='') {
-        $rutaDestino = NULL;
-    }else{
-        $rutaEnServidor = 'imagenes';
-        $rutaTemporal = $_FILES['imagen']['tmp_name'];
-        $nombreImagen = $_FILES['imagen']['name'];
-        $rutaDestinoImg = '../../' . $rutaEnServidor . '/' . $nombreImagen;
-        $rutaDestino = $rutaEnServidor . '/' . $nombreImagen;
-        move_uploaded_file($rutaTemporal, $rutaDestinoImg);
-    }
-
+    include_once('../modelo/modelo_imagenes.php'); ?>
+<?php
 	// Obtenemos los Datos.
 	$codigo = $_POST['txt_cod'];
 	$nombre = $_POST['txt_nom'];
