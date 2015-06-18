@@ -17,7 +17,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 ORDER BY pro_nombre ASC
 LIMIT " . $start . "," . $reg);
@@ -37,7 +37,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 AND pr.pro_nombre like '%$nombre%' ");
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
@@ -57,7 +57,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 AND pu.ubc_id = 1
 AND pr.pro_nombre like '%$nombre%' ");
@@ -78,7 +78,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 AND pu.ubc_id = 2
 AND pr.pro_nombre like '%$nombre%' ");
@@ -99,7 +99,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 AND pu.pu_cantidad <= 2
 ORDER BY pro_nombre ASC");
@@ -122,7 +122,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pu.pu_id, pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 AND pu.ubc_id = 1
 ORDER BY pro_nombre ASC
@@ -156,7 +156,7 @@ $a=array();
 $x=0;
 $sql=("SELECT pu.pu_id, pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
-WHERE pr.pro_id = pu.pro_id
+WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
 AND pu.ubc_id = 2
 ORDER BY pro_nombre ASC
@@ -272,7 +272,7 @@ function existeStockBodega($codigo)
     $x=0;
     $sql = "SELECT pu.pu_id, pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pu.pu_cantidad, ubc.ubc_descripcion
 			   FROM producto_ubicacion pu, productos pr, ubicacion ubc
-			   WHERE pr.pro_id = pu.pro_id
+			   WHERE pr.pro_cod = pu.pro_cod
 			   AND pu.ubc_id = ubc.ubc_id
 			   AND pu.ubc_id = 2
 			   AND pu.pro_cod = $codigo";
