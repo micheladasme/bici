@@ -32,6 +32,7 @@
 		<script>
 			alert('El producto de codigo <?php echo $codigo; ?> se ha modificado exitosamente.');
 			window.close();
+            window.location="../vista/vista_modificar_producto.php";
 		</script>
 <?php
 	}else
