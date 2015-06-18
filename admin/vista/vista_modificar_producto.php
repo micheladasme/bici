@@ -54,10 +54,11 @@ if($page!=1){
 
     <title>Modificar Producto</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../css/productos.css"  />
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
-     <script type="text/javascript">
+      <script type="text/javascript" src="../js/jQuery.js"></script>
+      <script type="text/javascript" src="../js/bootstrap.js"></script>
+
+
+      <script type="text/javascript">
     
       
       function salir(){
@@ -71,6 +72,20 @@ if($page!=1){
        $('.dropdown-toggle').dropdown()
 
      </script>
+      <script type="text/javascript">
+          function ValidaSoloNumeros() {
+              var code =event.charCode || event.keyCode;
+              if ((code< 48) || (code> 57)){
+                  if(window.event){
+                      event.returnValue = false;
+                  }else{
+                      event.preventDefault();
+                  }
+
+              }
+          }
+
+      </script>
  </head>
 
   <body>
@@ -119,23 +134,18 @@ if($page!=1){
            if(isset($_GET['txt_consulta']))
           {
               $res2 = muestraProductosnom($_GET['txt_consulta']);
-              foreach ($res2 as $f) {
-           echo (
-            "<tr>".
-            
-            "<td>".$f['pro_cod']."</td>".
-            "<td>".$f['pro_nombre']."</td>".
-            "<td>$".$f['pro_precio_compra']."</td>".
-            "<td>$".$f['pro_precio_venta']."</td>");
+              foreach ($res2 as $f) { ?>
 
-            echo ("<th><a href=");
-            echo("javascript:window.open('vista_m_producto.php?codigo=".$f['pro_cod']."'".",'nuevo'".",'top=0,left=0,toolbar=no,location=no,status=no,"."menubar=no,scrollbars=no,resizable=no,"."width=500,height=470')");
-              echo(" role='button' class='btn btn-sm btn-warning'><span class='glyphicon glyphicon-pencil'></span>&nbsp Modificar</a></th>".
+                 <tr>
+                     <th style="font-weight:100"><?php echo $f['pro_cod']; ?></th>
+                     <th style="font-weight:100"><?php echo $f['pro_nombre']; ?></th>
+                     <th style="font-weight:100">$ <?php echo $f['pro_precio_compra']; ?></th>
+                     <th style="font-weight:100">$ <?php echo $f['pro_precio_venta']; ?></th>
+                     <th width="30px"><a href="vista_modificar_producto.php?codigo=<?php print($f['pro_cod'])?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
+                 </tr>
 
-            "</tr>"
-            );
 
-           
+           <?php
              }
         }  
 
@@ -160,7 +170,7 @@ if($page!=1){
               <th style="font-weight:100"><?php echo $f['pro_nombre']; ?></th>
               <th style="font-weight:100">$ <?php echo $f['pro_precio_compra']; ?></th>
               <th style="font-weight:100">$ <?php echo $f['pro_precio_venta']; ?></th>
-              <th width="30px"><a href="javascript:window.open('vista_m_producto.php?codigo=<?php echo $f['pro_cod']; ?>', 'nuevo', 'top=0, left=0, toolbar=no,location=no, status=no,menubar=no,scrollbars=no, resizable=no, width=500,height=470')" role="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
+              <th width="30px"><a href="vista_modificar_producto.php?codigo=<?php print($f['pro_cod'])?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
           </tr>
 <?php
     }
@@ -177,5 +187,6 @@ if($page!=1){
 
               <?php include('/includes/paginador.php');  ?>
              <?php include('/includes/footer.php');  ?>
+              <?php include('/modal/modal_modificar_producto.php'); ?>
   </body>
 </html>
