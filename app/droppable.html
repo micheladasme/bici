@@ -8,16 +8,15 @@
 <script src="jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
 <style>
-#draggable, #draggable2 { width: 50px; height: 50px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-#droppable { width: 30px; height: 30px; padding: 0.5em; float: left; margin: 10px; }
+    .drag { width: 50px; height: 50px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+.drop { width: 30px; height: 30px; padding: 0.5em; float: left; margin: 10px; }
 </style>
 <script>
 $(function() {
-$( "#draggable" ).draggable({ revert: "valid" });
-$( "#draggable2" ).draggable({ revert: "invalid" });
-$( "#droppable" ).droppable({
-activeClass: "ui-state-default",
-hoverClass: "ui-state-hover",
+$( ".drag" ).draggable({ revert: "valid" });
+//$( ".drag" ).draggable({ revert: "invalid" });
+$( ".drop" ).droppable({
+
 drop: function( event, ui ) {
 $( this )
 .addClass( "ui-state-highlight" )
@@ -29,13 +28,13 @@ $( this )
 </script>
 </head>
 <body>
-<div id="draggable" class="ui-widget-content">
+<div class="drag" class="ui-widget-header">
 <p>I revert when I'm dropped</p>
 </div>
-<div id="draggable2" class="ui-widget-content">
+<div class="drag">
 <p>I revert when I'm not dropped</p>
 </div>
-<div id="droppable" class="ui-widget-header">
+<div id="droppable" class="drop">
 <p>Drop me here</p>
 </div>
 </body>
