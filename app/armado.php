@@ -10,6 +10,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap.min.js"></script>
+    <script src="js/drag-drop.js"></script>
 <style>
 
 
@@ -27,12 +28,13 @@
 #cont-biela{width: 100px; height: 100px; left:340px; top:275px; z-index: 4; position: absolute;}    
 #cont-sillin{width: 120px; height: 100px; left:255px; top:110px; z-index: 4; position: absolute;} 
 #cont-manubrio{width: 70px; height: 70px; right:255px; top:70px; z-index: 4; position: absolute;}
-#Marco { width: 50px; height:50px; margin:5px; z-index: 20;}
-#Rueda { width: 50px; height:50px; margin:5px;  z-index: 20;}
-#Horquilla { width: 50px; height:50px; margin:5px;  z-index: 20;}
-#Sillin { width: 50px; height:50px; margin:5px;  z-index: 20;}
-#Manubrio { width: 50px; height:50px; margin:5px;  z-index: 20;}
-#Biela { width: 50px; height:50px; margin:5px;  z-index: 20;}
+
+#ruedas li { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
+#marcos li { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
+#horquillas li { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
+#bielas li { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
+#sillines li { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
+#manubrios li { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
 
 .btn{
     margin: 4px;
@@ -104,7 +106,6 @@ color: #fff;
 background-color: #47a877;
 border-top:2px solid #39865f;
 outline: none;
-outline-offset: none;
 margin-top: 2px;
 }
 
@@ -125,7 +126,6 @@ outline: none;
 color: #fff;
 background-color: #0a97b9;
 border-top:2px solid #087994;
-outline-offset: none;
 margin-top: 2px;
 }
 
@@ -154,208 +154,13 @@ margin-top: 2px;
 </style>
 <script>
 
-/*$(function() {
-$( "#draggable, #draggable-nonvalid" ).draggable(({ revert: "invalid" }));
-$( "#droppable" ).droppable({
-accept: "#draggable",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-$( this )
-.addClass( "ui-state-highlight" )
-.find( "p" )
-.html( "Dropped!" );
-}
-});
-});*/
-$(function() {
-$( ".marco, .rueda, .horquilla,.biela,.sillin,.manubrio" ).draggable({ revert: true });
-$(".marco, .rueda, .horquilla,.biela,.sillin,.manubrio").data("soltado", false);
-
-$("#cont-marco").droppable("option","accept",".marco")
-$( "#cont-marco" ).droppable({
-accept: ".marco",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-   
-$(this).append($(this).attr("id");); 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Marco").css({
-height: height ,
-width: width,
-margin: 0,
-top:0,
-left:0,
-
-
-});
-}
-});
-
-$( "#cont-horquilla" ).droppable({
-accept: "#Horquilla",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-   
-$(this).append($("#Horquilla")); 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Horquilla").css({
-height: height ,
-width: width,
-margin: 0,
-top:0,
-left:0,
-
-
-});
-}
-});
-
-$( "#cont-manubrio" ).droppable({
-accept: "#Manubrio",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-   
-$(this).append($("#Manubrio")); 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Manubrio").css({
-height: height ,
-width: width,
-margin: 0,
-top:0,
-left:0,
-
-
-});
-}
-});
-
-$( "#cont-sillin" ).droppable({
-accept: "#Sillin",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-   
-$(this).append($("#Sillin")); 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Sillin").css({
-height: height ,
-width: width,
-margin: 0,
-top:0,
-left:0,
-
-
-});
-}
-});
-
-$( "#cont-biela" ).droppable({
-accept: "#Biela",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-   
-$(this).append($("#Biela")); 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Biela").css({
-height: height ,
-width: width,
-margin: 0,
-top:0,
-left:0,
-
-
-});
-}
-});
-
-$( "#cont-rueda" ).droppable({
-accept: "#Rueda",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-$("#Rueda").addClass("ui-draggable-dragging");
-$(this).append($("#Rueda"));    
- 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Rueda").css({
-height: height,
-width: width,
-margin: 0,
-top:0,
-left:0,
-
-
-
-});
-$("#Rueda").clone().appendTo("#cont-rueda2");
-
- }
-});
-
-$( "#cont-rueda2" ).droppable({
-accept: "#Rueda",
-activeClass: "ui-state-hover",
-hoverClass: "ui-state-active",
-drop: function( event, ui ) {
-$("#Rueda").addClass("ui-draggable-dragging");
-$(this).append($("#Rueda"));    
- 
-var width = $(this).width();
-var height = $(this).height();
- 
-$("#Rueda").css({
-height: height,
-width: width,
-margin: 0,
-top:0,
-left:0,
-});
-
-$("#Rueda").clone().appendTo("#cont-rueda");
-
- }
-});
-
-});
-
-
-
 </script>
 </head>
 
 <body> 
-<!--<div id="draggable-nonvalid" class="ui-widget-content">
-<p>I'm draggable but can't be dropped</p>
-</div>
-<div id="draggable" class="ui-widget-content">
-<p>Drag me to my target</p>
-</div>
-<div id="droppable" class="ui-widget-header">
-<p>accept: '#draggable'</p>-->
-
-
 
 <?php include("header.php"); ?>
 </br>
-
-
 
 <!-- Draggables -->
 <div class="row" style="margin: 5px;">
@@ -371,12 +176,13 @@ $("#Rueda").clone().appendTo("#cont-rueda");
                     Ruedas</a>
                 </h4>
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in">
+              <div id="collapseOne">
+                <ul id="ruedas" class="gallery ui-helper-reset ui-helper-clearfix">
+                    <li id="rueda1" class="ui-widget-content ui-corner-tr">
+                        <img src="../imagenes/rueda_montana.png" style="width:100%; height: 100%"/>
+                    </li>
+                </ul>
 
-               <div id="Rueda" class="ui-widget-content rueda">
-        
-                <img src="../imagenes/rueda_montana.png" style="width:100%; height: 100%"/>
-              </div>
 
 
               </div>
@@ -390,10 +196,11 @@ $("#Rueda").clone().appendTo("#cont-rueda");
                 </h4>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse">
-                 <div id="Marco" class="ui-widget-content">
-        
-                <img src="../imagenes/canvas.png" style="width:100%; height: 100%"/>
-              </div>
+                 <ul id="marcos" class="gallery ui-helper-reset ui-helper-clearfix">
+                     <li id="marcos1" class="ui-widget-content ui-corner-tr">
+                         <img src="../imagenes/canvas.png" style="width:100%; height: 100%"/>
+                     </li>
+                 </ul>
               </div>
             </div>
 
@@ -405,10 +212,11 @@ $("#Rueda").clone().appendTo("#cont-rueda");
                 </h4>
               </div>
               <div id="collapseThree" class="panel-collapse collapse">
-                 <div id="Horquilla" class="ui-widget-content">
-        
-                <img src="../imagenes/horquilla.png" style="width:100%; height: 100%"/>
-              </div>
+                  <ul id="horquillas" class="gallery ui-helper-reset ui-helper-clearfix">
+                      <li id="horquilla1" class="ui-widget-content ui-corner-tr">
+                          <img src="../imagenes/horquilla.png" style="width:100%; height: 100%"/>
+                      </li>
+                  </ul>
               </div>
             </div>
           
@@ -420,10 +228,11 @@ $("#Rueda").clone().appendTo("#cont-rueda");
                 </h4>
               </div>
               <div id="collapseFour" class="panel-collapse collapse">
-                 <div id="Sillin" class="ui-widget-content">
-        
-                <img src="../imagenes/sillin_fierro_abajo.png" style="width:100%; height: 100%"/>
-              </div>
+                  <ul id="sillines" class="gallery ui-helper-reset ui-helper-clearfix">
+                      <li id="sillin1" class="ui-widget-content ui-corner-tr">
+                          <img src="../imagenes/sillin_fierro_abajo.png" style="width:100%; height: 100%"/>
+                      </li>
+                  </ul>
               </div>
             </div>
              
@@ -435,10 +244,11 @@ $("#Rueda").clone().appendTo("#cont-rueda");
                 </h4>
               </div>
               <div id="collapseFive" class="panel-collapse collapse">
-                 <div id="Biela" class="ui-widget-content">
-        
-                <img src="../imagenes/biela.png" style="width:100%; height: 100%"/>
-              </div>
+                  <ul id="bielas" class="gallery ui-helper-reset ui-helper-clearfix">
+                      <li id="biela1" class="ui-widget-content ui-corner-tr">
+                          <img src="../imagenes/biela.png" style="width:100%; height: 100%"/>
+                      </li>
+                  </ul>
               </div>
             </div>
 
@@ -450,10 +260,11 @@ $("#Rueda").clone().appendTo("#cont-rueda");
                 </h4>
               </div>
               <div id="collapseSix" class="panel-collapse collapse">
-                 <div id="Manubrio" class="ui-widget-content">
-        
-                <img src="../imagenes/manubrio.png" style="width:100%; height: 100%"/>
-              </div>
+                  <ul id="manubrios" class="gallery ui-helper-reset ui-helper-clearfix">
+                      <li id="manubrio1" class="ui-widget-content ui-corner-tr">
+                          <img src="../imagenes/manubrio.png" style="width:100%; height: 100%"/>
+                      </li>
+                  </ul>
               </div>
             </div>
 
@@ -488,21 +299,6 @@ $("#Rueda").clone().appendTo("#cont-rueda");
         </div>
       </div>
     </div>
-<!--<div id="lista">
-  <div id="productos" class="ui-widget-content ui-state-default">
-	<h4 class="ui-widget-header"> Productos</h4>
-
-  		<div id="Rueda" class="ui-widget-content" style="width:20px; height: 20px">
-  			<p>Rueda 1</p>
-  			<img src="../imagenes/2sinautor-nousar.jpg" style="width:100%; height: 100%"/>
-		</div>
-		<br>
-		<br>
-		<div id="Marco" class="ui-widget-content" style="width:50px; height: 50px">
-			<p>Marco 1</p>
-		</div>
-	</div>
-</div>-->
 </div>
 
 <!-- Contenedores -->
