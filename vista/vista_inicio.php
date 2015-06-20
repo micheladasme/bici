@@ -439,7 +439,7 @@ include("modelo/funciones.php");
                             <div class="col-md-12">
                                 <div class="contact-form">
                                     <div class="row">
-                                    	<form action="#" method="post">
+                                    	<form action="../control/control_contacto.php" method="post">
                                             <fieldset class="col-md-4">
                                                 <input id="name" type="text" name="name" placeholder="Nombre">
                                             </fieldset>
