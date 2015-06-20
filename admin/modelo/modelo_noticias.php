@@ -26,5 +26,92 @@ function registraNoticias($titulo, $subtitulo, $contenido, $rutaDestino, $usu_id
     mysql_close($link);
 }
 
+function cuentaNoticias()
+{
+    $link = conectar();
+    $x=0;
+    $sql ="SELECT * FROM noticias";
+    $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    $x= mysql_num_rows($res);
+    mysql_close($link);
+    return $x;
+}
+
+function muestraNoticias($start,$reg)
+{
+    $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT noti.not_id, noti.not_titulo, noti.not_subtitulo, noti.not_contenido, noti.not_imagen, noti.not_fecha,usu.usu_id, usu.usu_nombre, usu.usu_apellido FROM noticias noti,usuarios usu WHERE noti.usu_id = usu.usu_id
+            ORDER BY noti.not_fecha ASC
+			LIMIT " . $start . "," . $reg);
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+    }
+    mysql_close($link);
+    return $a;
+}
+
+function muestraNoticiasid($codigo)
+{
+    $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT not_id, not_titulo, not_subtitulo, not_contenido FROM noticias WHERE not_id = $codigo");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+    }
+    mysql_close($link);
+    return $a;
+}
+
+function muestraNoticiasTit($titulo)
+{
+    $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT * FROM Noticias WHERE not_titulo LIKE '%$titulo%'");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+    }
+    mysql_close($link);
+    return $a;
+}
+
+// Función Eliminar Producto.
+function eliminaNoticia($codigo)
+{
+    $link=conectar();
+    $sql="DELETE FROM noticias WHERE not_id ='$codigo'";
+    $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
+    if(mysql_affected_rows()>0)
+    {
+        return '1';
+    }
+    mysql_close($link);
+}
+
+// Función Modificar Producto.
+function modificaNoticias($codigo, $titulo, $subtitulo, $contenido)
+{
+    $link=conectar();
+    $sql="UPDATE noticias SET not_titulo = '$titulo', not_subtitulo = '$subtitulo', not_contenido = '$contenido' WHERE not_id = '$codigo'  ";
+    $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
+    // Verificamos si se realizo el insert
+    if(mysql_affected_rows()>0)
+    {
+        return '1';
+    }
+    mysql_close($link);
+}
 
 ?>
