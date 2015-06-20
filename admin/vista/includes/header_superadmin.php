@@ -99,9 +99,21 @@
                     </ul>
                 </li>
 
-                <li> <a href="vista_ingresar_noticia.php"><span class="glyphicon glyphicon-comment"></span> Noticias</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-comment"></span> Noticias <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li> <a href="vista_ver_noticia.php">Ver Noticias</a></li>
+                    <li class="divider"></li>
+                    <li> <a href="vista_ingresar_noticia.php">Ingresar Noticias</a></li>
+                    <li> <a href="vista_modificar_noticia.php">Modificar Noticias</a></li>
+                    <li> <a href="vista_eliminar_noticia.php">Eliminar Noticias</a></li>
+                </ul>
+                </li>
 
-                <li> <a href="reportes.php"><span class="glyphicon glyphicon-stats"></span> Reportes</a></li>
+
+                <li>
+                 <a href="reportes.php"><span class="glyphicon glyphicon-stats"></span> Reportes</a>
+                </li>
 
 
 
