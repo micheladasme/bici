@@ -13,7 +13,7 @@ if($sw==true)
 	
 
      echo "<script>
-		 location.href='../vista/vista_iniciada.php';
+		 location.href='../vista/vista_logeado.php';
 		 alert('Bienvenido');
 		 </script>";
 
