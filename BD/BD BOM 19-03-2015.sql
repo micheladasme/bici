@@ -186,6 +186,7 @@ CREATE TABLE Producto_Ubicacion
   pu_cantidad Int NOT NULL,
   suc_id Int NOT NULL,
   pro_cod Varchar(14) NOT NULL,
+  pu_para Varchar(2) NOT NULL,
   PRIMARY KEY (pu_id)
 
 )
@@ -333,25 +334,6 @@ CREATE TABLE Noticias
 )
 ;
 
--- Table Productos_Armado
-
-CREATE TABLE Productos_Armado
-(
-  proarm_id Int NOT NULL AUTO_INCREMENT,
-  proarm_cod Varchar(10) NOT NULL,
-  proarm_nombre Varchar(50) NOT NULL,
-  proarm_precio_venta Int NOT NULL,
-  proarm_precio_compra Int NOT NULL,
-  proarm_imagen Varchar(100) NOT NULL,
-  proarm_peso Int NOT NULL,
-  proarm_estado Int NOT NULL,
-  proarm_descripcion Varchar(140),
-  subcat_id Int,
-  proarm_talla Varchar(20),
-  marca_id Int,
- PRIMARY KEY (proarm_id)
-)
-;
 
 -- Table Marca
 
@@ -443,14 +425,9 @@ ALTER TABLE Detalle_Compra ADD CONSTRAINT Relationship50 FOREIGN KEY (pro_cod) R
 ALTER TABLE Noticias ADD CONSTRAINT Relationship51 FOREIGN KEY (usu_id) REFERENCES Usuarios (usu_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE Productos_Armado ADD CONSTRAINT Relationship53 FOREIGN KEY (subcat_id) REFERENCES Subcategoria (subcat_id) ON DELETE NO ACTION ON UPDATE NO ACTION
-;
-
 ALTER TABLE Productos ADD CONSTRAINT Relationship54 FOREIGN KEY (marca_id) REFERENCES Marca (marca_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE Productos_Armado ADD CONSTRAINT Relationship55 FOREIGN KEY (marca_id) REFERENCES Marca (marca_id) ON DELETE NO ACTION ON UPDATE NO ACTION
-;
 
 
 -- INSERTS  
