@@ -50,7 +50,7 @@ $(function() {
     });
 
     $("#cont-marco").droppable({
-        accept: "#marcos li",
+        accept: "#marcos div",
         activeClass: "ui-state-hover",
         hoverClass: "ui-state-active",
         drop: function(event, ui) {
@@ -71,7 +71,7 @@ $(function() {
     });
 
     $("#cont-horquilla").droppable({
-        accept: "#horquillas li",
+        accept: "#horquillas div",
         activeClass: "ui-state-hover",
         hoverClass: "ui-state-active",
         drop: function(event, ui) {
@@ -92,7 +92,7 @@ $(function() {
     });
 
     $("#cont-sillin").droppable({
-        accept: "#sillines li",
+        accept: "#sillines div",
         activeClass: "ui-state-hover",
         hoverClass: "ui-state-active",
         drop: function(event, ui) {
@@ -113,7 +113,7 @@ $(function() {
     });
 
     $("#cont-biela").droppable({
-        accept: "#bielas li",
+        accept: "#bielas div",
         activeClass: "ui-state-hover",
         hoverClass: "ui-state-active",
         drop: function(event, ui) {
@@ -134,7 +134,7 @@ $(function() {
     });
 
     $("#cont-manubrio").droppable({
-        accept: "#manubrios li",
+        accept: "#manubrios div",
         activeClass: "ui-state-hover",
         hoverClass: "ui-state-active",
         drop: function(event, ui) {
