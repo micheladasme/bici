@@ -13,18 +13,29 @@
     <script src="js/drag-drop2.js"></script>
     <style>
 
-
+        body {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('images/armado.jpg');
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover; }
+        .well{background: rgba(19, 19, 19, 0.52);}
+        h1,h2,h3,h4,h5 {color: #ffffff;}
+        label{color: #ffffff}
         #productos { float: left; width: 300px; height: 500px; margin:10px;  }
         #productos h4 { line-height: 16px; margin: 0 0 0.4em; }
         #armado { margin:auto; position: relative; width: 50%; }
         #lista {float:left; width: 320px; height: 600px; border: 1px solid black; }
         #cont-marco { width: 600px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; }
-        #cont-rueda { width: 280px; height: 280px; left:45px; top:190px; z-index: 1; position: absolute;}
-        #cont-rueda2 { width: 280px; height: 280px; right:20px; top:190px; z-index: 1; position: absolute;}
+        #cont-rueda { width: 260px; height: 260px; left:45px; top:190px; z-index: 1; position: absolute;}
+        #cont-rueda2 { width: 260px; height: 260px; right:20px; top:190px; z-index: 1; position: absolute;}
         #cont-horquilla{ width: 40px; height: 275px; right:190px; top:90px; z-index: 4; position: absolute;
             -ms-transform: rotate(-30deg); /* IE 9 */
-            -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
-            transform: rotate(-30deg);}
+            -webkit-transform: rotate(-28deg); /* Chrome, Safari, Opera */
+            transform: rotate(-28deg);}
         #cont-biela{width: 100px; height: 100px; left:340px; top:275px; z-index: 4; position: absolute;}
         #cont-sillin{width: 120px; height: 100px; left:255px; top:110px; z-index: 4; position: absolute;}
         #cont-manubrio{width: 70px; height: 70px; right:255px; top:70px; z-index: 4; position: absolute;}
@@ -160,14 +171,40 @@
 <body>
 
 <?php include("header.php"); ?>
-</br>
 
 <!-- Draggables -->
-<div class="row" style="margin: 5px;">
-    <div class="well col-md-3 pull-left" style="margin: 10px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-3">
+<div class="row" style="margin: 0px 90px;">
+<div class = "well col-md-12">
+    <form class="form-inline">
+        <div class="col-md-4">
+        <label> Peso : </label>
+        <div class="input-group">
+        <input type="text" id="peso" name="peso" class="form-control" disabled>
+        <div class="input-group-addon">grs.</div>
+        </div>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+        <label> Precio : </label>
+        <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input type="text" class="form-control" disabled>
+
+        </div>
+            </div>
+        <div class="col-md-2 col-md-offset-1">
+            <a class="btn btn-fresh"><span class="glyphicon glyphicon-floppy-saved"> </span> Guardar Creacion</a>
+
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<div class="row" style="margin: 0px 30px">
+    <div class="well col-md-3" style="margin: 0px 0px 0px 50px">
+
+            <h4> Partes de Bicicletas</h4>
+
+            <div>
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -296,17 +333,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
-        </div>
     </div>
 
     <!-- Contenedores -->
 
-    <div class="well col-md-8" style="margin: 5px; height:auto">
-        <h3> Crea Tu Cleta !</h3>
+    <div class="well col-md-8">
+        <h3> Arma Tu Bicicleta Aqui</h3>
         <hr>
-        <br>
+
         <div id="cleta" style="position: relative; height:500px; border: 1px solid #cccccc; background: white;">
             <div id="cont-marco" class="ui-widget-header">
 
@@ -336,6 +372,15 @@
 
             </div>
         </div>
+    </div>
+    </div>
+    <div class="row" style="margin: 0px 0px 0px 100px">
+    <div class="well col-md-11">
+        <h4>Detalle</h4>
+
+
+
+    </div>
     </div>
     </br>
     </br>

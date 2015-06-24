@@ -21,7 +21,7 @@
         </div>-->
         <div class="well text-center">
 			<button type="button" class="btn btn-hot text-uppercase"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>  Crear Bicicleta</button>
-            <button type="button" class="btn btn-sunny text-uppercase"><span class="glyphicon glyphicon-tags" aria-hidden="true"> </span>  Creaciones</button>
+            <button type="button" class="btn btn-sunny text-uppercase"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>   Creaciones</button>
             <button type="button" class="btn btn-fresh text-uppercase"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Pedidos</button>
             <button type="button" class="btn btn-sky text-uppercase pull-right"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>  Cerrar Sesion</button>
         </div>
