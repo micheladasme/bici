@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bici-O-Matic</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/jquery-ui.css"/>
@@ -12,7 +11,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/drag-drop2.js"></script>
     <style>
-
+        html{ max-width: none !important; width: 1366px;  }
         body {
             background-repeat: no-repeat;
             background-position: center;
@@ -22,20 +21,20 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover; }
-        .well{background: rgba(19, 19, 19, 0.52);}
-        h1,h2,h3,h4,h5 {color: #ffffff;}
-        label{color: #ffffff}
+        /*.well{background: rgba(19, 19, 19, 0.52);}*/
+        /* h1,h2,h3,h4,h5 {color: #ffffff;}*/
+        /*label{color: #ffffff}*/
         #productos { float: left; width: 300px; height: 500px; margin:10px;  }
         #productos h4 { line-height: 16px; margin: 0 0 0.4em; }
         #armado { margin:auto; position: relative; width: 50%; }
         #lista {float:left; width: 320px; height: 600px; border: 1px solid black; }
-        #cont-marco { width: 600px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; }
-        #cont-rueda { width: 260px; height: 260px; left:45px; top:190px; z-index: 1; position: absolute;}
-        #cont-rueda2 { width: 260px; height: 260px; right:20px; top:190px; z-index: 1; position: absolute;}
-        #cont-horquilla{ width: 40px; height: 275px; right:190px; top:90px; z-index: 4; position: absolute;
+        #cont-marco { width: 600px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px;}
+        #cont-rueda { width: 240px; height: 240px; left:59px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
+        #cont-rueda2 { width: 240px; height: 240px; right:19px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
+        #cont-horquilla { width: 40px; height: 275px; right:170px; top:90px; z-index: 4; position: absolute;
             -ms-transform: rotate(-30deg); /* IE 9 */
-            -webkit-transform: rotate(-28deg); /* Chrome, Safari, Opera */
-            transform: rotate(-28deg);}
+            -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
+            transform: rotate(-30deg); }
         #cont-biela{width: 100px; height: 100px; left:340px; top:275px; z-index: 4; position: absolute;}
         #cont-sillin{width: 120px; height: 100px; left:255px; top:110px; z-index: 4; position: absolute;}
         #cont-manubrio{width: 70px; height: 70px; right:255px; top:70px; z-index: 4; position: absolute;}
@@ -174,16 +173,16 @@
 
 <!-- Draggables -->
 <div class="row" style="margin: 0px 90px;">
-<div class = "well col-md-12">
+<div class = "well col-xs-12">
     <form class="form-inline">
-        <div class="col-md-4">
+        <div class="col-xs-4">
         <label> Peso : </label>
         <div class="input-group">
         <input type="text" id="peso" name="peso" class="form-control" disabled>
         <div class="input-group-addon">grs.</div>
         </div>
         </div>
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-xs-4 col-xs-offset-1">
         <label> Precio : </label>
         <div class="input-group">
             <div class="input-group-addon">$</div>
@@ -191,7 +190,7 @@
 
         </div>
             </div>
-        <div class="col-md-2 col-md-offset-1">
+        <div class="col-xs-2 col-xs-offset-1">
             <a class="btn btn-fresh"><span class="glyphicon glyphicon-floppy-saved"> </span> Guardar Creacion</a>
 
             </div>
@@ -200,7 +199,7 @@
 </div>
 </div>
 <div class="row" style="margin: 0px 30px">
-    <div class="well col-md-3" style="margin: 0px 0px 0px 50px">
+    <div class="well col-xs-3" style="margin: 0px 0px 0px 50px">
 
             <h4> Partes de Bicicletas</h4>
 
@@ -339,7 +338,7 @@
 
     <!-- Contenedores -->
 
-    <div class="well col-md-8">
+    <div class="well col-xs-8">
         <h3> Arma Tu Bicicleta Aqui</h3>
         <hr>
 
@@ -375,7 +374,7 @@
     </div>
     </div>
     <div class="row" style="margin: 0px 0px 0px 100px">
-    <div class="well col-md-11">
+    <div class="well col-xs-11">
         <h4>Detalle</h4>
 
 
