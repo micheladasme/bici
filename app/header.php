@@ -1,8 +1,7 @@
       <div class="container">
 	<div class="row">
 		<div class="row">
-  			<div class="col-md-8"><h2>Bici-O-Matic</h2></div>
-  			<div class="col-xs-6 col-md-4"><h4>Bienvenido Sr(a):  </h4></div>
+  			<div class="col-md-4 col-md-offset-8"><h4 style="color: #ffffff;">Bienvenido Sr(a):  </h4></div>
 		</div>
     
     
@@ -20,6 +19,7 @@
             <button type="button" class="btn btn-sky text-uppercase btn-sm">Sky button</button>
         </div>-->
         <div class="well text-center">
+            <img src="images/logo.png" class="pull-left" style="width: 150px; height: 45px;">
 			<button type="button" class="btn btn-hot text-uppercase"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>  Crear Bicicleta</button>
             <button type="button" class="btn btn-sunny text-uppercase"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>   Creaciones</button>
             <button type="button" class="btn btn-fresh text-uppercase"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Pedidos</button>

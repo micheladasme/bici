@@ -11,11 +11,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/drag-drop2.js"></script>
     <style>
-        html{ max-width: none !important; width: 1366px;  }
+        html{ max-width: none !important; width: 1280px;  }
         body {
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url('images/armado.jpg');
+            background-image: url("images/armado.jpg");
             background-attachment: fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -28,16 +28,16 @@
         #productos h4 { line-height: 16px; margin: 0 0 0.4em; }
         #armado { margin:auto; position: relative; width: 50%; }
         #lista {float:left; width: 320px; height: 600px; border: 1px solid black; }
-        #cont-marco { width: 600px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px;}
+        #cont-marco { width: 500px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; border: 1px solid #000000;}
         #cont-rueda { width: 240px; height: 240px; left:59px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
-        #cont-rueda2 { width: 240px; height: 240px; right:19px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
-        #cont-horquilla { width: 40px; height: 275px; right:170px; top:90px; z-index: 4; position: absolute;
+        #cont-rueda2 { width: 240px; height: 240px; right:35px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
+        #cont-horquilla { width: 40px; height: 275px; right:200px; top:90px; z-index: 4; position: absolute;
             -ms-transform: rotate(-30deg); /* IE 9 */
             -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
-            transform: rotate(-30deg); }
-        #cont-biela{width: 100px; height: 100px; left:340px; top:275px; z-index: 4; position: absolute;}
-        #cont-sillin{width: 120px; height: 100px; left:255px; top:110px; z-index: 4; position: absolute;}
-        #cont-manubrio{width: 70px; height: 70px; right:255px; top:70px; z-index: 4; position: absolute;}
+            transform: rotate(-30deg); border: 1px solid #000000;}
+        #cont-biela{width: 100px; height: 100px; left:340px; top:275px; z-index: 4; position: absolute; border: 1px solid #000000;}
+        #cont-sillin{width: 120px; height: 100px; left:255px; top:110px; z-index: 4; position: absolute; border: 1px solid #000000;}
+        #cont-manubrio{width: 70px; height: 70px; right:255px; top:70px; z-index: 4; position: absolute; border: 1px solid #000000;}
 
         #ruedas div { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
         #marcos div { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
