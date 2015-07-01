@@ -9,12 +9,12 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="vista_inicio_admin.php">
-                <img alt="Brand" src="../img/logo.png" style="width:160px;height:50px;">
+                <img alt="Brand" src="../img/logo.png" style="width:120px;height:40px;">
             </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="font-size: 13px;">
             <ul class="nav navbar-nav">
                 <!--
                    <li><a href="#">Link</a></li>
