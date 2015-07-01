@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
-include_once("../../modelo/funciones.php");
+include_once("../modelo/modelo_usuarios.php");
 $link = conectar();
 $consulta = "select tip_id , tip_descripcion from tipo_usuarios order by tip_id asc";
 $result=mysql_query($consulta , $link);
@@ -18,11 +18,11 @@ $result2=mysql_query($consulta2 , $link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Registrar Nuevos Usuarios</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
   
 
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
      <script type="text/javascript">
      
     
@@ -52,7 +52,7 @@ $result2=mysql_query($consulta2 , $link);
             
             <div class="row">
         <div class="col-md-4 col-md-offset-4"><!--col-md-6 col-md-offset-3-->        
-          <form id="iform"  method="POST" action="../../control/superadmin/controlRUsuario.php" enctype="multipart/form-data">
+          <form id="iform"  method="POST" action="../control/controlRUsuario.php" enctype="multipart/form-data">
       <p> Nombre : <input type="text" id="txt_nom" name="txt_nom" class="form-control" required autofocus/>   </p>
       <p> Apellido :  <input type="text" id="txt_ape" name="txt_ape" class="form-control" required/>    </p>
       <p> Nickname :  <input type="text" id="txt_nick" name="txt_nick" class="form-control" required/>    </p>
@@ -82,7 +82,7 @@ $result2=mysql_query($consulta2 , $link);
        </div>
            </div>
 </div>
-            <?php include('../includes/footer.php');  ?>
+            <?php include('/includes/footer.php');  ?>
 
               </body>
 </html>
