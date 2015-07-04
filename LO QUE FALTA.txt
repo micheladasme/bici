@@ -1,8 +1,10 @@
 
 -PEDIDOS (EEROR LINEA 9)
 -VER GASTOS (NO HAY VISTA)... Nota : va a ser parte de reporterias.
--MODIFICAR USUARIOS...
--MOSTRAR PRODUCTOS EN PAGINA WEB
+-ELIMINAR USUARIOS...
 modificar cliente
 modificar usuarios=======
+pedidos
 -MOSTRAR PRODUCTOS EN PAGINA WEB
+REPORTES
+APP WEB
