@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
-include_once("../../modelo/funciones.php");
+include_once("../modelo/modelo_cliente.php");
 $link = conectar();
 $consulta = "select com.comu_id , com.comu_nombre from comuna com;";
 $result=mysql_query($consulta , $link);
@@ -16,11 +16,11 @@ $result=mysql_query($consulta , $link);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Registrar Productos</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/productos.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/productos.css"  />
 
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
      <script type="text/javascript">
      
      function ValidaSoloNumeros() {
@@ -60,7 +60,7 @@ $result=mysql_query($consulta , $link);
             
             <div class="row">
         <div class="col-md-4 col-md-offset-4"><!--col-md-6 col-md-offset-3-->        
-          <form id="iform"  method="POST" action="../../control/superadmin/controlRCliente.php" enctype="multipart/form-data">
+          <form id="iform"  method="POST" action="../control/superadmin/controlRCliente.php" enctype="multipart/form-data">
       <p> RUT : <input type="text" id="txt_cod" name="txt_cod" onkeypress="ValidaSoloNumeros()" class="form-control" required autofocus/>   </p>
       <p> Nombre :  <input type="text" id="txt_nom" name="txt_nom" class="form-control" required/>    </p>
       <p> Apellido :   <input type="text" id="txt_ape" name="txt_ape" class="form-control" required/>    </p>
@@ -86,7 +86,7 @@ $result=mysql_query($consulta , $link);
        </div>
            </div>
 </div>
-            <?php include('../includes/footer.php');  ?>
+            <?php include('/includes/footer.php');  ?>
 
               </body>
 </html>

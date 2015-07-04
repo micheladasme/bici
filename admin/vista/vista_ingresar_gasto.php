@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../modelo/funciones.php');
+include('../modelo/modelo_gastos.php');
 
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
@@ -14,10 +14,10 @@ if(!isset($_SESSION['usu_nombre']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bienvenido Administrador</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/caja.css"  />
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap-dropdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/caja.css"  />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
      <script>
     
       
@@ -60,7 +60,7 @@ if(!isset($_SESSION['usu_nombre']))
 
 
 
-          <form id="iform"  method="POST" action="../../control/superadmin/controlRGastoA.php"  enctype="multipart/form-data">
+          <form id="iform"  method="POST" action="../control/superadmin/controlRGastoA.php"  enctype="multipart/form-data">
       <p> Tipo Gasto : <select name="sel_tipo" class="form-control"  id="sel_tipo">
                            <option value="1">Merma</option>
                             <option value="2">Gasto Local</option>    
@@ -80,6 +80,6 @@ if(!isset($_SESSION['usu_nombre']))
 
         
            
-             <?php include('../includes/footer.php');  ?>
+             <?php include('/includes/footer.php');  ?>
   </body>
 </html>
