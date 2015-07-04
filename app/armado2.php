@@ -31,7 +31,7 @@
         #cont-marco { width: 500px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; border: 1px solid #000000;}
         #cont-rueda { width: 240px; height: 240px; left:59px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
         #cont-rueda2 { width: 240px; height: 240px; right:35px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
-        #cont-horquilla { width: 40px; height: 275px; right:200px; top:90px; z-index: 4; position: absolute;
+        #cont-horquilla { width: 40px; height: 210px; right:200px; top:150px; z-index: 4; position: absolute;
             -ms-transform: rotate(-30deg); /* IE 9 */
             -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
             transform: rotate(-30deg); border: 1px solid #000000;}
