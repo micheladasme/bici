@@ -3,3 +3,6 @@
 -VER GASTOS (NO HAY VISTA)... Nota : va a ser parte de reporterias.
 -MODIFICAR USUARIOS...
 -MOSTRAR PRODUCTOS EN PAGINA WEB
+modificar cliente
+modificar usuarios=======
+-MOSTRAR PRODUCTOS EN PAGINA WEB
