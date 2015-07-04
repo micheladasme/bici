@@ -39,7 +39,7 @@ function cuentaCategoria()
 function modificaCategoria($id, $nombre, $descripcion)
 {
     $link=conectar();
-    $sql="UPDATE catgorias SET cat_nombre = '$nombre', cat_descripcion = '$descripcion' WHERE cat_id = '$id'";
+    $sql="UPDATE categorias SET cat_nombre = '$nombre', cat_descripcion = '$descripcion' WHERE cat_id = '$id'";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     // Verificamos si se realizo el insert
     if(mysql_affected_rows()>0)

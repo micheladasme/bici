@@ -59,8 +59,8 @@ if($page!=1){
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
     <link rel="stylesheet" type="text/css" href="../css/promociones.css"  />
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
+      <script type="text/javascript" src="../js/jQuery.js"></script>
+    <script src="../js/bootstrap.js"></script>
      <script type="text/javascript">
     
       
@@ -120,70 +120,61 @@ if($page!=1){
 
             </thead>
              <tbody>
-           <?php 
-           if(isset($_GET['txt_consulta']))
-          {
-              $res2 = buscaCategoriasnom($_GET['txt_consulta']);
-              foreach ($res2 as $f) {
-           echo (
-            "<tr>".
-           
-            "<td>".$f['cat_id']."</td>".
-            "<td>".$f['cat_nombre']."</td>".
-            "<td>".$f['cat_descripcion']."</td>");
-             echo ("<td><a href=");
-            echo("javascript:window.open('vista_m_categoria.php?codigo=".$f['cat_id']."'".",'nuevo'".",'top=0,left=0,toolbar=no,location=no,status=no,"."menubar=no,scrollbars=no,resizable=no,"."width=500,height=470')");
-          echo(" role='button' class='btn btn-sm btn-warning'><span class='glyphicon glyphicon-pencil'></span>&nbsp Modificar</a></td> </tr>"
-            );
-
-           
-             }
-        }  
-
-              else 
-              {
-
-
-
-                ?>  
-
-
-            <?php if($res==true) { ?>
-           
-          
-          <?php
-    
-          // Llenamos la tabla
-            foreach($res as $f)
-          {
-          ?>
-          <tr>
-              <th style="font-weight:100"><?php echo $f['cat_id']; ?></th>
-              <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
-              <th style="font-weight:100"><?php echo $f['cat_descripcion']; ?></th>
-              <th width="30px"><a href="javascript:window.open('vista_m_categoria.php?codigo=<?php echo $f['cat_id']; ?>', 'nuevo', 'top=0, left=0, toolbar=no,location=no, status=no,menubar=no,scrollbars=no, resizable=no, width=500,height=470')" role="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
-              
-
-              
-          </tr>
-<?php
-    }
-?>
-            
- <?php } 
-             else 
+             <?php
+             if(isset($_GET['txt_consulta']))
              {
-               echo ("<tr><td><h4>&nbsp;&nbsp;&nbsp;No hay Categorias</h4></td></tr>");
-             } 
+                 $res2 = muestraCategoriaCod($_GET['txt_consulta']);
+                 foreach ($res2 as $f) { ?>
 
-           }?>
-           </tbody>  
+                     <tr>
+                         <th style="font-weight:100"><?php echo $f['cat_id']; ?></th>
+                         <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
+                         <th style="font-weight:100"><?php echo $f['cat_descripcion']; ?></th>
+                         <th width="30px"><a href="vista_ver_categorias.php?codigo=<?php print($f['cat_id'])?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
+                     </tr>
+
+
+                 <?php
+                 }
+             }
+
+             else
+             {
+
+
+
+             ?>
+             <?php if($res==true) { ?>
+
+
+
+             <?php
+
+             // Llenamos la tabla
+             foreach($res as $f)
+             {
+                 ?>
+                 <tr>
+                     <th style="font-weight:100"><?php echo $f['cat_id']; ?></th>
+                     <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
+                     <th style="font-weight:100"><?php echo $f['cat_descripcion']; ?></th>
+                     <th width="30px"><a href="vista_ver_categorias.php?codigo=<?php print($f['cat_id'])?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
+                 </tr>
+             <?php
+             }
+             ?>
+             </tbody>
+
+               <?php }
+               else
+               {
+                   echo ("<tr><td><h4>&nbsp;&nbsp;&nbsp;No hay categorias</h4></td></tr>");
+               }   }?>
+
            </table>
-            <?php include('includes/paginador.php'); ?>
 
-
-          </div>
-
-             <?php include('/includes/footer.php');  ?>
+              <?php include('/includes/paginador.php');  ?>
+              <?php include('/includes/footer.php');  ?>
+              <?php include('/modal/modal_modificar_categoria.php'); ?>
   </body>
 </html>
