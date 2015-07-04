@@ -1,8 +1,7 @@
 <?php
 session_start();
-include_once('../../modelo/funciones.php');
+include_once('../modelo/modelo_cliente.php');
 
-error_reporting(0);
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
@@ -57,10 +56,10 @@ if($page!=1){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bienvenido Administrador</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/promociones.css"  />
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap-dropdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/promociones.css"  />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
      <script type="text/javascript">
     
       
@@ -195,34 +194,7 @@ if($page!=1){
            }?>
            </tbody>  
            </table>
-             <br>
-          <ul class="pager">
-            <li>
-              <?php 
-            echo $paginadorP;
-            ?> 
-            </li>
-            <li>
-             <?php 
-            echo $paginador;
-            ?> 
-            </li>
-            <li>
-              <?php 
-            echo $paginador2;
-            ?> 
-            </li>
-            <li>
-              <?php 
-            echo $paginadorL;
-            ?> 
-            </li>
-            </ul>
-
-
-          </div>
-           <br>
-           <br>
-             <?php include('../includes/footer.php');  ?>
+            <?php include('/includes/paginador.php'); ?>
+             <?php include('/includes/footer.php');  ?>
   </body>
 </html>
