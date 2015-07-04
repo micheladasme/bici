@@ -61,7 +61,7 @@ function buscaProductoDetalle($codigo){
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso, cat.cat_nombre
+    $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso,pr.pro_color,pr.pro_talla, cat.cat_nombre
         FROM productos pr,categorias cat
         WHERE pr.pro_cod = $codigo
         AND pr.cat_id = cat.cat_id";
@@ -83,7 +83,7 @@ function muestraProductos($start,$reg)
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT * FROM productos WHERE pro_estado = 1 ORDER BY pro_nombre ASC
+    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, cat.cat_nombre FROM productos pro, categorias cat WHERE pro.cat_id = cat.cat_id AND pro_estado = 1 ORDER BY pro_nombre ASC
 			LIMIT " . $start . "," . $reg);
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))

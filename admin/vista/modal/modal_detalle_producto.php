@@ -37,11 +37,22 @@ if (isset($_GET['codigo'])) {
                             </tr>
 
                             <tr>
+                                <td class="h6"><strong>Color</strong></td>
+                                <td> </td>
+                                <td class="h5"><?php print($b["pro_color"]) ?> </td>
+                            </tr>
+
+                            <tr>
                                 <td class="h6"><strong>Peso Producto</strong></td>
                                 <td> </td>
                                 <td class="h5"><?php print($b["pro_peso"].' ')?>grs</td>
                             </tr>
 
+                            <tr>
+                                <td class="h6"><strong>Talla</strong></td>
+                                <td> </td>
+                                <td class="h5"><?php print($b["pro_talla"]) ?> </td>
+                            </tr>
 
                             <tr>
                                 <td class="h6"><strong>Stock</strong></td>

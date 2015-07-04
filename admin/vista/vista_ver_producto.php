@@ -132,6 +132,9 @@ if($last!=1){
             <th>
                 Precio Venta
             </th>
+            <th>
+                Categoria
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -147,7 +150,7 @@ if($last!=1){
             <td>" . $f['pro_nombre'] . "</td>
             <td>$" . $f['pro_precio_compra'] . "</td>
             <td>$" . $f['pro_precio_venta'] . "</td>
-
+            <td>$" . $f['cat_nombre'] . "</td>
             </tr>"
                 );
 
@@ -173,6 +176,7 @@ if($last!=1){
                 <th style="font-weight:100"><?php echo $f['pro_nombre']; ?></th>
                 <th style="font-weight:100">$ <?php echo $f['pro_precio_compra']; ?></th>
                 <th style="font-weight:100">$ <?php echo $f['pro_precio_venta']; ?></th>
+                <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
                 <th style="font-weight:100"><a href="vista_ver_producto.php?codigo=<?php echo $f["pro_cod"]; ?>"
                                                class="btn btn-sm btn-info"><span
                             class='glyphicon glyphicon-plus-sign'></span> Ver Mas </a></th>
