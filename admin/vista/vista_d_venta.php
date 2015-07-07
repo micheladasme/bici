@@ -21,9 +21,9 @@ if(!isset($_SESSION['usu_nombre']))
     <meta content="text/html" http-equiv="Content-type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boleta</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap-dropdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
  </head>
 <body>
 <div class="container"><br>

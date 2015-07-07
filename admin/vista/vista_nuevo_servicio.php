@@ -60,10 +60,13 @@ if(!isset($_SESSION['usu_nombre']))
 	
 	</style>
 
-	<script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script> <script>
      <script type="text/javascript">
-    
+         $("#").autocomplete({
+             minLength: 3,
+             source: "buscar-autocompletar.php"
+         })
       
       function salir(){
          var respuesta=confirm('Desea realmente Cerrar Sesion?');
@@ -101,7 +104,7 @@ if(!isset($_SESSION['usu_nombre']))
 				<table>
 					<tr>
 					<th class="nombre">Fecha :</th>
-					<th><input type="text" name="fecha" /></th></tr>
+					<th><input type="date" id="fecha" name="fecha" /></th></tr>
 					
 				</table> <br><br>
 				<table>
@@ -140,7 +143,7 @@ if(!isset($_SESSION['usu_nombre']))
 					<th class="nombre">Direccion :</th>
 					<th><input type="text" name="direccion" /></th> 
 					<th class="nombre">Fecha de Entrega :</th>
-					<th><input type="text" name="entrega" /></th>
+					<th><input type="date" name="entrega" /></th>
 			</tr>	
 
 

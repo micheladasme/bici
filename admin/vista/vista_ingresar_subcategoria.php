@@ -19,10 +19,8 @@ $result=mysql_query($consulta , $link);
 
     <title>Ingresar Sub-Categoria</title>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/productos.css"  />
-
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.js"></script>
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script> <script>
      <script type="text/javascript">
      
      function ValidaSoloNumeros() {

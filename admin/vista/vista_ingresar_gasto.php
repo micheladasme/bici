@@ -15,10 +15,8 @@ if(!isset($_SESSION['usu_nombre']))
 
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../css/caja.css"  />
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
-     <script>
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script> <script>
     
       
       function salir(){

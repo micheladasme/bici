@@ -25,8 +25,8 @@ if(!isset($_SESSION['usu_nombre']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Productos</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script> <script>
     <script type="text/javascript">
      function ValidaSoloNumeros() {
         var code =event.charCode || event.keyCode;

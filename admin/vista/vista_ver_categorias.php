@@ -2,7 +2,7 @@
 session_start();
 include_once('../modelo/modelo_categorias.php');
 
-error_reporting(0);
+
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../index.php");}
 
@@ -58,9 +58,14 @@ if($page!=1){
 
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+<<<<<<< .mine
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script> <script>
+=======
     <link rel="stylesheet" type="text/css" href="../css/promociones.css"  />
       <script type="text/javascript" src="../js/jQuery.js"></script>
     <script src="../js/bootstrap.js"></script>
+>>>>>>> .r54
      <script type="text/javascript">
     
       

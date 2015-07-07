@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../../modelo/funciones.php');
-error_reporting(0);
+
 
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}

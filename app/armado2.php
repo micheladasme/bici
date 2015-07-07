@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bici-O-Matic</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/jquery-ui.css"/>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/drag-drop2.js"></script>
     <style>

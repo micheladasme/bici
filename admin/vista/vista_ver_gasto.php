@@ -55,8 +55,8 @@ if($page!=1){
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
     <link rel="stylesheet" type="text/css" href="../../css/caja.css"  />
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap-dropdown.js"></script>
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script> <script>
      <script type="text/javascript">
     
       

@@ -2,7 +2,7 @@
 session_start();
 include_once('../../modelo/funciones.php');
 
-error_reporting(0);
+
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
@@ -58,9 +58,8 @@ if($page!=1){
 
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/promociones.css"  />
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap-dropdown.js"></script>
+      <script src="../js/jquery-1.11.3.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script> <script>
      <script type="text/javascript">
     
       

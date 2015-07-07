@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Administrador</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-    <script type="text/javascript" src="js/jQuery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script> <script>
     <script type="text/javascript">
         function valida()
         {
