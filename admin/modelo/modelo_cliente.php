@@ -68,4 +68,19 @@ function registraCliente($rut,$nombre, $apellido,$direccion,$telefono,$correo,$n
     mysql_close($link);
 }
 
+function buscarClientenom($nombre)
+{
+    $link=conectar();
+    $a=array();
+    $sql=("SELECT * FROM cliente WHERE cli_nombre LIKE '%$nombre%'");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[]=array("value"=>$f['cli_nombre'].' '.$f['cli_apellido'],"id_cliente"=>$f['cli_id'],
+                    "correo"=>$f['cli_correo'], "telefono"=>$f['cli_telefono'] , "direccion"=>$f['cli_direccion']);
+    }
+    mysql_close($link);
+    return $a;
+
+}
 ?>

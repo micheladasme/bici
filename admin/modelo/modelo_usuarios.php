@@ -25,4 +25,5 @@ function registraUsuario($nombre, $apellido, $nick, $pass, $tipo, $suc)
     mysql_close($link);
 }
 
+
 ?>
