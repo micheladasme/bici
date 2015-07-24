@@ -933,3 +933,8 @@ INSERT INTO `cliente` (`cli_id`, `cli_rut`, `cli_nombre`, `cli_apellido`, `cli_d
 INSERT INTO `ubicacion` VALUES
 (1, 'Tienda'),
 (2, 'Bodega');
+
+INSERT INTO `estado_servicio` VALUES
+(1, 'En Reparacion'),
+(2, 'Listo Para Entrega'),
+(3, 'Entregado Y Completado');
