@@ -272,10 +272,12 @@ CREATE TABLE Subcategoria
 
 CREATE TABLE Servicio
 (
-  cli_id Int,
   ser_id Int NOT NULL AUTO_INCREMENT,
   ser_documento Varchar(200) NOT NULL,
+  ser_total int NOT NULL,
   ser_fecha_ingreso Date NOT NULL,
+  ser_fecha_entrega Date NOT NULL,
+  cli_id Int,
   est_ser_id Int,
  PRIMARY KEY (ser_id)
 )
