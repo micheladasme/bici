@@ -41,12 +41,15 @@ if(!isset($_SESSION['usu_nombre']))
             <br>
             <p><h3>Bienvenido a el Sistema de Venta, dirijase al menu para elegir la funcion que desea realizar.</h3></p>
              
-       
+        
           </div>
            <br>
            <br>
              <?php include('includes/footer.php');  ?>
+             <?php include('modal/modal_inicio_caja.php') ?>
 
-      
+       <script type="text/javascript">
+        $('#mimodal').modal('show')
+       </script>
   </body>
 </html>

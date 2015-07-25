@@ -15,7 +15,7 @@ if(!isset($_SESSION['usu_nombre']))
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
 
       <script src="../js/jquery-1.11.3.min.js"></script>
-      <script src="../js/bootstrap.min.js"></script> <script>
+      <script src="../js/bootstrap.min.js"></script> 
      <script type="text/javascript">
 
 
@@ -164,35 +164,35 @@ if(!isset($_SESSION['usu_nombre']))
     <br>
               <?php $subtotal=consultasubtotal();?>
              
-             <div class="row pull-right" style="margin-right:50px">
+             <div class="row">
+              <div class="col-lg-offset-9 col-lg-2">
                  <form name="f1" action="../control/controlPaga.php" method="post" >
                   <?php foreach ($subtotal as $g) {
-           echo "<p>Total Compra :   <input type='text' id='txt_compra' name='txt_compra' class='form-control' value='".$g['SUM( v_subtotal )']."' readonly/></p>";
- } ?>
-             <p>Paga :   
-              <input type="text" id="txt_paga" name="txt_paga" class='form-control'/></p>
-          
-             <p>
-             Modo de Pago :
+                  echo "<p>Total Compra :   <input type='text' id='txt_compra' name='txt_compra' class='form-control' value='".$g['SUM( v_subtotal )']."' readonly/></p>";
+                  } ?>
+             
+                Modo de Pago :
                  <?php $modo=devuelvemodo();
-                    echo "<select name='modo' class='form-control' style= 'width:170px ;height:30px'>";
+                    echo "<select name='modo' class='form-control'>";
                         foreach($modo as $re)
                         {
                             echo ("<option value='".$re['id_modo']."'>".$re['tipo_modo']."</option>");
                         }
                          echo "</select>";?>
                        </p>
-                         <br>
-                         <br>
+                        
+                 
+                  <p>Paga :   
+              <input type="text" id="txt_paga" name="txt_paga" class='form-control'/></p>
              <p>  
-               <button type="submit" name="enviarpaga" class='row pull-right btn btn-info' style='width:100px ;height:50px'>
+               <button type="submit" name="enviarpaga" class='btn btn-success  btn-lg btn-block'>
                 <span class="glyphicon glyphicon-usd"></span> PAGAR
              </button>
 
                 </p>
                 </form>
            </div>
-          
+          </div>
           </div>
 
            <br>
