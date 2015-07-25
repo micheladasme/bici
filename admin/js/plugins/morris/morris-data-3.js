@@ -1,8 +1,5 @@
-// Morris.js Charts sample data for SB Admin template
-
-$(function() {
-
-    // Area Chart
+ $(function() {
+ // Area Chart
     Morris.Area({
         element: 'ganancias_mes',
         data: [{
@@ -64,21 +61,65 @@ $(function() {
         resize: true
     });
 
-    // Donut Chart
-    Morris.Donut({
-        element: 'realizados',
+ // Bar Chart
+    Morris.Bar({
+        element: 'mas-vendidos',
         data: [{
-            label: "Armados Personalizados",
-            value: 12
+            device: 'iPhone',
+            geekbench: 136
         }, {
-            label: "Ventas de Productos",
-            value: 30
+            device: 'iPhone 3G',
+            geekbench: 137
         }, {
-            label: "Servicios Mecanicos",
-            value: 20
+            device: 'iPhone 3GS',
+            geekbench: 275
+        }, {
+            device: 'iPhone 4',
+            geekbench: 380
+        }, {
+            device: 'iPhone 4S',
+            geekbench: 655
+        }, {
+            device: 'iPhone 5',
+            geekbench: 1571
         }],
+        xkey: 'device',
+        ykeys: ['geekbench'],
+        labels: ['Geekbench'],
+        barRatio: 0.4,
+        xLabelAngle: 35,
+        hideHover: 'auto',
         resize: true
     });
 
-   
+     // Bar Chart
+    Morris.Bar({
+        element: 'menos-vendidos',
+        data: [{
+            device: 'iPhone',
+            geekbench: 136
+        }, {
+            device: 'iPhone 3G',
+            geekbench: 137
+        }, {
+            device: 'iPhone 3GS',
+            geekbench: 275
+        }, {
+            device: 'iPhone 4',
+            geekbench: 380
+        }, {
+            device: 'iPhone 4S',
+            geekbench: 655
+        }, {
+            device: 'iPhone 5',
+            geekbench: 1571
+        }],
+        xkey: 'device',
+        ykeys: ['geekbench'],
+        labels: ['Geekbench'],
+        barRatio: 0.4,
+        xLabelAngle: 35,
+        hideHover: 'auto',
+        resize: true
+    });
 });
