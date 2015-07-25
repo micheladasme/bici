@@ -31,7 +31,7 @@ if($sw)
 
          		case 3:
          	    echo "<script>
-		 location.href='../vista/vista_inicio_admin.php';
+		 location.href='../vista/vista_inicio_vendedor.php';
 		 alert('Bienvenido Administrador Local');
 		 </script>";
                     $_SESSION['header']="/includes/header_admin_local.php";
@@ -47,7 +47,7 @@ if($sw)
 
          		case 5:
          	    echo "<script>
-		 location.href='../vista/vista_inicio_admin.php';
+		 location.href='../vista/vista_inicio_vendedor.php';
 		 alert('Bienvenido Vendedor');
 		 </script>";
                     $_SESSION['header']="/includes/header_vendedor.php";
