@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('modelo/funciones.php');
+include_once('modelo/modelo_venta.php');
 $id_vend = $_SESSION['id_usuario'];
 $ultimo = consultaVendedor($id_vend);
 $cierra = cierraCaja($id_vend, $ultimo);
