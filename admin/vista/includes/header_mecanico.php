@@ -41,7 +41,7 @@
                         <!--<li> <a href="vista_venta.php">Nueva Venta</a></li>
                         <li class="divider"></li>-->
                         <li> <a href="vista_nuevo_servicio.php">Nuevo Servicio</a></li>
-                        <li> <a href="vista_historial.php">Historial Servicios</a></li>
+                        <li> <a href="vista_historial_servicios.php">Historial Servicios</a></li>
                     </ul>
                 </li>
 
