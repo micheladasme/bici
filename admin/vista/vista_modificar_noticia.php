@@ -59,7 +59,7 @@ if($last!=1){
     <title>Modificar Producto</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
     <script src="../js/jquery-1.11.3.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script> <script>
+    <script src="../js/bootstrap.min.js"></script> 
 
 
     <script type="text/javascript">

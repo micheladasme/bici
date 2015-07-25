@@ -19,7 +19,7 @@ if(!isset($_SESSION['usu_nombre']))
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
     <link rel="stylesheet" type="text/css" href="../../css/stock.css"  />
       <script src="../js/jquery-1.11.3.min.js"></script>
-      <script src="../js/bootstrap.min.js"></script> <script>
+      <script src="../js/bootstrap.min.js"></script>
      <script type="text/javascript">
 
       function ValidaSoloNumeros() {

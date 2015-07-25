@@ -76,7 +76,7 @@ if($last!=1){
 
     </style>
     <script src="../js/jquery-1.11.3.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script> <script>
+    <script src="../js/bootstrap.min.js"></script> 
 
     <script type="text/javascript">
 
