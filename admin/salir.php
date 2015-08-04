@@ -2,8 +2,18 @@
 session_start();
 include_once('modelo/modelo_venta.php');
 $id_vend = $_SESSION['id_usuario'];
+$id_tipo = $_SESSION['usu_tipo'];
+
+if($id_tipo == 5)
+{
 $ultimo = consultaVendedor($id_vend);
 $cierra = cierraCaja($id_vend, $ultimo);
+}
+else
+{
+	$cierra = 1;
+}
+
 if ($cierra == 1) {
 session_unset();
 session_destroy();
