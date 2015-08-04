@@ -201,7 +201,7 @@ $link = conectar();
 
 
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Gastos</h3>
@@ -218,49 +218,49 @@ $link = conectar();
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3326</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:29 PM</td>
                                                 <td>$321.33</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3325</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:20 PM</td>
                                                 <td>$234.34</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3324</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:03 PM</td>
                                                 <td>$724.17</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3323</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:00 PM</td>
                                                 <td>$23.71</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3322</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:49 PM</td>
                                                 <td>$8345.23</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3321</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:23 PM</td>
                                                 <td>$245.12</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3320</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:15 PM</td>
                                                 <td>$5663.54</td>
                                             </tr>
-                                            <tr>
+                                            <tr class="post">
                                                 <td>3319</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:13 PM</td>
@@ -269,14 +269,92 @@ $link = conectar();
                                         </tbody>
                                     </table>
                                 </div>
+                                <nav class="paginate">
+                                   
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Ventas</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Order #</th>
+                                                <th>Order Date</th>
+                                                <th>Order Time</th>
+                                                <th>Amount (USD)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="post2">
+                                                <td>3326</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:29 PM</td>
+                                                <td>$321.33</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3325</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:20 PM</td>
+                                                <td>$234.34</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3324</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:03 PM</td>
+                                                <td>$724.17</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3323</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:00 PM</td>
+                                                <td>$23.71</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3322</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:49 PM</td>
+                                                <td>$8345.23</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3321</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:23 PM</td>
+                                                <td>$245.12</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3320</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:15 PM</td>
+                                                <td>$5663.54</td>
+                                            </tr>
+                                            <tr class="post2">
+                                                <td>3319</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:13 PM</td>
+                                                <td>$943.45</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav class="paginate2">
+                                   
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- /.row -->
 
+
                 <div class="row">
-                    <div class="col-lg-5">
+                    <div class="col-lg-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancias del Mes</h3>
@@ -292,10 +370,10 @@ $link = conectar();
                         </div>
                     </div>
            
-                    <div class="col-lg-offset-2 col-lg-5">
+                    <div class="col-lg-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancias vs Gastos</h3>
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ingresos vs Gastos</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="flot-chart">
@@ -342,7 +420,84 @@ $link = conectar();
     <script src="../js/plugins/flot/jquery.flot.tooltip.min.js"></script>
     <script src="../js/plugins/flot/jquery.flot.resize.js"></script>
     <script src="../js/plugins/flot/jquery.flot.pie.js"></script>
-    <script src="../js/plugins/flot/flot-data-2.js"></script>
+    <script src="../js/paginate.js"></script>
+    <script src="../js/custom.js"></script>
+    <script>// Flot Pie Chart with Tooltips
+$(function() {
+
+    var data = [{
+        label: "Series 0",
+        data: 1
+    }, {
+        label: "Series 1",
+        data: 3
+    }, {
+        label: "Series 2",
+        data: 9
+    }, {
+        label: "Series 3",
+        data: 20
+    }];
+
+    var plotObj = $.plot($("#ganancias-mes"), data, {
+        series: {
+            pie: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            shifts: {
+                x: 20,
+                y: 0
+            },
+            defaultTheme: false
+        }
+    });
+
+});
+
+$(function() {
+
+    var data = [{
+        label: "Series 0",
+        data: 1
+    }, {
+        label: "Series 1",
+        data: 3
+    }, {
+        label: "Series 2",
+        data: 9
+    }, {
+        label: "Series 3",
+        data: 20
+    }];
+
+    var plotObj = $.plot($("#ganancias-gastos"), data, {
+        series: {
+            pie: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            shifts: {
+                x: 20,
+                y: 0
+            },
+            defaultTheme: false
+        }
+    });
+
+});</script>
 
 </body>
 

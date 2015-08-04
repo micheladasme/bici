@@ -1,7 +1,7 @@
 <?php
 session_start();
   // Incluir Funciones
-include_once('../modelo/funciones.php');
+include_once('../modelo/modelo_venta.php');
 
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}

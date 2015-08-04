@@ -2,9 +2,12 @@
 session_start();
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../index.php");}
+include_once("../modelo/modelo_reportes.php");
 
-include_once("../modelo/funciones.php");
-$link = conectar();
+$res1 = cantidadActividadesfecha();
+$res2 = productosMasVendidos();
+
+print_r(json_encode($res2));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -205,7 +208,7 @@ $link = conectar();
                                 <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Acciones por Mes</h3>
                             </div>
                             <div class="panel-body">
-                                <div id="ganancias_mes"></div>
+                                <div id="acciones_mes"></div>
                             </div>
                         </div>
                     </div>
@@ -259,7 +262,89 @@ $link = conectar();
     <!-- Morris Charts JavaScript -->
     <script src="../js/plugins/morris/raphael.min.js"></script>
     <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data-3.js"></script>
+     <script>
+    $(function() {
+
+    // Area Chart
+    // Ganancias del Mes en Ventas, Servicios, Armados
+    Morris.Area({
+        element: 'acciones_mes',
+        data: <?php echo json_encode($res1);?>,
+        xkey: 'fecha_venta',
+        ykeys: ['total_servicios', 'total_pedido', 'total_ventas'],
+        labels: ['Servicios', 'Armados', 'Ventas'],
+        xLabels: "month",
+        pointSize: 2,
+        hideHover: 'auto',
+        resize: true
+    });
+
+     // Bar Chart
+    Morris.Bar({
+        element: 'mas-vendidos',
+        data: [{
+            device: 'iPhone',
+            geekbench: 136
+        }, {
+            device: 'iPhone 3G',
+            geekbench: 137
+        }, {
+            device: 'iPhone 3GS',
+            geekbench: 275
+        }, {
+            device: 'iPhone 4',
+            geekbench: 380
+        }, {
+            device: 'iPhone 4S',
+            geekbench: 655
+        }, {
+            device: 'iPhone 5',
+            geekbench: 1571
+        }],
+        xkey: 'device',
+        ykeys: ['geekbench'],
+        labels: ['Geekbench'],
+        barRatio: 0.4,
+        xLabelAngle: 35,
+        hideHover: 'auto',
+        resize: true
+    });
+
+     // Bar Chart
+    Morris.Bar({
+        element: 'menos-vendidos',
+        data: [{
+            device: 'iPhone',
+            geekbench: 136
+        }, {
+            device: 'iPhone 3G',
+            geekbench: 137
+        }, {
+            device: 'iPhone 3GS',
+            geekbench: 275
+        }, {
+            device: 'iPhone 4',
+            geekbench: 380
+        }, {
+            device: 'iPhone 4S',
+            geekbench: 655
+        }, {
+            device: 'iPhone 5',
+            geekbench: 1571
+        }],
+        xkey: 'device',
+        ykeys: ['geekbench'],
+        labels: ['Geekbench'],
+        barRatio: 0.4,
+        xLabelAngle: 35,
+        hideHover: 'auto',
+        resize: true
+    });
+
+   
+});
+
+    </script>
 
     <!-- Flot Charts JavaScript -->
     <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->

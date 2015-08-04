@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../../modelo/funciones.php');
+include('../modelo/modelo_venta.php');
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
@@ -54,10 +54,10 @@ if($page!=1){
      <meta content="text/html" http-equiv="Content-type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido Administrador</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/caja.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/caja.css"  />
       <script src="../js/jquery-1.11.3.min.js"></script>
-      <script src="../js/bootstrap.min.js"></script> <script>
+      <script src="../js/bootstrap.min.js"></script> 
      <script type="text/javascript">
     
       
@@ -117,7 +117,7 @@ if($page!=1){
               <a class="btn btn-info btn-xs" href="javascript:window.open('vista_d_venta.php?id=<?php echo $f['com_id']; ?>', 'nuevo', 'top=0, left=0, toolbar=no,location=no, status=no,menubar=no,scrollbars=no, resizable=no, width=500,height=470')" role="button" >  
                Ver Mas >>
               </a>
-              <a class="btn btn-danger btn-xs" href="../../control/superadmin/controlAnulaVenta.php?id=<?php echo $f['com_id']; ?>"  role="button">  
+              <a class="btn btn-danger btn-xs" href="../control/superadmin/controlAnulaVenta.php?id=<?php echo $f['com_id']; ?>"  role="button">  
                Anular <span class="glyphicon glyphicon-remove"></span>
               </a>
                 </td>
@@ -133,31 +133,10 @@ if($page!=1){
              } ?>
            </table>
              <br>
-          <ul class="pager">
-            <li>
-              <?php 
-            echo $paginadorP;
-            ?> 
-            </li>
-            <li>
-             <?php 
-            echo $paginador;
-            ?> 
-            </li>
-            <li>
-              <?php 
-            echo $paginador2;
-            ?> 
-            </li>
-            <li>
-              <?php 
-            echo $paginadorL;
-            ?> 
-            </li>
-            </ul>
+          <?php include('includes/paginador.php');   ?>
           </div>
            <br>
            <br>
-            <?php include('../includes/footer.php');  ?>
+            <?php include('includes/footer.php');  ?>
   </body>
 </html>
