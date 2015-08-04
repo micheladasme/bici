@@ -1,8 +1,9 @@
-// Morris.js Charts sample data for SB Admin template
+
 
 $(function() {
 
     // Area Chart
+    // Ganancias del Mes en Ventas, Servicios, Armados
     Morris.Area({
         element: 'ganancias_mes',
         data: [{
@@ -82,3 +83,5 @@ $(function() {
 
    
 });
+
+
