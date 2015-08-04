@@ -39,6 +39,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> Venta y Servicios <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li> <a href="vista_venta.php">Nueva Venta</a></li>
+                        <li> <a href="vista_ver_venta.php">Anular Venta</a></li>
                         <li class="divider"></li>
                         <li> <a href="vista_nuevo_servicio.php">Nuevo Servicio</a></li>
                         <li> <a href="vista_historial_servicios.php">Historial Servicios</a></li>
