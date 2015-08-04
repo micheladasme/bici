@@ -170,8 +170,8 @@ function detalleVenta2($id)
     $link = conectar();
     $a = array();
     $x = 0;
-    $sql = ("SELECT b.pro_cod, p.pro_nombre, b.bol_cantidad, b.bol_subtotal
-				FROM productos p, boleta b, compra c
+    $sql = ("SELECT b.pro_cod, p.pro_nombre, b.det_cantidad, b.det_subtotal
+				FROM productos p, detalle_compra b, compra c
 				WHERE c.com_id = b.com_id
 				AND p.pro_cod = b.pro_cod
 				AND b.com_id = $id");
@@ -335,5 +335,38 @@ function registraVentaProducto($cod,$nom,$cant,$val,$subt,$vende)
     mysql_close($link);
 }
 
+function muestraVenta($start,$reg)
+    {
+        $link=conectar();
+        $a=array();
+        $x=0;
+        $sql=("SELECT c.com_id, c.com_total, c.com_fecha, mp.tipo_modo, u.usu_nombre, mp.tipo_modo 
+             FROM compra c,usuarios u, modo_pago mp where u.usu_id = c.usu_id and mp.id_modo = c.id_modo 
+             AND com_nula = 0
+             ORDER BY c.com_fecha DESC
+               LIMIT " . $start . "," . $reg);
+        $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+        while($f=mysql_fetch_array($res))
+        {
+            $a[$x]=$f;
+            $x++;
+        }
+        mysql_close($link);
+        return $a;
+    }
+
+    function cuentaVenta()
+    {
+        $link = conectar();
+        $x=0;
+        $sql ="SELECT * FROM compra WHERE com_nula = 0";
+        $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+        $x= mysql_num_rows($res);
+        mysql_close($link);
+        return $x;
+     }
+
+    
+ 
 
 ?>
