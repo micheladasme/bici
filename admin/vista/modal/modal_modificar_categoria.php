@@ -5,7 +5,7 @@ if (isset($_GET['codigo'])) {
     $codigo = $_GET['codigo'];
 
 // Llamar a la función.
-    $datos = muestraNoticiasid($codigo);
+    $datos = muestraCategoriaCod($codigo);
 
 // Llenamos los campos
 foreach($datos as $d)
@@ -20,14 +20,13 @@ foreach($datos as $d)
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="gridSystemModalLabel">Modificar Producto</h4>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Modificar Categoria</h4>
                 </div>
                 <div class="modal-body">
                     <form id="iform"  method="POST" action="../control/controlMNoticia.php" enctype="multipart/form-data">
-                        <p> Id : <input type="text" id="txt_cod" name="txtCod"  class="form-control" value="<?php echo $d['not_id']; ?>" required readonly/>   </p>
-                        <p> Titulo :  <input type="text" id="txt_nom" name="txtTitulo" class="form-control" value="<?php echo $d['not_titulo']; ?>" required/>    </p>
-                        <p> Sub Titulo :  <input type="text" id="txt_comp" name="txtSub"  class="form-control" value="<?php echo $d['not_subtitulo']; ?>" required/>    </p>
-                        <p> Contenido :  <textarea rows="5" id="txt_vent" name="txtCont"  class="form-control" required> <?php echo $d['not_contenido']; ?></textarea>  </p>
+                        <p> Id : <input type="text" id="txt_cod" name="txt_cod"  class="form-control" value="<?php echo $d['cat_id']; ?>" required readonly/>   </p>
+                        <p> Nombre :  <input type="text" id="txt_nom" name="txt_nom" class="form-control" value="<?php echo $d['cat_nombre']; ?>" required/>    </p>
+                        <p> Descripcion :  <textarea rows="5" id="txt_desc" name="txt_desc"  class="form-control" required> <?php echo $d['cat_descripcion']; ?></textarea>  </p>
                         <input type="hidden" name="txtCodigo" value="<?php echo $d['not_id']; ?>">
                         <?php
                         }

@@ -35,8 +35,8 @@ foreach($datos as $d)
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <input type="submit" id="btn_ingresar" name="btn_ingresar" class="btn btn-primary" value="Modificar"/>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <input type="submit" id="btn_ingresar" name="btn_ingresar" class="btn btn-warning" value="Modificar"/>
             </div>
             </form>
         </div><!-- /.modal-content -->
