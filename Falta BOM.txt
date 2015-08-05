@@ -1,0 +1,41 @@
+FALTA
+
+VENTA Y SERVICIOS
+- incluir modal_detalle_venta en los reportes
+
+HISTORIAL SERVICIOS
+- Arreglar PDF
+
+PEDIDOS
+- falta pedidos
+
+GASTO
+- ver gasto
+- ingresar gasto
+
+SISTEMA
+- modificar usuario
+- ver cliente (cifrar contraseña con MD5 o SHA1) ver modelo_usuarios
+
+
+REPORTES
+	DASHBOARD
+	- llenar dashboard con datos reales
+
+	FINANZAS
+	- llenar tablas y graficos con datos reales
+	- generar graficos con rango de fecha y sucursal
+	- Ver gastos boton ver mas y aparece un modal
+
+	VENTAS y SERVICIOS
+	- llenar productos mas vendidos y crear otro grafico
+
+ARMADO
+- COMPLETO
+
+
+PD : TRUE = 1     FALSE = 0 
+
+6006003200
+
+371094
