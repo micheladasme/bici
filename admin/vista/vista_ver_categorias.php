@@ -6,48 +6,10 @@ include_once('../modelo/modelo_categorias.php');
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../index.php");}
 
-$cont = cuentaCategoria();
+
+$res = muestraCategorias();
 
 
-if(isset($_GET['page'])){
-  $page = preg_replace("#[^0-9]#","",$_GET['page']);
-  $start=(($page-1)*$reg);
-}
-else {
-  $page = 1;
-   $start=(($page-1)*0);
-}
-
-$reg = 12;
-$last = ceil($cont/$reg);
-
-
-if($page<1){
-
-  $page=1;
-}
-else if($page > $last) {
-  $page = $last;
-}
-
-
-
-$res = muestraCategorias($start,$reg);
-
-if($last!=1){
-
-if($page!=$last){
-  $next = $page + 1;
-  $paginador2 = '<a href="vista_ver_categorias.php?page='.$next.'">Siguente -></a>';
-  $paginadorL = '<a href="vista_ver_categorias.php?page='.$last.'">Ultimo >></a>';
-}
-if($page!=1){
-  $prev = $page - 1;
-  $paginador = '<a href="vista_ver_categorias.php?page='.$prev.'"><- Anterior</a>';
-  $paginadorP = '<a href="vista_ver_categorias.php?page=1"><< Primero</a>';
-}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,11 +18,13 @@ if($page!=1){
      <meta content="text/html" http-equiv="Content-type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bienvenido Administrador</title>
+    <title>Ver Categorias</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
 
       <script src="../js/jquery-1.11.3.min.js"></script>
       <script src="../js/bootstrap.min.js"></script> 
+       <script src="../js/paginate.js"></script>
+    <script src="../js/custom.js"></script>
 
      <script type="text/javascript">
     
@@ -127,7 +91,7 @@ if($page!=1){
                  $res2 = muestraCategoriaCod($_GET['txt_consulta']);
                  foreach ($res2 as $f) { ?>
 
-                     <tr>
+                     <tr class="post">
                          <th style="font-weight:100"><?php echo $f['cat_id']; ?></th>
                          <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
                          <th style="font-weight:100"><?php echo $f['cat_descripcion']; ?></th>
@@ -155,7 +119,7 @@ if($page!=1){
              foreach($res as $f)
              {
                  ?>
-                 <tr>
+                 <tr class="post">
                      <th style="font-weight:100"><?php echo $f['cat_id']; ?></th>
                      <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
                      <th style="font-weight:100"><?php echo $f['cat_descripcion']; ?></th>

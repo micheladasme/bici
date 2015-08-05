@@ -1,50 +1,12 @@
 <?php
 session_start();
 include_once('../../modelo/funciones.php');
-
 if(!isset($_SESSION['usu_nombre']))
-{header("location:../../index.php");}
-
-$cont = cuentaPromocion();
+{header("location:../index.php");}
 
 
-if(isset($_GET['page'])){
-  $page = preg_replace("#[^0-9]#","",$_GET['page']);
-}
-else {
-  $page = 1;
-}
+$res = muestraPromocion();
 
-$reg = 12;
-$last = ceil($cont/$reg);
-
-
-if($page<1){
-
-  $page=1;
-}
-else if($page > $last) {
-  $page = $last;
-}
-
-$start=(($page-1)*$reg);
-
-$res = muestraPromocion($start,$reg);
-
-if($last!=1){
-
-if($page!=$last){
-  $next = $page + 1;
-  $paginador2 = '<a href="vista_eliminar_promocion.php?page='.$next.'">Siguente -></a>';
-  $paginadorL = '<a href="vista_eliminar_promocion.php?page='.$last.'">Ultimo >></a>';
-}
-if($page!=1){
-  $prev = $page - 1;
-  $paginador = '<a href="vista_eliminar_promocion.php?page='.$prev.'"><- Anterior</a>';
-  $paginadorP = '<a href="vista_eliminar_promocion.php?page=1"><< Primero</a>';
-}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +20,8 @@ if($page!=1){
     <link rel="stylesheet" type="text/css" href="../../css/promociones.css"  />
     <script src="../../js/jquery.min.js"></script>
     <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../js/paginate.js"></script>
+    <script src="../js/custom.js"></script>
      <script type="text/javascript">
     
       
@@ -128,7 +92,7 @@ if($page!=1){
               $res2 = muestraStockTiendanom($_GET['txt_consulta']);
               foreach ($res2 as $f) {
            echo (
-            "<tr>".
+            "<tr class='post'>".
             
             "<td>".$f['pro_cod']."</td>".
             "<td>".$f['pro_nombre']."</td>".
@@ -160,7 +124,7 @@ if($page!=1){
       foreach($res as $f)
     {
 ?>
-          <tr>
+          <tr class="post">
                      
               <th style="font-weight:100"><?php echo $f['pro_cod']; ?></th>
               <th style="font-weight:100"><?php echo $f['pro_nombre']; ?></th>

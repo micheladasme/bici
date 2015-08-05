@@ -7,50 +7,9 @@ if (!isset($_SESSION['usu_nombre'])) {
     header("location:../index.php");
 }
 
+$res = muestraNoticias();
 
-$cont = cuentaNoticias();
 
-
-if(isset($_GET['page'])){
-    $page = preg_replace("#[^0-9]#","",$_GET['page']);
-}
-else {
-    $page = 1;
-}
-
-$reg = 12;
-$last = ceil($cont/$reg);
-$start = 0;
-
-if($page<1){
-
-    $page=1;
-}
-else if($page > $last) {
-    $page = $last;
-}
-else if ($page = 1)
-{ $page = 0;}
-else
-{
-    $start = (($page - 1) * $reg);
-}
-$res = muestraNoticias($start,$reg);
-
-if($last!=1){
-
-    if($page!=$last){
-        $next = $page + 1;
-        $paginador2 = '<a href="vista_modificar_noticias.php?page='.$next.'">Siguente -></a>';
-        $paginadorL = '<a href="vista_modificar_noticias.php?page='.$last.'">Ultimo >></a>';
-    }
-    if($page =0){
-        $prev = $page - 1;
-        $paginador = '<a href="vista_modificar_noticias.php?page='.$prev.'"><- Anterior</a>';
-        $paginadorP = '<a href="vista_modificar_noticias.php?page=1"><< Primero</a>';
-    }
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +36,8 @@ if($last!=1){
     </style>
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script> 
-
+    <script src="../js/paginate.js"></script>
+    <script src="../js/custom.js"></script>
     <script type="text/javascript">
 
         function salir() {
@@ -150,7 +110,7 @@ if($last!=1){
             $res2 = muestraNoticiasTit($_GET['txt_consulta']);
             foreach ($res2 as $f) {
                 echo(
-                    "<tr>
+                    "<tr class='post'>
              
             <td>" . $f['not_id'] . "</td>
             <td>" . $f['not_titulo'] . "</td>
@@ -179,7 +139,7 @@ if($last!=1){
         // Llenamos la tabla
         foreach ($res as $f) {
             ?>
-            <tr>
+            <tr class="post">
 
                 <th style="font-weight:100"><?php echo $f['not_id']; ?></th>
                 <th style="font-weight:100"><?php echo $f['not_titulo']; ?></th>
@@ -189,7 +149,7 @@ if($last!=1){
                 <th style="font-weight:100"><?php echo $f['usu_nombre']. ' '.$f['usu_apellido'] ; ?></th>
                 <th style="font-weight:100"><a href="vista_ver_noticia.php?codigo=<?php echo $f["not_id"]; ?>"
                                                class="btn btn-sm btn-info"><span
-                            class='glyphicon glyphicon-plus-sign'></span> Ver Mas </a></th>
+                            class='glyphicon glyphicon-plus-sign'></span> Ver Mas >></a></th>
             </tr>
 
         <?php

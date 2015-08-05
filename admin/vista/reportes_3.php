@@ -7,7 +7,7 @@ include_once("../modelo/modelo_reportes.php");
 $res1 = cantidadActividadesfecha();
 $res2 = productosMasVendidos();
 
-print_r(json_encode($res2));
+//print_r(json_encode($res2));
 ?>
 <!DOCTYPE html>
 <html lang="en">

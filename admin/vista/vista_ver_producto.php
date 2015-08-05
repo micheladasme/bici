@@ -8,45 +8,10 @@ if (!isset($_SESSION['usu_nombre'])) {
 }
 
 
-$cont = cuentaProductos();
+
+$res = muestraProductos();
 
 
-if(isset($_GET['page'])){
-    $page = preg_replace("#[^0-9]#","",$_GET['page']);
-}
-else {
-    $page = 1;
-}
-
-$reg = 12;
-$last = ceil($cont/$reg);
-
-
-if($page<1){
-
-    $page=1;
-}
-else if($page > $last) {
-    $page = $last;
-}
-
-$start=(($page-1)*$reg);
-$res = muestraProductos($start,$reg);
-
-if($last!=1){
-
-    if($page!=$last){
-        $next = $page + 1;
-        $paginador2 = '<a href="vista_ver_producto.php?page='.$next.'">Siguente -></a>';
-        $paginadorL = '<a href="vista_ver_producto.php?page='.$last.'">Ultimo >></a>';
-    }
-    if($page!=1){
-        $prev = $page - 1;
-        $paginador = '<a href="vista_ver_producto.php?page='.$prev.'"><- Anterior</a>';
-        $paginadorP = '<a href="vista_ver_producto.php?page=1"><< Primero</a>';
-    }
-
-}
 
 ?>
 <!DOCTYPE html>
@@ -74,6 +39,8 @@ if($last!=1){
     </style>
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script> 
+    <script src="../js/paginate.js"></script>
+      <script src="../js/custom.js"></script>
     <script type="text/javascript">
 
         function salir() {
@@ -143,7 +110,7 @@ if($last!=1){
             $res2 = muestraProductosNom($_GET['txt_consulta']);
             foreach ($res2 as $f) {
                 echo(
-                    "<tr>
+                    "<tr class='post'>
              
             <td>" . $f['pro_cod'] . "</td>
             <td>" . $f['pro_nombre'] . "</td>
@@ -169,7 +136,7 @@ if($last!=1){
         // Llenamos la tabla
         foreach ($res as $f) {
             ?>
-            <tr>
+            <tr class="post">
 
                 <th style="font-weight:100"><?php echo $f['pro_cod']; ?></th>
                 <th style="font-weight:100"><?php echo $f['pro_nombre']; ?></th>

@@ -1,52 +1,12 @@
 <?php
 session_start();
 include('../modelo/modelo_servicios.php');
+if(!isset($_SESSION['usu_nombre']))
+{header("location:../index.php");}
+
+$res = muestraServicios();
 
 
-if (!isset($_SESSION['usu_nombre'])) {
-    header("location:../index.php");
-}
-
-
-$cont = cuentaServicios();
-
-
-if(isset($_GET['page'])){
-    $page = preg_replace("#[^0-9]#","",$_GET['page']);
-}
-else {
-    $page = 1;
-}
-
-$reg = 12;
-$last = ceil($cont/$reg);
-
-
-if($page<1){
-
-    $page=1;
-}
-else if($page > $last) {
-    $page = $last;
-}
-
-$start=(($page-1)*$reg);
-$res = muestraServicios($start,$reg);
-
-if($last!=1){
-
-    if($page!=$last){
-        $next = $page + 1;
-        $paginador2 = '<a href="vista_historial_servicios.php?page='.$next.'">Siguente -></a>';
-        $paginadorL = '<a href="vista_historial_servicios.php?page='.$last.'">Ultimo >></a>';
-    }
-    if($page!=1){
-        $prev = $page - 1;
-        $paginador = '<a href="vista_historial_servicios.php?page='.$prev.'"><- Anterior</a>';
-        $paginadorP = '<a href="vista_historial_servicios.php?page=1"><< Primero</a>';
-    }
-
-}
 
 ?>
 <!DOCTYPE html>
@@ -74,6 +34,8 @@ if($last!=1){
     </style>
     <script src="../js/jquery-1.11.3.min.js"></script>
     <script src="../js/bootstrap.min.js"></script> 
+    <script src="../js/paginate.js"></script>
+    <script src="../js/custom.js"></script>
     <script type="text/javascript">
 
         function salir() {
@@ -146,7 +108,7 @@ if($last!=1){
             $res2 = muestraProductosNomCli($_GET['txt_consulta']);
             foreach ($res2 as $f) {
                 echo(
-                    "<tr>
+                    "<tr class='post'>
              
             <td>" . $f['ser_id'] . "</td>
             <td>" . $f['cli_nombre'] . "</td>
@@ -179,7 +141,7 @@ if($last!=1){
             {$estado = 'warning';} 
             else{$estado ='success';} 
             ?> 
-            <tr class="<?php echo $estado ?>">
+            <tr class="post <?php echo $estado ?>">
 
                 <th style="font-weight:100"><?php echo $f['ser_id']; ?></th>
                 <th style="font-weight:100"><?php echo $f['cli_nombre']; ?></th>

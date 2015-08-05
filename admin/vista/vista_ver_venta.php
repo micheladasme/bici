@@ -5,47 +5,9 @@ include('../modelo/modelo_venta.php');
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
-$cont = cuentaVenta();
 
+$res = muestraVenta();
 
-if(isset($_GET['page'])){
-  $page = preg_replace("#[^0-9]#","",$_GET['page']);
-  $start=(($page-1)*$reg);
-}
-else {
-  $page = 1;
-  $start=(($page-1)*0);
-}
-
-$reg = 12;
-$last = ceil($cont/$reg);
-
-
-if($page<1){
-
-  $page=1;
-}
-else if($page > $last) {
-  $page = $last;
-}
-
-
-
-$res = muestraVenta($start,$reg);
-if($last!=1){
-
-if($page!=$last){
-  $next = $page + 1;
-  $paginador2 = '<a href="vista_ver_venta.php?page='.$next.'">Siguente -></a>';
-  $paginadorL = '<a href="vista_ver_venta.php?page='.$last.'">Ultimo >></a>';
-}
-if($page!=1){
-  $prev = $page - 1;
-  $paginador = '<a href="vista_ver_venta.php?page='.$prev.'"><- Anterior</a>';
-  $paginadorP = '<a href="vista_ver_venta.php?page=1"><< Primero</a>';
-}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,9 +17,11 @@ if($page!=1){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../css/caja.css"  />
+  
       <script src="../js/jquery-1.11.3.min.js"></script>
       <script src="../js/bootstrap.min.js"></script> 
+       <script src="../js/paginate.js"></script>
+      <script src="../js/custom.js"></script>
      <script type="text/javascript">
     
       
@@ -108,16 +72,16 @@ if($page!=1){
       foreach($res as $f)
     {
 ?>
-          <tr>
+          <tr class="post">
               <th style="font-weight:100"><?php echo $f['usu_nombre']; ?></th>
               <th style="font-weight:100"><?php echo $f['com_fecha']; ?></th>
               <th style="font-weight:100">$ <?php echo $f['com_total']; ?></th>
                <th style="font-weight:100"><?php echo $f['tipo_modo']; ?></th>
             <td>
-              <a class="btn btn-info btn-xs" href="javascript:window.open('vista_d_venta.php?id=<?php echo $f['com_id']; ?>', 'nuevo', 'top=0, left=0, toolbar=no,location=no, status=no,menubar=no,scrollbars=no, resizable=no, width=500,height=470')" role="button" >  
-               Ver Mas >>
-              </a>
-              <a class="btn btn-danger btn-xs" href="../control/superadmin/controlAnulaVenta.php?id=<?php echo $f['com_id']; ?>"  role="button">  
+              <a href="vista_ver_venta.php?id=<?php echo $f["com_id"]; ?>"
+                                               class="btn btn-xs btn-info"><span
+                            class='glyphicon glyphicon-plus-sign'></span> Ver Mas >></a>
+              <a class="btn btn-danger btn-xs" href="../control/controlAnulaVenta.php?id=<?php echo $f['com_id']; ?>"  role="button">  
                Anular <span class="glyphicon glyphicon-remove"></span>
               </a>
                 </td>
@@ -132,11 +96,9 @@ if($page!=1){
                echo ("<h4>&nbsp;&nbsp;&nbsp;No hay Ventas por Ver</h4>");
              } ?>
            </table>
-             <br>
+            
           <?php include('includes/paginador.php');   ?>
-          </div>
-           <br>
-           <br>
+         <?php include('/modal/modal_detalle_venta.php'); ?>
             <?php include('includes/footer.php');  ?>
   </body>
 </html>

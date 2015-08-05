@@ -5,48 +5,10 @@ include_once('../modelo/modelo_cliente.php');
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
-$cont = cuentaCliente();
+
+$res = muestraCliente();
 
 
-if(isset($_GET['page'])){
-  $page = preg_replace("#[^0-9]#","",$_GET['page']);
-}
-else {
-  $page = 1;
-}
-
-$reg = 10;
-$last = ceil($cont/$reg);
-
-
-if($page<1){
-
-  $page=1;
-}
-else if($page > $last) {
-  $page = $last;
-}
-
-$start=(($page-1)*$reg);
-
-
-
-$res = muestraCliente($start,$reg);
-
-if($last!=1){
-
-if($page!=$last){
-  $next = $page + 1;
-  $paginador2 = '<a href="vista_ver_cliente.php?page='.$next.'">Siguente -></a>';
-  $paginadorL = '<a href="vista_ver_cliente.php?page='.$last.'">Ultimo >></a>';
-}
-if($page!=1){
-  $prev = $page - 1;
-  $paginador = '<a href="vista_ver_cliente.php?page='.$prev.'"><- Anterior</a>';
-  $paginadorP = '<a href="vista_ver_cliente.php?page=1"><< Primero</a>';
-}
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +20,9 @@ if($page!=1){
     <title>Bienvenido Administrador</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
       <script src="../js/jquery-1.11.3.min.js"></script>
-      <script src="../js/bootstrap.min.js"></script> 
+      <script src="../js/bootstrap.min.js"></script>
+      <script src="../js/paginate.js"></script>
+      <script src="../js/custom.js"></script>
      <script type="text/javascript">
     
       
@@ -134,7 +98,7 @@ if($page!=1){
               $res2 = buscaClienterut($_GET['txt_consulta']);
               foreach ($res2 as $f) {
            echo (
-            "<tr>".
+            "<tr class='post'>".
            
             "<td>".$f['cli_rut']."</td>".
             "<td>".$f['cli_nombre']."</td>".
@@ -170,7 +134,7 @@ if($page!=1){
             foreach($res as $f)
           {
           ?>
-          <tr>
+          <tr class="post">
               <th style="font-weight:100"><?php echo $f['cli_rut']; ?></th>
               <th style="font-weight:100"><?php echo $f['cli_nombre']; ?></th>
               <th style="font-weight:100"><?php echo $f['cli_apellido']; ?></th>
