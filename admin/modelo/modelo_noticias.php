@@ -37,14 +37,13 @@ function cuentaNoticias()
     return $x;
 }
 
-function muestraNoticias($start,$reg)
+function muestraNoticias()
 {
     $link=conectar();
     $a=array();
     $x=0;
     $sql=("SELECT noti.not_id, noti.not_titulo, noti.not_subtitulo, noti.not_contenido, noti.not_imagen, noti.not_fecha,usu.usu_id, usu.usu_nombre, usu.usu_apellido FROM noticias noti,usuarios usu WHERE noti.usu_id = usu.usu_id
-            ORDER BY noti.not_fecha ASC
-			LIMIT " . $start . "," . $reg);
+            ORDER BY noti.not_fecha ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {

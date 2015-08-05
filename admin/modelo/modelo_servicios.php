@@ -25,13 +25,12 @@ function registraServicio($id_cliente, $documento, $total, $fecha_ing, $fecha_en
     mysql_close($link);
 }
 
-function muestraServicios($start,$reg)
+function muestraServicios()
 {
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT ser.ser_id, ser.ser_fecha_entrega, ser.ser_total,ser.ser_documento, ses.est_ser_id, ses.est_ser_nombre, cli.cli_id,cli.cli_rut , cli.cli_nombre, cli.cli_apellido FROM servicio ser, cliente cli, estado_servicio ses WHERE ser.cli_id = cli.cli_id AND ser.est_ser_id = ses.est_ser_id ORDER BY ser.ser_id ASC
-            LIMIT " . $start . "," . $reg);
+    $sql=("SELECT ser.ser_id, ser.ser_fecha_entrega, ser.ser_total,ser.ser_documento, ses.est_ser_id, ses.est_ser_nombre, cli.cli_id,cli.cli_rut , cli.cli_nombre, cli.cli_apellido FROM servicio ser, cliente cli, estado_servicio ses WHERE ser.cli_id = cli.cli_id AND ser.est_ser_id = ses.est_ser_id ORDER BY ser.ser_id ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {

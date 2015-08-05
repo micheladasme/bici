@@ -77,14 +77,13 @@ function buscaProductoDetalle($codigo){
 
 }
 
-// Función Muestra Productos con paginacion.
-function muestraProductos($start,$reg)
+// Función Muestra Productos
+function muestraProductos()
 {
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, cat.cat_nombre FROM productos pro, categorias cat WHERE pro.cat_id = cat.cat_id AND pro_estado = 1 ORDER BY pro_nombre ASC
-			LIMIT " . $start . "," . $reg);
+    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, cat.cat_nombre FROM productos pro, categorias cat WHERE pro.cat_id = cat.cat_id AND pro_estado = 1 ORDER BY pro_nombre ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {

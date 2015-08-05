@@ -156,8 +156,8 @@ function detalleVenta($id)
 			AND c.com_id = $id");
     $res = mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while ($f = mysql_fetch_assoc($res)) {
-        $a[$x] = $f;
-        $x++;
+        $a = $f;
+       
     }
     mysql_close($link);
     return $a;
@@ -335,7 +335,7 @@ function registraVentaProducto($cod,$nom,$cant,$val,$subt,$vende)
     mysql_close($link);
 }
 
-function muestraVenta($start,$reg)
+function muestraVenta()
     {
         $link=conectar();
         $a=array();
@@ -343,8 +343,7 @@ function muestraVenta($start,$reg)
         $sql=("SELECT c.com_id, c.com_total, c.com_fecha, mp.tipo_modo, u.usu_nombre, mp.tipo_modo 
              FROM compra c,usuarios u, modo_pago mp where u.usu_id = c.usu_id and mp.id_modo = c.id_modo 
              AND com_nula = 0
-             ORDER BY c.com_fecha DESC
-               LIMIT " . $start . "," . $reg);
+             ORDER BY c.com_fecha DESC");
         $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
         while($f=mysql_fetch_array($res))
         {

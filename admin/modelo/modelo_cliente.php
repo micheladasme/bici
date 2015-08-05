@@ -20,13 +20,12 @@ function cuentaCliente()
     return $x;
 }
 
-function muestraCliente($start,$reg)
+function muestraCliente()
 {
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT * FROM cliente ORDER BY cli_rut ASC
-			LIMIT " . $start . "," . $reg);
+    $sql=("SELECT * FROM cliente ORDER BY cli_rut ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {

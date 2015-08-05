@@ -10,7 +10,7 @@ function conectar()
 }
 
 // Función Muestra Stock con paginacion.
-function muestraStock($start,$reg)
+function muestraStock()
 {
 $link=conectar();
 $a=array();
@@ -19,8 +19,7 @@ $sql=("SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_comp
 FROM producto_ubicacion pu, productos pr, ubicacion ubc
 WHERE pr.pro_cod = pu.pro_cod
 AND pu.ubc_id = ubc.ubc_id
-ORDER BY pro_nombre ASC
-LIMIT " . $start . "," . $reg);
+ORDER BY pro_nombre ASC");
 $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
 while($f=mysql_fetch_assoc($res))
 {

@@ -14,7 +14,8 @@ function registraUsuario($nombre, $apellido, $nick, $pass, $tipo, $suc)
 {
     $x=0;
     $link=conectar();
-    $sql="INSERT INTO usuarios (usu_nick, usu_clave, usu_nombre , usu_apellido , tip_id, suc_id) VALUES ('$nick', '$pass', '$nombre', '$apellido','$tipo', '$suc')";
+    $cryptpass = cryptPass($pass);
+    $sql="INSERT INTO usuarios (usu_nick, usu_clave, usu_nombre , usu_apellido , tip_id, suc_id) VALUES ('$nick', '$cryptpass', '$nombre', '$apellido','$tipo', '$suc')";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     // Verificamos si se realizo el insert
     if(mysql_affected_rows()>0)
@@ -25,5 +26,31 @@ function registraUsuario($nombre, $apellido, $nick, $pass, $tipo, $suc)
     mysql_close($link);
 }
 
+function cryptPass($password, $rounds=9){
+    $salt="";
+    $saltChars = array_merge(range('A','Z'), range('a','z'), range(0,9));
+    
+    for($i=0; $i < 22: $i++){
+        $salt.= $saltChars[array_rand($saltChars)];
+    }
+    return crypt($password, sprintf('$2y$%02d$', $rounds). $salt);
+    
+
+}
+
+/*
+function validarPass($inputPass, $passwordBD)
+{
+$hashedPass = cryptPass($passwordBD)
+
+    if(crypt($inputPass, $hashedPass) == $hashedPass){
+        echo "Password Correcta = Logeado";
+    }else{
+        echo "Password NO Correcta = No Logeado"
+    }
+
+}
+
+*/
 
 ?>

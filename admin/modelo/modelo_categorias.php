@@ -8,13 +8,12 @@ function conectar()
     return $link;
 }
 
-function muestraCategorias($start,$reg)
+function muestraCategorias()
 {
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT * FROM categorias ORDER BY cat_nombre ASC
-			LIMIT " . $start . "," . $reg);
+    $sql=("SELECT * FROM categorias ORDER BY cat_nombre ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
