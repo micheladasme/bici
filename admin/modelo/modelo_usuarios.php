@@ -51,6 +51,15 @@ $hashedPass = cryptPass($passwordBD)
 
 }
 
+// OTRO TIPO DE ENCRIPTACION DE PASSWORD
+function cryptPass($input, $rounds = 9) {
+    $salt = mcrypt_create_iv(22, MCRYPT_DEV_URANDOM);
+    return crypt($input, sprintf('$2x$%02d$', $rounds) . $salt);
+}
+
+//you can verify with
+$isMatch = password_verify($password, $saltedPassword);
+
 */
 
 ?>
