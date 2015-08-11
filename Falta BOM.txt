@@ -20,7 +20,7 @@ SISTEMA
 
 REPORTES
 	DASHBOARD
-	- llenar dashboard con datos reales
+	- llenar dashboard con datos reales (Probar con datos) 
 
 	FINANZAS
 	- llenar tablas y graficos con datos reales
@@ -31,7 +31,8 @@ REPORTES
 	- llenar productos mas vendidos y crear otro grafico
 
 ARMADO
-- COMPLETO
+- FALTA TODO (Idea: arrastrar producto a armado y luego aparece un modal que especifica que marca de producto y color 
+quiere)
 
 
 PD : TRUE = 1     FALSE = 0 
