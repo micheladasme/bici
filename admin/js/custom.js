@@ -13,6 +13,18 @@
             itemsToPaginate : ".post2"
         
         });
+
+          $(".paginate3").customPaginate({
+        
+            itemsToPaginate : ".post3"
+        
+        });
+
+           $(".paginate4").customPaginate({
+        
+            itemsToPaginate : ".post4"
+        
+        });
     
     });
     
