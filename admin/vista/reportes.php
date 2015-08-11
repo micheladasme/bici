@@ -7,6 +7,7 @@ include_once("../modelo/modelo_reportes.php");
 $res1 = ingresosActividades();
 $res2 = cantidadActividades();
 $res3 = ultimasVentas();
+$res4 = cantidadActividadesHoy();
 
 ?>
 <!DOCTYPE html>
@@ -123,7 +124,7 @@ $res3 = ultimasVentas();
                                         <i class="fa fa-tags fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
+                                        <div class="huge"> <?php print(isset($res4['total_pedido'])?$res4['total_pedido']:0);?></div>
                                         <div>Nuevos Pedidos</div>
                                     </div>
                                 </div>
@@ -145,7 +146,7 @@ $res3 = ultimasVentas();
                                         <i class="fa fa-cogs fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
+                                        <div class="huge"> <?php print(isset($res4['total_servicios'])?$res4['total_servicios']:0);?></div>
                                         <div>Nuevos Servicios</div>
                                     </div>
                                 </div>
@@ -167,7 +168,7 @@ $res3 = ultimasVentas();
                                         <i class="fa fa-shopping-cart fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
+                                        <div class="huge"> <?php print(isset($res4['total_ventas'])?$res4['total_ventas']:0);?></div>
                                         <div>Nueva Ventas</div>
                                     </div>
                                 </div>
@@ -210,7 +211,7 @@ $res3 = ultimasVentas();
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Ganancias del Mes</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Ingresos del Mes</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="ganancias_mes"></div>

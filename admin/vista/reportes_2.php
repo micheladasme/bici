@@ -3,8 +3,12 @@ session_start();
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../index.php");}
 
-include_once("../modelo/funciones.php");
-$link = conectar();
+include_once("../modelo/modelo_reportes.php");
+
+$res1 = ingresosActividades();
+$res2 = muestraVentas();
+$res3 = muestraGasto();
+$res4 = fechaActividades();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +34,9 @@ $link = conectar();
 
     <!-- Custom Fonts -->
     <link href="../font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,101 +65,14 @@ $link = conectar();
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <!--<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>-->
                 
-                <!--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Sr(a) <?php echo($_SESSION['usu_nombre']); ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="vista_inicio_admin.php"><i class="glyphicon glyphicon-share-alt"></i> Volver al Sistema de Administracion</a>
                         </li>
-                        <!--
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        -->
+                       
                         <li class="divider"></li>
                         <li>
                             <a href="#" onclick="salir()"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesion</a>
@@ -167,10 +87,10 @@ $link = conectar();
                         <a href="reportes.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <a href="reportes_2.php"><i class="fa fa-fw fa-money"></i>Finanzas</a>
+                        <a href="reportes_2.php"><i class="fa fa-fw fa-money"></i> Finanzas</a>
                     </li>
                     <li>
-                        <a href="reportes_3.php"><i class="fa fa-fw fa-shopping-cart"></i>Ventas y Servicios</a>
+                        <a href="reportes_3.php"><i class="fa fa-fw fa-shopping-cart"></i> Ventas y Servicios</a>
                     </li>
                 </ul>
             </div>
@@ -202,139 +122,137 @@ $link = conectar();
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-red">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Gastos</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Gastos Realizados</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
-                                                <th>Order Date</th>
-                                                <th>Order Time</th>
-                                                <th>Amount (USD)</th>
+                                                <th>Gasto #</th>
+                                                <th>Fecha Gasto</th>
+                                                <th>Tipo de Gasto</th>
+                                                <th>Monto</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                             <?php foreach ($res3 as $key => $val) { ?>
                                             <tr class="post">
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
+                                                <td><?php print($val['gas_id']); ?></td>
+                                                <td><?php print($val['gas_fecha']); ?></td>
+                                                <td>$<?php print($val['gas_monto']); ?></td>
+                                                <td><?php print($val['tg_descripcion']); ?></td>
                                             </tr>
-                                            <tr class="post">
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr class="post">
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr class="post">
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr class="post">
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr class="post">
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr class="post">
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr class="post">
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
+                                            <?php  }?>
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav class="paginate">
+                                <nav class="paginate text-center">
                                    
                                 </nav>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Ventas</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Ventas Realizadas</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
-                                                <th>Order Date</th>
-                                                <th>Order Time</th>
-                                                <th>Amount (USD)</th>
+                                                <th>Venta #</th>
+                                                <th>Fecha</th>
+                                                <th>Tipo de Pago</th>
+                                                <th>Monto</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                             <?php foreach ($res2 as $key => $val) { ?>
                                             <tr class="post2">
+                                                <td><?php print($val['com_id']); ?></td>
+                                                <td><?php print($val['com_fecha']); ?></td>
+                                                <td>$<?php print($val['com_total']); ?></td>
+                                                <td><?php print($val['tipo_modo']); ?></td>
+                                            </tr>
+                                            <?php  }?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav class="paginate2 text-center">
+                                   
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Pedidos Realizados</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Gasto #</th>
+                                                <th>Fecha Gasto</th>
+                                                <th>Tipo de Gasto</th>
+                                                <th>Monto</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="post3">
                                                 <td>3326</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:29 PM</td>
                                                 <td>$321.33</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3325</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:20 PM</td>
                                                 <td>$234.34</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3324</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:03 PM</td>
                                                 <td>$724.17</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3323</td>
                                                 <td>10/21/2013</td>
                                                 <td>3:00 PM</td>
                                                 <td>$23.71</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3322</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:49 PM</td>
                                                 <td>$8345.23</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3321</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:23 PM</td>
                                                 <td>$245.12</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3320</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:15 PM</td>
                                                 <td>$5663.54</td>
                                             </tr>
-                                            <tr class="post2">
+                                            <tr class="post3">
                                                 <td>3319</td>
                                                 <td>10/21/2013</td>
                                                 <td>2:13 PM</td>
@@ -343,7 +261,81 @@ $link = conectar();
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav class="paginate2">
+                                <nav class="paginate3 text-center">
+                                   
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Servicios Realizados</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Venta #</th>
+                                                <th>Fecha</th>
+                                                <th>Tipo de Pago</th>
+                                                <th>Monto</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="post4">
+                                                <td>3326</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:29 PM</td>
+                                                <td>$321.33</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3325</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:20 PM</td>
+                                                <td>$234.34</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3324</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:03 PM</td>
+                                                <td>$724.17</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3323</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:00 PM</td>
+                                                <td>$23.71</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3322</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:49 PM</td>
+                                                <td>$8345.23</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3321</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:23 PM</td>
+                                                <td>$245.12</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3320</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:15 PM</td>
+                                                <td>$5663.54</td>
+                                            </tr>
+                                            <tr class="post4">
+                                                <td>3319</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:13 PM</td>
+                                                <td>$943.45</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav class="paginate4 text-center">
                                    
                                 </nav>
                             </div>
@@ -357,12 +349,20 @@ $link = conectar();
                     <div class="col-lg-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancias del Mes</h3>
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ganancias Totales por Mes</h3>
                             </div>
                             <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="ganancias-mes"></div>
+                                <div>
+                                    Año : <select onchange="drawChart(this.value)">
+                                        <option> Seleccione </option>
+                                        <?php foreach ($res4 as $f => $v) { ?>
+                                            <option value="<?php print $v['anio_venta'];?>"><?php print $v['anio_venta'];?></option>
+                                        <?php } ?>
+                                        </select>
                                 </div>
+                              
+                                    <div id="chart_div"></div>
+                                
                                 <div class="text-right">
                                     <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
@@ -373,9 +373,17 @@ $link = conectar();
                     <div class="col-lg-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ingresos vs Gastos</h3>
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Ingresos vs Gastos por Mes</h3>
                             </div>
                             <div class="panel-body">
+                                <div>
+                                    Mes : <select onchange="drawChart(this.value)">
+                                        <option> Seleccione </option>
+                                        <?php foreach ($res1 as $f => $v) { ?>
+                                            <option><?php print $v['fecha_venta'];?></option>
+                                        <?php } ?>
+                                        </select>
+                                </div>
                                 <div class="flot-chart">
                                     <div class="flot-chart-content" id="ganancias-gastos"></div>
                                 </div>
@@ -498,6 +506,66 @@ $(function() {
     });
 
 });</script>
+
+<script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1', {'packages':['corechart']});
+      //google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+        function drawChart(num) {
+
+     var charData = $.ajax({
+      url: "../control/controlPieChart.php",
+      data: "q="+num,
+      dataType:"json",
+      async:false
+     }).responseText;
+    
+   
+    
+    var data = new google.visualization.DataTable();
+
+      data.addColumn('string', 'Mes');
+      data.addColumn('number', 'Ganancias');
+      data.addRows(JSON.parse(charData));
+
+      var options = {
+       
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+  }
+
+      function drawChart2(num) {
+
+     var charData = $.ajax({
+      url: "../control/controlPieChart.php",
+      data: "q="+num,
+      dataType:"json",
+      async:false
+     }).responseText;
+    
+   
+    
+    var data = new google.visualization.DataTable();
+
+      data.addColumn('string', 'Mes');
+      data.addColumn('number', 'Ganancias');
+      data.addRows(JSON.parse(charData));
+
+      var options = {
+       
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+  }
+    </script>
 
 </body>
 
