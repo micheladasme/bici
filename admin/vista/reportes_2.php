@@ -377,16 +377,19 @@ $res4 = fechaActividades();
                             </div>
                             <div class="panel-body">
                                 <div>
-                                    Mes : <select onchange="drawChart(this.value)">
+                                    Mes : <select onchange="drawChart2(this.value)">
                                         <option> Seleccione </option>
                                         <?php foreach ($res1 as $f => $v) { ?>
-                                            <option><?php print $v['fecha_venta'];?></option>
+                                            <option value="<?php print $v['fecha_venta'];?>"><?php print $v['fecha_venta'];?></option>
                                         <?php } ?>
                                         </select>
                                 </div>
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="ganancias-gastos"></div>
-                                </div>
+                                
+                                    <div id="chart_div2">
+                                        
+
+                                    </div>
+
                                 <div class="text-right">
                                     <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
@@ -430,82 +433,7 @@ $res4 = fechaActividades();
     <script src="../js/plugins/flot/jquery.flot.pie.js"></script>
     <script src="../js/paginate.js"></script>
     <script src="../js/custom.js"></script>
-    <script>// Flot Pie Chart with Tooltips
-$(function() {
-
-    var data = [{
-        label: "Series 0",
-        data: 1
-    }, {
-        label: "Series 1",
-        data: 3
-    }, {
-        label: "Series 2",
-        data: 9
-    }, {
-        label: "Series 3",
-        data: 20
-    }];
-
-    var plotObj = $.plot($("#ganancias-mes"), data, {
-        series: {
-            pie: {
-                show: true
-            }
-        },
-        grid: {
-            hoverable: true
-        },
-        tooltip: true,
-        tooltipOpts: {
-            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-            shifts: {
-                x: 20,
-                y: 0
-            },
-            defaultTheme: false
-        }
-    });
-
-});
-
-$(function() {
-
-    var data = [{
-        label: "Series 0",
-        data: 1
-    }, {
-        label: "Series 1",
-        data: 3
-    }, {
-        label: "Series 2",
-        data: 9
-    }, {
-        label: "Series 3",
-        data: 20
-    }];
-
-    var plotObj = $.plot($("#ganancias-gastos"), data, {
-        series: {
-            pie: {
-                show: true
-            }
-        },
-        grid: {
-            hoverable: true
-        },
-        tooltip: true,
-        tooltipOpts: {
-            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-            shifts: {
-                x: 20,
-                y: 0
-            },
-            defaultTheme: false
-        }
-    });
-
-});</script>
+    
 
 <script type="text/javascript">
 
@@ -545,7 +473,7 @@ $(function() {
 
      var charData = $.ajax({
       url: "../control/controlPieChart.php",
-      data: "q="+num,
+      data: "r="+num,
       dataType:"json",
       async:false
      }).responseText;
@@ -562,7 +490,7 @@ $(function() {
        
       };
 
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
       chart.draw(data, options);
   }
     </script>
