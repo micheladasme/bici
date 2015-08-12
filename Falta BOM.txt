@@ -24,7 +24,7 @@ REPORTES
 
 	FINANZAS
 	- llenar tablas y graficos con datos reales
-	- generar graficos con rango de fecha y sucursal
+	- generar graficos con rango de sucursal
 	- Ver gastos boton ver mas y aparece un modal
 
 	VENTAS y SERVICIOS
