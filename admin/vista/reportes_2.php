@@ -9,6 +9,8 @@ $res1 = ingresosActividades();
 $res2 = muestraVentas();
 $res3 = muestraGasto();
 $res4 = fechaActividades();
+$res5 = muestraPedidos();
+$res6 = muestraServicios();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -203,61 +205,21 @@ $res4 = fechaActividades();
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Gasto #</th>
-                                                <th>Fecha Gasto</th>
-                                                <th>Tipo de Gasto</th>
+                                                <th>Venta #</th>
+                                                <th>Fecha</th>
                                                 <th>Monto</th>
+                                                <th>Estado</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                             <?php foreach ($res5 as $key => $val) { ?>
                                             <tr class="post3">
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
+                                                <td><?php print($val['ped_id']); ?></td>
+                                                <td><?php print($val['ped_fecha']); ?></td>
+                                                <td>$<?php print($val['ped_total']); ?></td>
+                                                <td><?php print($val['est_nombre']); ?></td>
                                             </tr>
-                                            <tr class="post3">
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr class="post3">
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr class="post3">
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr class="post3">
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr class="post3">
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr class="post3">
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr class="post3">
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
+                                            <?php  }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -275,63 +237,23 @@ $res4 = fechaActividades();
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                        <thead>
+                                    <thead>
                                             <tr>
                                                 <th>Venta #</th>
                                                 <th>Fecha</th>
-                                                <th>Tipo de Pago</th>
                                                 <th>Monto</th>
+                                                <th>Estado</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="post4">
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
+                                             <?php foreach ($res6 as $key => $val) { ?>
+                                            <tr class="post3">
+                                                <td><?php print($val['ser_id']); ?></td>
+                                                <td><?php print($val['ser_fecha']); ?></td>
+                                                <td>$<?php print($val['ser_total']); ?></td>
+                                                <td><?php print($val['est_ser_nombre']); ?></td>
                                             </tr>
-                                            <tr class="post4">
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr class="post4">
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr class="post4">
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr class="post4">
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr class="post4">
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr class="post4">
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr class="post4">
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
+                                            <?php  }?>
                                         </tbody>
                                     </table>
                                 </div>
