@@ -209,6 +209,44 @@ function muestraGasto()
     
 }
 
+function muestraPedidos()
+{
+     $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT ped.ped_id, Date_format(ped.ped_fecha,'%d/%m/%Y') as ped_fecha, ped.ped_total, est.est_nombre FROM pedido ped, estado est WHERE ped.est_id = est.est_id ORDER BY ped_id DESC");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+        
+    }
+    mysql_close($link);
+    return $a;
+
+    
+}
+
+function muestraServicios()
+{
+     $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT ser.ser_id, Date_format(ser.ser_fecha_ingreso,'%d/%m/%Y') as ser_fecha, ser.ser_total, est.est_ser_nombre FROM servicio ser, estado_servicio est WHERE ser.est_ser_id = est.est_ser_id ORDER BY ser_id DESC");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+        
+    }
+    mysql_close($link);
+    return $a;
+
+    
+}
+
 function gananciasMes($anio)
 {
     $link=conectar();

@@ -186,15 +186,14 @@ function muestraGastos_Mercaderia2($fecha1,$fecha2)
     return $a;
 }
 
-function muestraGasto($start,$reg)
+function muestraGasto()
 {
     $link=conectar();
     $a=array();
     $x=0;
     $sql=("SELECT gas_fecha, tg_descripcion ,gas_monto,gas_descripcion FROM gastos g, tipo_gastos tg
 			WHERE g.tg_id = tg.tg_id
-			ORDER BY gas_fecha DESC
-			   LIMIT " . $start . "," . $reg);
+			ORDER BY gas_fecha DESC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
