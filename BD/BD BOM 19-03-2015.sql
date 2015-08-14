@@ -25,6 +25,7 @@ CREATE TABLE Cliente
 CREATE TABLE Pedido
 (
   ped_id Int NOT NULL AUTO_INCREMENT,
+  ped_subtotal Int,
   ped_total Int,
   ped_fecha Date,
   ped_mano_obra Int,
@@ -938,3 +939,10 @@ INSERT INTO `estado_servicio` VALUES
 (1, 'En Reparacion'),
 (2, 'Listo Para Entrega'),
 (3, 'Entregado Y Completado');
+
+INSERT INTO `estado` VALUES
+(1, 'Solo Creacion'),
+(2, 'Enviado, Esperando Aprobacion'),
+(3, 'En Proceso de Armado'),
+(4, 'Listo Para Entrega'),
+(5, 'Entregado Y Completado');
