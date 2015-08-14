@@ -10,7 +10,6 @@ PEDIDOS
 - falta pedidos
 
 GASTO
-- ver gasto
 - ingresar gasto
 
 SISTEMA
@@ -23,7 +22,6 @@ REPORTES
 	- llenar dashboard con datos reales (Probar con datos) 
 
 	FINANZAS
-	- llenar tablas y graficos con datos reales
 	- generar graficos con rango de sucursal
 	- Ver gastos boton ver mas y aparece un modal
 
