@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../../modelo/funciones.php');
+include('../modelo/modelo_gastos.php');
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
@@ -16,8 +16,8 @@ $res = muestraGasto();
      <meta content="text/html" http-equiv="Content-type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gastos</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css"  />
-    <link rel="stylesheet" type="text/css" href="../../css/caja.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="../css/caja.css"  />
       <script src="../js/jquery-1.11.3.min.js"></script>
       <script src="../js/bootstrap.min.js"></script> 
       <script src="../js/paginate.js"></script>
