@@ -1,7 +1,107 @@
-      <div class="container">
+     <style type="text/css">
+       .btn{
+            margin: 4px;
+            box-shadow: 1px 1px 5px #888888;
+        }
+
+        .btn-xs{
+            font-weight: 300;
+        }
+
+        .btn-hot {
+            color: #fff;
+            background-color: #db5566;
+            border-bottom:2px solid #af4451;
+
+        }
+
+        .btn-hot:hover, .btn-sky.active:focus, .btn-hot:focus, .open>.dropdown-toggle.btn-hot {
+            color: #fff;
+            background-color: #df6a78;
+            border-bottom:2px solid #b25560;
+            outline: none;}
+
+
+        .btn-hot:active, .btn-hot.active {
+            color: #fff;
+            background-color: #c04b59;
+            border-top:2px solid #9a3c47;
+            margin-top: 2px;
+        }
+
+        .btn-sunny {
+            color: #fff;
+            background-color: #f4ad49;
+            border-bottom:2px solid #c38a3a;
+        }
+
+        .btn-sunny:hover, .btn-sky.active:focus, .btn-sunny:focus, .open>.dropdown-toggle.btn-sunny {
+            color: #fff;
+            background-color: #f5b75f;
+            border-bottom:2px solid #c4924c;
+            outline: none;
+        }
+
+
+        .btn-sunny:active, .btn-sunny.active {
+            color: #fff;
+            background-color: #d69840;
+            border-top:2px solid #ab7a33;
+            margin-top: 2px;
+        }
+
+        .btn-fresh {
+            color: #fff;
+            background-color: #51bf87;
+            border-bottom:2px solid #41996c;
+        }
+
+        .btn-fresh:hover, .btn-sky.active:focus, .btn-fresh:focus, .open>.dropdown-toggle.btn-fresh {
+            color: #fff;
+            background-color: #66c796;
+            border-bottom:2px solid #529f78;
+            outline: none;
+        }
+
+
+        .btn-fresh:active, .btn-fresh.active {
+            color: #fff;
+            background-color: #47a877;
+            border-top:2px solid #39865f;
+            outline: none;
+            margin-top: 2px;
+        }
+
+        .btn-sky {
+            color: #fff;
+            background-color: #0bacd3;
+            border-bottom:2px solid #098aa9;
+        }
+
+        .btn-sky:hover,.btn-sky.active:focus, .btn-sky:focus, .open>.dropdown-toggle.btn-sky {
+            color: #fff;
+            background-color: #29b6d8;
+            border-bottom:2px solid #2192ad;
+            outline: none;
+        }
+
+        .btn-sky:active, .btn-sky.active {
+            color: #fff;
+            background-color: #0a97b9;
+            border-top:2px solid #087994;
+            margin-top: 2px;
+        }
+
+        .btn:focus,
+        .btn:active:focus,
+        .btn.active:focus {
+            outline: none;
+            outline-offset: 0px;
+        }
+     </style>
 	<div class="row">
 		<div class="row">
-  			<div class="col-md-4 col-md-offset-8"><h4 style="color: #ffffff;">Bienvenido Sr(a):  </h4></div>
+  			<div class="col-xs-4 col-xs-offset-8"><h4 style="color: #ffffff;">Bienvenido Sr(a):  </h4></div>
 		</div>
     
     
@@ -18,7 +118,7 @@
             <button type="button" class="btn btn-fresh text-uppercase btn-sm">Fresh button</button>
             <button type="button" class="btn btn-sky text-uppercase btn-sm">Sky button</button>
         </div>-->
-        <div class="well text-center">
+        <div class="well text-center col-xs-offset-1">
             <img src="images/logo.png" class="pull-left" style="width: 150px; height: 45px;">
 			<button type="button" class="btn btn-hot text-uppercase"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>  Crear Bicicleta</button>
             <button type="button" class="btn btn-sunny text-uppercase"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>   Creaciones</button>
@@ -35,4 +135,3 @@
     -->
 
 	</div>
-</div>

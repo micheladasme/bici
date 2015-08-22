@@ -1,5 +1,5 @@
 $(function() {
-    $('div', $('#ruedas')).draggable({ revert: "invalid" });
+    $('div', $('#ruedas')).draggable({ revert: "valid", helper: "clone"});
     $('div', $('#marcos')).draggable({ revert: "invalid" });
     $('div', $('#horquillas')).draggable({ revert: "invalid" });
     $('div', $('#sillines')).draggable({ revert: "invalid" });
@@ -11,6 +11,7 @@ $(function() {
         activeClass: "ui-state-hover",
         hoverClass: "ui-state-active",
         drop: function(event, ui) {
+            
             var width = $(this).width();
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
@@ -24,7 +25,9 @@ $(function() {
                 left:0
             });
             $(ids).clone().appendTo("#cont-rueda2");
+             $('#modalRueda').modal('show');
         }
+
     });
 
 
@@ -46,6 +49,7 @@ $(function() {
                 left:0
             });
             $(ids).clone().appendTo("#cont-rueda");
+             $('#modalRueda').modal('show');
         }
     });
 
@@ -154,4 +158,10 @@ $(function() {
         }
     });
 
+$("#btn1").click(function() {
+   $(".ui-widget-header").empty();
 });
+
+});
+
+
