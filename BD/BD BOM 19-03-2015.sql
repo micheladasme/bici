@@ -29,6 +29,8 @@ CREATE TABLE Pedido
   ped_total Int,
   ped_fecha Date,
   ped_mano_obra Int,
+  ped_imagen Varchar(160),
+  ped_detalle Varchar(500),
   cli_id Int,
   usu_id Int,
   id_modo Int,
@@ -37,6 +39,7 @@ CREATE TABLE Pedido
  PRIMARY KEY (ped_id)
 )
 ;
+
 
 -- Table Compra
 
@@ -226,20 +229,20 @@ CREATE TABLE Estado
 )
 ;
 
--- Table Carro
+-- Table tmp_armado
 
-CREATE TABLE Carro
+CREATE TABLE tmp_armado
 (
-  c_id Int NOT NULL AUTO_INCREMENT,
-  c_codigo Int NOT NULL,
-  c_nombre Varchar(200) NOT NULL,
-  c_imagen Varchar(200) NOT NULL,
-  c_cantidad Int NOT NULL,
-  c_valor Int NOT NULL,
-  c_peso Int NOT NULL,
-  c_subtotal Int NOT NULL,
-  c_cliente Int,
- PRIMARY KEY (c_id)
+  arm_id Int NOT NULL AUTO_INCREMENT,
+  arm_codigo Int NOT NULL,
+  arm_nombre Varchar(200) NOT NULL,
+  arm_imagen Varchar(200) NOT NULL,
+  arm_cantidad Int NOT NULL,
+  arm_valor Int NOT NULL,
+  arm_peso Int NOT NULL,
+  arm_subtotal Int NOT NULL,
+  arm_cliente Int,
+ PRIMARY KEY (arm_id)
 )
 ;
 
