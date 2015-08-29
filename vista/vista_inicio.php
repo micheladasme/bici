@@ -1,5 +1,4 @@
-
-<<?php   
+<?php
 
 include("modelo/funciones.php");
 ?>
