@@ -101,7 +101,7 @@
      </style>
 	<div class="row">
 		<div class="row">
-  			<div class="col-xs-4 col-xs-offset-8"><h4 style="color: #ffffff;">Bienvenido Sr(a):  </h4></div>
+  			<div class="col-xs-4 col-xs-offset-8"> <h2 class="bg-success">Bienvenido Sr.(a) <?php echo $_SESSION['usu_nombre']; ?></h2></div>
 		</div>
     
     
@@ -123,8 +123,10 @@
 			<button type="button" class="btn btn-hot text-uppercase"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>  Crear Bicicleta</button>
             <button type="button" class="btn btn-sunny text-uppercase"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>   Creaciones</button>
             <button type="button" class="btn btn-fresh text-uppercase"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Pedidos</button>
-            <button type="button" class="btn btn-sky text-uppercase pull-right"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>  Cerrar Sesion</button>
+            <button type="button" class="btn btn-sky text-uppercase pull-right" onclick="salir()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>  Cerrar Sesion</button>
         </div>
+
+
         <!--
         <div class="well text-center">
             <button type="button" class="btn btn-hot text-uppercase btn-lg">hot button</button>
