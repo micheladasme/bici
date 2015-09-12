@@ -68,7 +68,7 @@ include("modelo/funciones.php");
                             <li><a class="show-6" href="#">Noticias</a></li>
                        <!-- <li><a class="show-4" href="#">Productos</a></li>-->
                             <li><a class="show-5" href="#" onclick="templatemo_map();">Contactanos</a></li>
-                            <li><a rel="nofollow" href="app/armado.php">Arma Tu Bicicleta</a></li>
+                            <li><a rel="nofollow" href="app/index.php">Arma Tu Bicicleta</a></li>
                         </ul> <!-- /.menu -->
                         <a href="#" class="toggle-menu"  ><i class="fa fa-bars"></i></a>
 
