@@ -101,9 +101,9 @@
               </a>
             </div>
                
-               <div class="btn-group" style="float:right; margin:10px;"> 
-               <a class="btn btn-primary btn-sm " style="margin-left:10px; margin-right:10px;" role="button" onclick="salir()">
-                 Cerrar Sesion  <span class="glyphicon glyphicon-off">    </span></a> 
-            </div>
+               <div class="btn-group" style="float:right; margin:10px;">
+                    <a class="btn btn-primary btn-sm " style="margin-left:10px; margin-right:10px;" role="button" onclick="salir()">
+                        Cerrar Sesion  <span class="glyphicon glyphicon-off">    </span></a>
+                </div>
              </div>
           </nav>
