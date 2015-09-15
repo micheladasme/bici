@@ -13,7 +13,6 @@ CREATE TABLE Cliente
   cli_direccion Varchar(120) NOT NULL,
   cli_telefono Varchar(20) NOT NULL,
   cli_correo Varchar(80),
-  cli_nick Varchar(80) NOT NULL,
   cli_pass Varchar(80) NOT NULL,
   comu_id Int,
  PRIMARY KEY (cli_id)
@@ -940,7 +939,7 @@ INSERT INTO `comuna` (`comu_id`, `comu_nombre`, `region_id`) VALUES
 (345, 'PADRE LAS CASAS', 9),
 (346, 'ALTO HOSPICIO', 1);
 
-INSERT INTO `cliente` (`cli_id`, `cli_rut`, `cli_nombre`, `cli_apellido`, `cli_direccion`, `cli_telefono`, `cli_correo`, `cli_nick`, `cli_pass`, `comu_id`) VALUES
+INSERT INTO `cliente` (`cli_id`, `cli_rut`, `cli_nombre`, `cli_apellido`, `cli_direccion`, `cli_telefono`, `cli_correo`, `cli_pass`, `comu_id`) VALUES
 (1, 180647945, 'Michel', 'Adasme', 'Las Guias 7555, Naltagua', '51194592', 'mic.adasme@gmail.com', 'mic.adasme', '12345', 87);
 
 INSERT INTO `ubicacion` VALUES
