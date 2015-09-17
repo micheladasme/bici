@@ -8,11 +8,13 @@ $result=mysql_query($consulta , $link);
 <script type="text/javascript">
     function pass_match()
     {
-        $pass1="txt_pass";
-        $pass2="txt_pass2";
+         $pass1=document.getElementById('txt_pass').value;
+         $pass2=document.getElementById('txt_pass2').value;
+
         if($pass1 != $pass2)
         {
             alert("las contraseñas no coincide");
+
 
         }
         else
