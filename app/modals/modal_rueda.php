@@ -2,34 +2,36 @@
   $res1 = muestraLlantas();
   $res2 = muestraNeumaticos();
   $res3 = muestraFrenos();
+
   
-  $lista = array();
-  ?>
+?>
 
-  <script type="text/javascript">
+    <script>
+     function agregaRegistro(){
+    var url = 'control/RPartes.php';
+    //recorremos todos los checkbox seleccionados con .each
+    /*$('input[name="rueda[]"]:checked').each(function() {
+    //$(this).val() es el valor del checkbox correspondiente
+    checkboxValues.push($(this).val());
+     
+    });
+    alert(checkboxValues);*/
+    var data = $("#iform").serialize(); 
 
-  function registro(prod,tipo,cat){
-          $.ajax({
-            // En data puedes utilizar un objeto JSON, un array o un query string
-            data: {"prod" : prod, "tipo" : tipo, "cat": cat},
-            //Cambiar a type: POST si necesario
-            type: "POST",
-            // Formato de datos que se espera en la respuesta
-            dataType: "json",
-            // URL a la que se enviará la solicitud Ajax
-            url: "control/RPartes.php",
-        })
-         .done(function( data, textStatus, jqXHR ) {
-            alert("La solicitud se ha completado correctamente." );
-            
-         })
-         .fail(function( jqXHR, textStatus, errorThrown ) {
-       
-            alert("La solicitud a fallado: " +  textStatus);
-             
-        });
+                $.ajax({
+                    url: url, // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: data, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").val(data); 
+                        $("#modalRueda").modal("hide");// The data that is echoed from the ajax.php
+                    }
+                });
+   
     }
-  </script>
+   </script>
 
   <div class="modal fade" id="modalRueda" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" >
@@ -40,7 +42,8 @@
                     <h3 class="modal-title" id="gridSystemModalLabel">Ruedas</h3>
                 </div>
                 <div class="modal-body">
-                    <div class="panel-group" id="accordion"  role="tablist" aria-multiselectable="true">
+                    <form id="iform" method="POST">
+                   <div class="panel-group" id="accordion"  role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -49,16 +52,16 @@
                                 </h4>
                             </div>
                             <div id="collapse1">
-                                <div class="row">
+                                <div class="row" id="neumatico">
                                     <?php foreach ($res2 as $key => $val) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($val["pro_nombre"]);?></h4>
-                                                        <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                        <p><a href="<?php print($val['pro_cod']);?>" class="label label-success" rel="tooltip" title="Elegir">Elegir</a></p>
+                                                        <h5><?php print($val["pro_nombre"]);?></h5>
+                                                        <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
+                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="neumatico[]" value="<?php print($val['pro_cod'].",".$val['pro_nombre'])?>"> Elegir<br> </div></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -87,7 +90,7 @@
                                                     <div class="caption">
                                                         <h4><?php print($val["pro_nombre"]);?></h4>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                        <p><a href="<?php print($val['pro_cod']);?>" class="label label-success" rel="tooltip" title="Elegir">Elegir</a></p>
+                                                       <p> <input type="checkbox" id="llantas" name="llanta[]" value="<?php print($val['pro_cod'].",".$val['pro_nombre'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -102,74 +105,40 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                        Tipo de Freno</a>
+                                        Freno Trasero</a>
                                 </h4>
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
                                 <div class="row">
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
+                                    <?php foreach ($res3 as $key => $val) { ?>
+                                        
+                                    
+                                     <div class="col-md-3">            
+                                                <div class="thumbnail">
+                                                    <div class="caption">
+                                                        <h4><?php print($val["pro_nombre"]);?></h4>
+                                                        <p>$<?php print($val["pro_precio_venta"]);?></p>
+                                                       <p> <input type="checkbox" id="freno" name="freno[]" value="<?php print($val['pro_cod'].",".$val['pro_nombre'])?>"> Elegir<br></p>
+                                                    </div>
+                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                </div>
+                                          </div>
+                                       
+                                    <?php } ?>
                                 </div>
                            </div>
                         </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                        Piñones</a>
-                                </h4>
-                            </div>
-                            <div id="collapse4" class="panel-collapse collapse">
-                                <div class="row">    
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                </div>    
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                                        Cambio Trasero</a>
-                                </h4>
-                            </div>
-                            <div id="collapse5" class="panel-collapse collapse">
-                                <div class="row">    
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                    <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="images/img250.png" alt="Image" class="img-responsive"></a>
-                                    </div>
-                                 </div>   
-                            </div>
-                        </div>
                     </div>
-           
 
+                      
                  </div>
                 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <input type="submit" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar"/>
+                    <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistro()"/>
                 </div>
-           
+           </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
