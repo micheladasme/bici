@@ -8,8 +8,16 @@
     <title>Iniciar Sesion</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.Rut.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
+        $(document).ready(function(){
+
+            $('#txt_cod').Rut({
+                on_error: function(){ alert('Rut incorrecto'); }
+            });
+        });
+
         function valida()
         {
 
