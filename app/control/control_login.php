@@ -9,13 +9,14 @@ if($sw)
 	{
 		$_SESSION['id_usuario']= validaLogin($_POST['txt_usu'],$_POST['txt_pass']);
 		$_SESSION['usu_nombre']= retornaNombrePorId($_SESSION['id_usuario']);
-		$_SESSION['usu_tipo']= retornaNivel($_SESSION['id_usuario']);
+		
         $_SESSION['header']="";
 
          if($_SESSION['usu_nombre']) {
          	?>
          		 <script>
-		 location.href='../prueba.php';
+		 location.href='../armado2.php';
+		 alert('Bienvenido a Bici-o-Matic'); 
 
 		 </script><?php
 
