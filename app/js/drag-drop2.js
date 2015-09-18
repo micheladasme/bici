@@ -61,6 +61,8 @@ $(function() {
             var width = $(this).width();
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
+            var array = ($(ui.draggable).attr('name'));
             $(ids).addClass("ui-draggable-dragging");
             $("#cont-marco").append($(ids));
             $(ids).css({
@@ -70,8 +72,19 @@ $(function() {
                 top:0,
                 left:0
             });
-
-        }
+                alert(array);
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {marco:valor}, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").val(data); 
+                        $("#modalRueda").modal("hide");// The data that is echoed from the ajax.php
+                    }
+                });
+            }
     });
 
     $("#cont-horquilla").droppable({
