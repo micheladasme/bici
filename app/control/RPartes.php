@@ -1,6 +1,7 @@
 <?php
 session_start();
 //include_once("../modelo/modelo_armado.php");
+include("array_table.php");
 $datos = $_POST; 
 
 
@@ -13,7 +14,7 @@ $datos = $_POST;
     array_push($_SESSION["bicicleta"], $datos);
     }
 
-print_r($_SESSION["bicicleta"]);
-
+//print_r($_SESSION["bicicleta"]);
+print_r(array2table($_SESSION["bicicleta"]));
 
 ?>
