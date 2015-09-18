@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("modelo/funciones.php");
+$_SESSION["bicicleta"]=array();
 ?>
 
 <!DOCTYPE html>
@@ -326,30 +327,14 @@ include("modelo/funciones.php");
     <div class="row" style="margin: 0px 0px 0px 100px">
     <div class="well col-xs-11">
         <h4>Detalles</h4>
-        <textarea id="comp">
-            
-        </textarea>
-        <!--<table class="table table-bordered">
-            
-            <thead> 
-                <tr>
-                    <th>Codigo</th>
-                    <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Peso</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-
-            <tbody>
-              <div id="comp">
-                  
-              </div>
-            </tbody>
-
-        </table>-->
-
-
+        <div id="comp">
+            <table>
+    <tr><th>marco</th></tr>
+    <tr><td>23,MARCO1</td></tr>
+    <tr><td>75,NEUMATICO 2</td><td>70,FRENO 2</td></tr>
+        </table>
+        </div>
+    
     </div>
     </div>
     </br>
