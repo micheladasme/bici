@@ -62,7 +62,7 @@ $result=mysql_query($consulta , $link);
                 Objeto.focus()
                 return false;
             }
-            alert('El Rut Ingresado es Correcto!')
+            pass_match();
             Objeto.focus()
             return true;
         }
