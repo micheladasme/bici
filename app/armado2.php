@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("modelo/funciones.php");
 ?>
 
@@ -16,7 +17,12 @@ include("modelo/funciones.php");
     <script src="js/drag-drop2.js"></script>
     <script type="text/javascript">
         $( document ).ready(function() {
-             $("[rel='tooltip']").tooltip();    
+             /*$('input[type=checkbox]').on('click', function(){
+        var parent = $(this).parent().attr('id');
+        $('#'+parent+' input[type=checkbox]').removeAttr('checked');
+        $(this).attr('checked', 'checked');
+        });*/
+            $("[rel='tooltip']").tooltip();    
             $('.thumbnail').hover(
                 function(){
                     $(this).find('.caption').slideDown(250); //.fadeIn(250)
@@ -26,6 +32,7 @@ include("modelo/funciones.php");
                 }
             ); 
 });
+
 
     </script>
     <style>
@@ -176,7 +183,7 @@ include("modelo/funciones.php");
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse">
                                 <div id="marcos" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="marcos1" class="ui-widget-content ui-corner-tr">
+                                    <div id="marcos1" class="ui-widget-content ui-corner-tr" name="marco[]" value="23,MARCO1">
                                         <img src="../imagenes/canvas.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -319,21 +326,28 @@ include("modelo/funciones.php");
     <div class="row" style="margin: 0px 0px 0px 100px">
     <div class="well col-xs-11">
         <h4>Detalles</h4>
-        <table class="table table-bordered">
+        <textarea id="comp">
+            
+        </textarea>
+        <!--<table class="table table-bordered">
             
             <thead> 
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Categoria</th>
+                    <th>Peso</th>
                     <th>Precio</th>
                 </tr>
             </thead>
 
             <tbody>
+              <div id="comp">
+                  
+              </div>
             </tbody>
 
-        </table>
+        </table>-->
 
 
     </div>
