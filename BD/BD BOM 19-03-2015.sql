@@ -452,15 +452,37 @@ INSERT INTO `categorias` (`cat_id`, `cat_nombre`, `cat_descripcion`) VALUES
 (11, 'Manilla AG', 'Manilla AG'),
 (12, 'Expansor', 'Expansor'),
 (13, 'Corona', 'Corona'),
-(14, 'Guia', 'Guia');
+(14, 'Guia', 'Guia'),
+(15, 'Piñones', 'Piñones'),
+(16, 'Cambios', 'Cambios'),
+(17, 'Horquilla', 'Horquilla'),
+(18, 'Asiento', 'Asiento'),
+(19, 'Biela', 'Biela'),
+(20, 'Pedal', 'Pedal'),
+(21, 'Manubrio', 'Manubrio'),
+(22, 'Frenos', 'Frenos'),
+(23, 'Cadena', 'Cadena'),
+(24, 'Accesorios', 'Accesorios');
 
 
 INSERT INTO `subcategoria` (`subcat_id`, `subcat_nombre`, `cat_id`) VALUES
 (1, 'Llanta', 1),
 (2, 'Neumaticos', 1),
-(3, 'Frenos', 1),
-(4, 'Piñones', 1),
-(5, 'Cambio Trasero', 1);
+(3, 'De Cassette', 15),
+(4, 'De Rosca', 15),
+(5, 'Cambio Trasero', 16),
+(6, 'Cambio Delantero', 16),
+(7, 'Mando Cambio', 16),
+(8, 'Horquilla', 17),  
+(9, 'Sillin', 18),
+(10,'Tija', 18),
+(11,'Platos', 19),
+(12, 'Cadena', 23),
+(13, 'Pedal', 20),
+(14, 'Tubo Manubrio', 21),
+(15, 'Manilla', 21),
+(16, 'Accesorios', 24);
+
 
 INSERT INTO `sucursal` (`suc_id`, `suc_nombre`, `suc_direccion`) VALUES
 (1, 'Sucursal 1', 'Sucursal 1');
