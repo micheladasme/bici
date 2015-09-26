@@ -156,35 +156,55 @@ $_SESSION["bicicleta"]=array();
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                                         Ruedas</a>
                                 </h4>
                             </div>
-                            <div id="collapseOne">
+                            <div id="collapse1" class="panel-collapse collapse">
+                               
                                 <div id="ruedas" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="rueda1" class="ui-widget-content ui-corner-tr">
+                                  
+                                    <div id="rueda1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
                                         <img src="../imagenes/rueda_montana.png" style="width:100%; height: 100%"/>
                                     </div>
-                                    <div id="rueda2" class="ui-widget-content ui-corner-tr">
+                                    <div id="rueda2" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda3" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda4" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda5" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda6" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda7" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda8" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                    <div id="rueda9" class="ui-widget-content ui-corner-tr" style="display:inline-block">
                                         <img src="../imagenes/RUEDA DE 26''.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                                         Marcos</a>
                                 </h4>
                             </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
+                            <div id="collapse2" class="panel-collapse collapse">
                                 <div id="marcos" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="marcos1" class="ui-widget-content ui-corner-tr" name="marco[]" value="23,MARCO1">
+                                    <div id="marcos1" class="ui-widget-content ui-corner-tr" style="display:inline-block" name="marco" value="23">
                                         <img src="../imagenes/canvas.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -194,13 +214,45 @@ $_SESSION["bicicleta"]=array();
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                        Piñones</a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div id="pinones" class="gallery ui-helper-reset ui-helper-clearfix">
+                                    <div id="pinones1" class="ui-widget-content ui-corner-tr" style="display:inline-block" name="piñones" value="28">
+                                        <img src="../imagenes/pinones1.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                        Cambio Trasero</a>
+                                </h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div id="cambiotrs" class="gallery ui-helper-reset ui-helper-clearfix">
+                                    <div id="cambiotrs1" class="ui-widget-content ui-corner-tr" style="display:inline-block" name="cambioTra" value="55">
+                                        <img src="../imagenes/pinones1.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
                                         Horquillas</a>
                                 </h4>
                             </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
+                            <div id="collapse5" class="panel-collapse collapse">
                                 <div id="horquillas" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="horquilla1" class="ui-widget-content ui-corner-tr">
+                                    <div id="horquilla1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
                                         <img src="../imagenes/horquilla.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -210,13 +262,13 @@ $_SESSION["bicicleta"]=array();
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                        Sillin</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                                        Asiento</a>
                                 </h4>
                             </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
+                            <div id="collapse6" class="panel-collapse collapse">
                                 <div id="sillines" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="sillin1" class="ui-widget-content ui-corner-tr">
+                                    <div id="sillin1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
                                         <img src="../imagenes/sillin_fierro_abajo.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -226,13 +278,13 @@ $_SESSION["bicicleta"]=array();
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
                                         Biela</a>
                                 </h4>
                             </div>
-                            <div id="collapseFive" class="panel-collapse collapse">
+                            <div id="collapse7" class="panel-collapse collapse">
                                 <div id="bielas" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="biela1" class="ui-widget-content ui-corner-tr">
+                                    <div id="biela1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
                                         <img src="../imagenes/biela.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -242,13 +294,13 @@ $_SESSION["bicicleta"]=array();
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
                                         Manubrio</a>
                                 </h4>
                             </div>
-                            <div id="collapseSix" class="panel-collapse collapse">
+                            <div id="collapse8" class="panel-collapse collapse">
                                 <div id="manubrios" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="manubrio1" class="ui-widget-content ui-corner-tr">
+                                    <div id="manubrio1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
                                         <img src="../imagenes/manubrio.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -258,28 +310,24 @@ $_SESSION["bicicleta"]=array();
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFiv">Accesorios</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Accesorios</a>
                                 </h4>
                             </div>
-                            <div id="collapseFiv" class="panel-collapse collapse">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <h4 class="list-group-item-heading">List group item heading</h4>
-                                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    </a>
-                                </div>
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item active">
-                                        <h4 class="list-group-item-heading">List group item heading</h4>
-                                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    </a>
-                                </div>
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <h4 class="list-group-item-heading">List group item heading</h4>
-                                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    </a>
-                                </div>
+                            <div id="collapse9" class="panel-collapse collapse">
+                                <div id="manubrios" class="gallery ui-helper-reset ui-helper-clearfix">
+                                    <div id="acce1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/manubrio.png" style="width:100%; height: 100%"/>
+                                    </div>
+                                
+                               
+                                    <div id="acce2" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/manubrio.png" style="width:100%; height: 100%"/>
+                                    </div>
+                               
+                                    <div id="acce3" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                        <img src="../imagenes/manubrio.png" style="width:100%; height: 100%"/>
+                                    </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -327,13 +375,9 @@ $_SESSION["bicicleta"]=array();
     <div class="row" style="margin: 0px 0px 0px 100px">
     <div class="well col-xs-11">
         <h4>Detalles</h4>
-        <div id="comp">
-            <table>
-    <tr><th>marco</th></tr>
-    <tr><td>23,MARCO1</td></tr>
-    <tr><td>75,NEUMATICO 2</td><td>70,FRENO 2</td></tr>
-        </table>
-        </div>
+        <textarea id="comp">
+    
+        </textarea>
     
     </div>
     </div>
@@ -343,6 +387,9 @@ $_SESSION["bicicleta"]=array();
     <?php
            
            include("modals/modal_rueda.php");
+           include("modals/modal_asiento.php");
+           include("modals/modal_biela.php");
+           include("modals/modal_manubrio.php");
     ?>
 
 </div>
