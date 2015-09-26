@@ -1,7 +1,6 @@
-  <?php 
+ <?php 
   $res1 = muestraLlantas();
   $res2 = muestraNeumaticos();
-  $res3 = muestraFrenos();
 
   
 ?>
@@ -43,15 +42,15 @@
                 </div>
                 <div class="modal-body">
                     <form id="iform" method="POST">
-                   <div class="panel-group" id="accordion"  role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="accordion"  role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseR1">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                                         Neumaticos</a>
                                 </h4>
                             </div>
-                            <div id="collapseR1" class="panel-collapse collapse">
+                            <div id="collapse1">
                                 <div class="row" id="neumatico">
                                     <?php foreach ($res2 as $key => $val) { ?>
                                         
@@ -61,7 +60,7 @@
                                                     <div class="caption">
                                                         <h5><?php print($val["pro_nombre"]);?></h5>
                                                         <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
-                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="neumatico" value="<?php print($val['pro_cod'])?>"> Elegir<br> </div></p>
+                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="rueda[neumatico]" value="<?php print($val['pro_cod'].",".$val['pro_nombre'])?>"> Elegir<br> </div></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -76,11 +75,11 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseR2">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                                         Llantas</a>
                                 </h4>
                             </div>
-                            <div id="collapseR2" class="panel-collapse collapse">
+                            <div id="collapse2" class="panel-collapse collapse">
                                 <div class="row">
                                   <?php foreach ($res1 as $key => $val) { ?>
                                         
@@ -90,7 +89,7 @@
                                                     <div class="caption">
                                                         <h4><?php print($val["pro_nombre"]);?></h4>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="llantas" name="llanta" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="llantas" name="rueda[llanta]" value="<?php print($val['pro_cod'].",".$val['pro_nombre'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -99,39 +98,11 @@
                                     <?php } ?>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseR3">
-                                        Freno Trasero</a>
-                                </h4>
-                            </div>
-                            <div id="collapseR3" class="panel-collapse collapse">
-                                <div class="row">
-                                    <?php foreach ($res3 as $key => $val) { ?>
-                                        
-                                    
-                                     <div class="col-md-3">            
-                                                <div class="thumbnail">
-                                                    <div class="caption">
-                                                        <h4><?php print($val["pro_nombre"]);?></h4>
-                                                        <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="freno" name="freno" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
-                                                    </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
-                                                </div>
-                                          </div>
-                                       
-                                    <?php } ?>
-                                </div>
-                           </div>
                         </div>
 
                     </div>
-
-                      
+           
+                    
                  </div>
                 
                 <div class="modal-footer">
