@@ -1,6 +1,7 @@
 <?php
 // Incluir Funciones.
 include_once('../modelo/modelo_noticias.php');
+include_once('../modelo/modelo_imagenes.php');
 
 // Obtenemos los Datos.
 $codigo = $_POST['txtCodigo'];
@@ -9,7 +10,7 @@ $subtitulo = $_POST['txtSub'];
 $contenido  = $_POST['txtCont'];
 
 // Verificamos que no esten vacíos.
-if($codigo == '' || $titulo == '' || $subtitulo == '' || $contenido == '')
+if($codigo == '' || $titulo == '' || $subtitulo == ''  || $contenido == '')
 {
 
     ?>
@@ -24,7 +25,7 @@ if($codigo == '' || $titulo == '' || $subtitulo == '' || $contenido == '')
 }
 
 // Si los campos no estan vacios, hacemos la modificación.
-$modificar = modificaNoticias($codigo, $titulo, $subtitulo, $contenido);
+$modificar = modificaNoticias($codigo, $titulo, $subtitulo, $rutaDestino, $contenido);
 
 if($modificar == 1)
 {
