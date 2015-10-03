@@ -25,11 +25,7 @@ $datos = $_POST;
 
 //print_r(($_SESSION["bicicleta"]));
 
-foreach ($_SESSION["bicicleta"][] as $key => $value) {
 
-print
-	
-}
-
-
-?>
+echo implode(', ', array_map(function ($entry) {
+  return $entry['parte'];
+}, $_SESSION["bicicleta"]));

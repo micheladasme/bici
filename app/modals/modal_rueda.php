@@ -61,7 +61,7 @@
                                                     <div class="caption">
                                                         <h5><?php print($val["pro_nombre"]);?></h5>
                                                         <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
-                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="neumatico" value="<?php print($val['pro_cod'])?>"> Elegir<br> </div></p>
+                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="parte" value="<?php print($val['pro_cod'])?>"> Elegir<br> </div></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -90,7 +90,7 @@
                                                     <div class="caption">
                                                         <h4><?php print($val["pro_nombre"]);?></h4>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="llantas" name="llanta" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="llantas" name="parte" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -118,7 +118,7 @@
                                                     <div class="caption">
                                                         <h4><?php print($val["pro_nombre"]);?></h4>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="freno" name="freno" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="freno" name="parte" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>

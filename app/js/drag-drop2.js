@@ -79,7 +79,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {marco:valor}, // all data will be passed here
+                    data: {parte:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                         
@@ -111,7 +111,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {pinon:valor}, // all data will be passed here
+                    data: {parte:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                         
@@ -143,7 +143,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {pinon:valor}, // all data will be passed here
+                    data: {parte:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                         
@@ -175,7 +175,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {horquilla:valor}, // all data will be passed here
+                    data: {parte:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                        
@@ -229,37 +229,6 @@ $(function() {
         }
     });
 
-     $("#cont-horquilla").droppable({
-        accept: "#horquillas div",
-        activeClass: "ui-state-hover",
-        hoverClass: "ui-state-active",
-        drop: function(event, ui) {
-            var width = $(this).width();
-            var height = $(this).height();
-            var ids = "#"+($(ui.draggable).attr('id'));
-            var valor = ($(ui.draggable).attr('value'));
-            $(ids).addClass("ui-draggable-dragging");
-            $("#cont-horquilla").append($(ids));
-            $(ids).css({
-                height: height,
-                width: width,
-                margin: 0,
-                top:0,
-                left:0
-            });
-            $.ajax({
-                    url: "control/RPartes.php", // link of your "whatever" php
-                    type: "POST",
-                    async: true,
-                    cache: false,
-                    data: {horquilla:valor}, // all data will be passed here
-                    success: function(data){ 
-                        $("#comp").val(data); 
-                       
-                    }
-                });
-        }
-    });
 
     $("#cont-manubrio").droppable({
         accept: "#manubrios div",
