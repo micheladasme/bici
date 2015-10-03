@@ -23,8 +23,13 @@ $datos = $_POST;
 
 //print_r($datos);
 
-print_r(($_SESSION["bicicleta"]));
+//print_r(($_SESSION["bicicleta"]));
 
+foreach ($_SESSION["bicicleta"][] as $key => $value) {
+
+print
+	
+}
 
 
 ?>

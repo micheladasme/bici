@@ -1,10 +1,13 @@
 $(function() {
     $('div', $('#ruedas')).draggable({ revert: "valid", helper: "clone"});
-    $('div', $('#marcos')).draggable({ revert: "invalid" });
-    $('div', $('#horquillas')).draggable({ revert: "invalid" });
-    $('div', $('#sillines')).draggable({ revert: "invalid" });
-    $('div', $('#bielas')).draggable({ revert: "invalid" });
-    $('div', $('#manubrios')).draggable({ revert: "invalid" });
+    $('div', $('#marcos')).draggable({  revert: "valid", helper: "clone" });
+    $('div', $('#pinones')).draggable({  revert: "valid", helper: "clone" });
+    $('div', $('#cambiotrs')).draggable({  revert: "valid", helper: "clone" });
+    $('div', $('#horquillas')).draggable({  revert: "valid", helper: "clone" });
+    $('div', $('#sillines')).draggable({  revert: "valid", helper: "clone" });
+    $('div', $('#bielas')).draggable({  revert: "valid", helper: "clone" });
+    $('div', $('#manubrios')).draggable({  revert: "valid", helper: "clone" });
+    
 
     $("#cont-rueda").droppable({
         accept: "#ruedas div",
@@ -62,7 +65,6 @@ $(function() {
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
             var valor = ($(ui.draggable).attr('value'));
-            var array = ($(ui.draggable).attr('name'));
             $(ids).addClass("ui-draggable-dragging");
             $("#cont-marco").append($(ids));
             $(ids).css({
@@ -72,7 +74,6 @@ $(function() {
                 top:0,
                 left:0
             });
-                alert(array);
             $.ajax({
                     url: "control/RPartes.php", // link of your "whatever" php
                     type: "POST",
@@ -81,7 +82,71 @@ $(function() {
                     data: {marco:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
-                        $("#modalRueda").modal("hide");// The data that is echoed from the ajax.php
+                        
+                    }
+                });
+            }
+    });
+
+     $("#cont-pinones").droppable({
+        accept: "#pinones div",
+        activeClass: "ui-state-hover",
+        hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+            var width = $(this).width();
+            var height = $(this).height();
+            var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
+            $(ids).addClass("ui-draggable-dragging");
+            $("#cont-pinones").append($(ids));
+            $(ids).css({
+                height: height,
+                width: width,
+                margin: 0,
+                top:0,
+                left:0
+            });
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {pinon:valor}, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").val(data); 
+                        
+                    }
+                });
+            }
+    });
+
+     $("#cont-cambioTra").droppable({
+        accept: "#cambiotrs div",
+        activeClass: "ui-state-hover",
+        hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+            var width = $(this).width();
+            var height = $(this).height();
+            var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
+            $(ids).addClass("ui-draggable-dragging");
+            $("#cont-cambioTra").append($(ids));
+            $(ids).css({
+                height: height,
+                width: width,
+                margin: 0,
+                top:0,
+                left:0
+            });
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {pinon:valor}, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").val(data); 
+                        
                     }
                 });
             }
@@ -95,6 +160,7 @@ $(function() {
             var width = $(this).width();
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
             $(ids).addClass("ui-draggable-dragging");
             $("#cont-horquilla").append($(ids));
             $(ids).css({
@@ -104,7 +170,17 @@ $(function() {
                 top:0,
                 left:0
             });
-
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {horquilla:valor}, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").val(data); 
+                       
+                    }
+                });
         }
     });
 
@@ -116,6 +192,7 @@ $(function() {
             var width = $(this).width();
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
             $(ids).addClass("ui-draggable-dragging");
             $("#cont-sillin").append($(ids));
             $(ids).css({
@@ -125,6 +202,7 @@ $(function() {
                 top:0,
                 left:0
             });
+             $('#modalSillin').modal('show');
 
         }
     });
@@ -137,6 +215,7 @@ $(function() {
             var width = $(this).width();
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
             $(ids).addClass("ui-draggable-dragging");
             $("#cont-biela").append($(ids));
             $(ids).css({
@@ -146,7 +225,39 @@ $(function() {
                 top:0,
                 left:0
             });
+             $('#modalBiela').modal('show');
+        }
+    });
 
+     $("#cont-horquilla").droppable({
+        accept: "#horquillas div",
+        activeClass: "ui-state-hover",
+        hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+            var width = $(this).width();
+            var height = $(this).height();
+            var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
+            $(ids).addClass("ui-draggable-dragging");
+            $("#cont-horquilla").append($(ids));
+            $(ids).css({
+                height: height,
+                width: width,
+                margin: 0,
+                top:0,
+                left:0
+            });
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {horquilla:valor}, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").val(data); 
+                       
+                    }
+                });
         }
     });
 
@@ -158,6 +269,7 @@ $(function() {
             var width = $(this).width();
             var height = $(this).height();
             var ids = "#"+($(ui.draggable).attr('id'));
+             var valor = ($(ui.draggable).attr('value'));
             $(ids).addClass("ui-draggable-dragging");
             $("#cont-manubrio").append($(ids));
             $(ids).css({
@@ -167,7 +279,7 @@ $(function() {
                 top:0,
                 left:0
             });
-
+             $('#modalManubrio').modal('show');
         }
     });
 
