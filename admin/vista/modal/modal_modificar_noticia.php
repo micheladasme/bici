@@ -27,6 +27,7 @@ foreach($datos as $d)
                         <p> Id : <input type="text" id="txt_cod" name="txtCod"  class="form-control" value="<?php echo $d['not_id']; ?>" required readonly/>   </p>
                         <p> Titulo :  <input type="text" id="txt_nom" name="txtTitulo" class="form-control" value="<?php echo $d['not_titulo']; ?>" required/>    </p>
                         <p> Sub Titulo :  <input type="text" id="txt_comp" name="txtSub"  class="form-control" value="<?php echo $d['not_subtitulo']; ?>" required/>    </p>
+                        <p> Imagen : <input id="imagen" name="imagen" type="file" class="form-control" value="" required/>    </p>
                         <p> Contenido :  <textarea rows="5" id="txt_vent" name="txtCont"  class="form-control" required> <?php echo $d['not_contenido']; ?></textarea>  </p>
                         <input type="hidden" name="txtCodigo" value="<?php echo $d['not_id']; ?>">
                         <?php
