@@ -22,7 +22,7 @@ include("modelo/funciones.php");
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/font-awesome.mizn.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/templatemo_style.css">
@@ -42,23 +42,23 @@ include("modelo/funciones.php");
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    
+
     <div class="bg-overlay"></div>
 
     <div class="container-fluid">
         <div class="row">
-            
+
             <div class="col-md-4 col-sm-12">
-                <div class="sidebar-menu" >
-                    
+                <div class="sidebar-menu">
+
                     <div class="logo-wrapper">
                         <a rel="nofollow" href="vista_inicio.php"><img src="images/logo 2.0.png" alt="Circle Template" style="width:100%">
                         <h1 class="logo">
-                            
+
                             <span href="http://www.templatemo.com/preview/templatemo_410_circle">Atencion unica</span></a>
                         </h1>
                     </div> <!-- /.logo-wrapper -->
-                    
+
                     <div class="menu-wrapper">
                         <ul class="menu">
                             <li><a class="show-4" href="#">Inicio</a></li>
