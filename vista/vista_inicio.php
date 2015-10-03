@@ -464,9 +464,9 @@ include("modelo/funciones.php");
                     <div id="menu-6" class="contact content">
                         <div class="row">
                             
-                            <div class="col-md-12">
+                            <div class="col-md-12" >
                                 <div class="toggle-content text-center spacing">
-                                    <h3>Noticias</h3>
+                                    <h3 >Noticias</h3>
                                   <!-- /  <p></p>-->
 
                                      <?php
@@ -474,14 +474,15 @@ include("modelo/funciones.php");
                                         foreach ($res2 as $y)
                                         {
                                                   echo(' <div class="row">
-                                                          <div class="col-sm-6 col-md-4">
+                                                          <div class="col-sm-12 ">
                                                             <div class="thumbnail">
-                                                              <img src="'.$y['no_titulo'].'" alt="...">
+                                                              <img  class="col-sm-4 " style="height: 130px; width: 200px; " src="'.$y['not_imagen'].'" alt="...">
                                                               <div class="caption">
-                                                                <h3>'.$y['no_titulo'].'</h3>
-                                                                <p>'.$y['no_cuerpo'].'</p>
-                                                                <p><a href="#" class="btn btn-primary" role="button">Ver Mas >></a> </p>
+                                                                <h3>'.$y['not_titulo'].'</h3>
+                                                                <p>'.$y['not_subtitulo'].'</p>
+
                                                               </div>
+                                                              <button type="button" class="btn btn-primary" onclick="$(#mimodalN).modal(show)">Seguir Leyendo</a>
                                                             </div>
                                                           </div>
                                                         </div>');
