@@ -47,7 +47,7 @@
 		$a=array();
 		$x=0;
 
-		$sql=("SELECT no_titulo, no_fecha,no_cuerpo,no_imagen  FROM noticias ORDER BY no_id DESC");
+		$sql=("SELECT not_titulo, not_fecha,not_subtitulo,not_imagen  FROM noticias ORDER BY not_id DESC");
 		$res=mysql_query($sql,$link);
 		while($f=mysql_fetch_array($res))
 		{
