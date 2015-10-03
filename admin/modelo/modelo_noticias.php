@@ -59,7 +59,7 @@ function muestraNoticiasid($codigo)
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT not_id, not_titulo, not_subtitulo, not_contenido FROM noticias WHERE not_id = $codigo");
+    $sql=("SELECT not_id, not_titulo, not_subtitulo, not_imagen, not_contenido FROM noticias WHERE not_id = $codigo");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
@@ -100,10 +100,10 @@ function eliminaNoticia($codigo)
 }
 
 // Función Modificar Producto.
-function modificaNoticias($codigo, $titulo, $subtitulo, $contenido)
+function modificaNoticias($codigo, $titulo, $subtitulo, $imagen, $contenido)
 {
     $link=conectar();
-    $sql="UPDATE noticias SET not_titulo = '$titulo', not_subtitulo = '$subtitulo', not_contenido = '$contenido' WHERE not_id = '$codigo'  ";
+    $sql="UPDATE noticias SET not_titulo = '$titulo', not_subtitulo = '$subtitulo', not_imagen = '$imagen' , not_contenido = '$contenido' WHERE not_id = '$codigo'  ";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     // Verificamos si se realizo el insert
     if(mysql_affected_rows()>0)
