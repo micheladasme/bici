@@ -23,7 +23,7 @@ include("modelo/funciones.php");
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.mizn.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/templatemo_style.css">
@@ -50,7 +50,7 @@ include("modelo/funciones.php");
         <div class="row">
             
             <div class="col-md-4 col-sm-12">
-                <div class="sidebar-menu">
+                <div class="sidebar-menu" >
                     
                     <div class="logo-wrapper">
                         <a rel="nofollow" href="vista_inicio.php"><img src="images/logo 2.0.png" alt="Circle Template" style="width:100%">
