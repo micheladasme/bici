@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="vista_inicio_admin.php">
-                <img alt="Brand" src="../img/logo.png" style="width:160px;height:50px;">
+                <img alt="Brand" src="../img/logo.png" style="width:120px;height:40px;">
             </a>
         </div>
 
@@ -35,7 +35,18 @@
 
 
 
-                <!--<li class="dropdown">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> Venta y Servicios <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a href="vista_venta.php">Nueva Venta</a></li>
+                        <li> <a href="vista_ver_venta.php">Anular Venta</a></li>
+                        <li class="divider"></li>
+                        <li> <a href="vista_nuevo_servicio.php">Nuevo Servicio</a></li>
+                        <li> <a href="vista_historial_servicios.php">Historial Servicios</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-th-large"></span> Productos <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li> <a href="vista_ver_producto.php">Ver Productos</a></li>
@@ -43,30 +54,30 @@
                         <li> <a href="vista_modificar_producto.php">Modificar Producto</a></li>
                         <li> <a href="vista_eliminar_producto.php">Anular Producto</a></li>
                     </ul>
-                </li>-->
+                </li>
 
-               <!-- <li class="dropdown">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-inbox"></span> Stock <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li> <a href="vista_stock_general.php">Ver Stock</a></li>
                         <li> <a href="vista_ingresar_stock.php">Ingresar Stock</a></li>
                     </ul>
-                </li>-->
+                </li>
 
-                <!--<li class="dropdown">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-list"></span> Categorias <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li> <a href="vista_ver_categorias.php">Ver Categorias</a></li>
                         <li> <a href="vista_ingresar_categoria.php">Ingresar Categoria</a></li>
 
-                         <li class="divider"></li>
-                         <li> <a href="vista_ver_subcategoria.php">Ver Sub-Categoria</a></li>
-                         <li> <a href="vista_ingresar_subcategoria.php">Ingresar Sub-Categoria</a></li>
+                        <!--<li class="divider"></li>
+                        <li> <a href="vista_ver_subcategoria.php">Ver Sub-Categoria</a></li>
+                        <li> <a href="vista_ingresar_subcategoria.php">Ingresar Sub-Categoria</a></li>-->
 
                     </ul>
-                </li>-->
+                </li>
 
-                <!--<li> <a href="vista_pedidos.php"><span class="glyphicon glyphicon-list-alt"></span> Pedidos </a></li>-->
+                <li> <a href="vista_pedidos.php"><span class="glyphicon glyphicon-list-alt"></span> Pedidos </a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-usd"></span> Gastos <span class="caret"></span></a>
@@ -89,9 +100,21 @@
                     </ul>
                 </li>
 
-                <li> <a href="vista_ingresar_noticia.php"><span class="glyphicon glyphicon-comment"></span> Noticias</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-comment"></span> Noticias <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a href="vista_ver_noticia.php">Ver Noticias</a></li>
+                        <li class="divider"></li>
+                        <li> <a href="vista_ingresar_noticia.php">Ingresar Noticias</a></li>
+                        <li> <a href="vista_modificar_noticia.php">Modificar Noticias</a></li>
+                        <li> <a href="vista_eliminar_noticia.php">Eliminar Noticias</a></li>
+                    </ul>
+                </li>
 
-                <li> <a href="reportes.php"><span class="glyphicon glyphicon-stats"></span> Reportes</a></li>
+
+                <li>
+                    <a href="reportes.php"><span class="glyphicon glyphicon-stats"></span> Reportes</a>
+                </li>
 
 
 
