@@ -25,7 +25,26 @@ $datos = $_POST;
 
 //print_r(($_SESSION["bicicleta"]));
 
+foreach ($_SESSION["bicicleta"] as $row) {
+print(isset($row["neumatico"])?$row["neumatico"]:"");
+print(isset($row["neumatico"])?",".$row["neumatico"]:"");
+print(isset($row["llanta"])?",".$row["llanta"]:"");
+print(isset($row["llanta"])?",".$row["llanta"]:"");
+print(isset($row["frenoTra"])?",".$row["frenoTra"]:"");
+print(isset($row["marco"])?",".$row["marco"]:"");
+print(isset($row["pinon"])?",".$row["pinon"]:"");
+print(isset($row["cambioTra"])?",".$row["cambioTra"]:"");
+print(isset($row["horquilla"])?",".$row["horquilla"]:"");
+print(isset($row["sillin"])?",".$row["tija"]:"");	
+print(isset($row["platos"])?",".$row["platos"]:"");
+print(isset($row["cadena"])?",".$row["cadena"]:"");
+print(isset($row["pedal"])?",".$row["pedal"]:"");
+print(isset($row["manubrio"])?",".$row["manubrio"]:"");
+print(isset($row["manillar"])?",".$row["manillar"]:"");
+print(isset($row["frenosDel"])?",".$row["frenosDel"]:"");
+print(isset($row["mando"])?",".$row["mando"]:"");
+print(isset($row["accesorios"])?",".$row["accesorios"]:"");
+}
 
-echo implode(', ', array_map(function ($entry) {
-  return $entry['parte'];
-}, $_SESSION["bicicleta"]));
+
+?>

@@ -32,8 +32,21 @@ $_SESSION["bicicleta"]=array();
                     $(this).find('.caption').slideUp(250); //.fadeOut(205)
                 }
             ); 
-});
+        });
 
+     function tablaProductos(cadena){
+
+            $.ajax({
+                    url: "control/controlIPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data:{productos:cadena}, // all data will be passed here
+                    success: function(data){ 
+                        $("#comp").html(data); 
+                    }
+                });
+        }
 
     </script>
     <style>
@@ -252,7 +265,7 @@ $_SESSION["bicicleta"]=array();
                             </div>
                             <div id="collapse5" class="panel-collapse collapse">
                                 <div id="horquillas" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="horquilla1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
+                                    <div id="horquilla1" class="ui-widget-content ui-corner-tr" style="display:inline-block" name="horquilla" value="86">
                                         <img src="../imagenes/horquilla.png" style="width:100%; height: 100%"/>
                                     </div>
                                 </div>
@@ -375,9 +388,9 @@ $_SESSION["bicicleta"]=array();
     <div class="row" style="margin: 0px 0px 0px 100px">
     <div class="well col-xs-11">
         <h4>Detalles</h4>
-        <textarea id="comp">
+        <div id="comp">
     
-        </textarea>
+        </div>
     
     </div>
     </div>

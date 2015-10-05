@@ -8,6 +8,26 @@ function conectar()
 		return $link;
 	}
 
+function muestraProductosArmado($cadena)
+{
+    $link = conectar();
+    $a=array();
+    $x=0;
+    $sql2 = "SELECT * FROM productos WHERE pro_cod IN ($cadena)";
+    $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
+    while($f=mysql_fetch_assoc($res2))
+    {
+
+        $a[$x]=$f;
+        $x++;
+
+    }
+    mysql_close($link);
+    return $a;
+
+
+}    
+
 function muestraLlantas()
 {
 	$link = conectar();

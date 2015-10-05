@@ -79,7 +79,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {parte:valor}, // all data will be passed here
+                    data: {marco:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                         
@@ -111,7 +111,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {parte:valor}, // all data will be passed here
+                    data: {pinon:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                         
@@ -143,7 +143,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {parte:valor}, // all data will be passed here
+                    data: {cambioTra:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                         
@@ -175,7 +175,7 @@ $(function() {
                     type: "POST",
                     async: true,
                     cache: false,
-                    data: {parte:valor}, // all data will be passed here
+                    data: {horquilla:valor}, // all data will be passed here
                     success: function(data){ 
                         $("#comp").val(data); 
                        
