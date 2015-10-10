@@ -14,7 +14,7 @@ function registraProducto($codigo, $nombre, $compra, $venta, $rutaDestino, $peso
 {
 $x=0;
 $link=conectar();
-$sql="INSERT INTO productos (pro_cod, pro_nombre, pro_precio_compra, pro_precio_venta , pro_imagen , pro_peso, pro_descripcion, pro_estado , cat_id) VALUES ('$codigo', '$nombre', '$compra', '$venta','$rutaDestino', '$peso','$descripcion', 1 ,'$categoria')";
+$sql="INSERT INTO productos (pro_cod, pro_nombre, pro_precio_compra, pro_precio_venta , pro_imagen , pro_peso, pro_descripcion, pro_estado , subcat_id) VALUES ('$codigo', '$nombre', '$compra', '$venta','$rutaDestino', '$peso','$descripcion', 1 ,'$categoria')";
 $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
 // Verificamos si se realizo el insert
 if(mysql_affected_rows()>0)
@@ -64,7 +64,7 @@ function buscaProductoDetalle($codigo){
     $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso,pr.pro_color,pr.pro_talla, cat.cat_nombre
         FROM productos pr,categorias cat
         WHERE pr.pro_cod = $codigo
-        AND pr.cat_id = cat.cat_id";
+        AND pr.subcat_id = cat.subcat_id";
     $res2= mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
@@ -83,7 +83,7 @@ function muestraProductos()
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, cat.cat_nombre FROM productos pro, categorias cat WHERE pro.cat_id = cat.cat_id AND pro_estado = 1 ORDER BY pro_nombre ASC");
+    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, cat.cat_nombre FROM productos pro, categorias cat WHERE pro.subcat_id = cat.subcat_id AND pro_estado = 1 ORDER BY pro_nombre ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
