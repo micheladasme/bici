@@ -83,7 +83,7 @@ function muestraProductos()
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, subsubcat.cat_nombre FROM productos pro, subcategoria subcat WHERE pro.subcat_id = subcat.subcat_id AND pro_estado = 1 ORDER BY pro_nombre ASC");
+    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, subcat.cat_nombre FROM productos pro, subcategoria subcat WHERE pro.subcat_id = subcat.subcat_id AND pro_estado = 1 ORDER BY pro_nombre ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
