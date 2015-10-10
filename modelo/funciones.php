@@ -47,7 +47,7 @@
 		$a=array();
 		$x=0;
 
-		$sql=("SELECT not_titulo, not_fecha,not_subtitulo,not_imagen  FROM noticias ORDER BY not_id DESC");
+		$sql=("SELECT not_id, not_titulo, not_fecha,not_subtitulo,not_imagen  FROM noticias ORDER BY not_id DESC");
 		$res=mysql_query($sql,$link);
 		while($f=mysql_fetch_array($res))
 		{
@@ -57,6 +57,25 @@
 		mysql_close($link);
 		return $a;
 	}
+
+function MuestraNoticiasTodo($codigo)
+{
+    $link=conectar();
+    $a=array();
+    $x=0;
+
+    $sql=("SELECT *  FROM noticias where not_id = $codigo");
+    $res=mysql_query($sql,$link);
+    while($f=mysql_fetch_array($res))
+    {
+        $a[$x]=$f;
+        $x++;
+    }
+    mysql_close($link);
+    return $a;
+}
+
+
 
 	function existeCliente($correo)
 	{

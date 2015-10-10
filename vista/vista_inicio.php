@@ -1,5 +1,5 @@
 <?php
-include("modelo/funciones.php");
+include("../modelo/funciones.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,21 +20,34 @@ include("modelo/funciones.php");
     -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/templatemo_misc.css">
-    <link rel="stylesheet" href="css/templatemo_style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/normalize.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/templatemo_misc.css">
+    <link rel="stylesheet" href="../css/templatemo_style.css">
 
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    
+    <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="../js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
 
-    
-    
 
+    <script>
+
+    function modalNoticia(id){
+
+    $.ajax({
+    url: "../modal/modal_detalle_noticia.php", // link of your "whatever" php
+    type: "POST",
+    data:{codigo:id}, // all data will be passed here
+    success: function(data){
+        $("#divModal").html(data);
+
+    }
+    });
+    }
+
+    </script>
 	<!-- templatemo 410 circle -->
 </head>
 <body>
@@ -52,7 +65,7 @@ include("modelo/funciones.php");
                 <div class="sidebar-menu">
 
                     <div class="logo-wrapper">
-                        <a rel="nofollow" href="vista_inicio.php"><img src="images/logo 2.0.png" alt="Circle Template" style="width:100%">
+                        <a rel="nofollow" href="vista_inicio.php"><img src="../images/logo 2.0.png" alt="Circle Template" style="width:100%">
                         <h1 class="logo">
 
                             <span href="http://www.templatemo.com/preview/templatemo_410_circle">Atencion unica</span></a>
@@ -67,7 +80,7 @@ include("modelo/funciones.php");
                             <li><a class="show-6" href="#">Noticias</a></li>
                        <!-- <li><a class="show-4" href="#">Productos</a></li>-->
                             <li><a class="show-5" href="#" onclick="templatemo_map();">Contactanos</a></li>
-                            <li><a rel="nofollow" href="app/index.php">Arma Tu Bicicleta</a></li>
+                            <li><a rel="nofollow" href="../app/index.php">Arma Tu Bicicleta</a></li>
                         </ul> <!-- /.menu -->
                         <a href="#" class="toggle-menu"  ><i class="fa fa-bars"></i></a>
 
@@ -204,7 +217,7 @@ include("modelo/funciones.php");
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/RogelioCano.png" alt="Rogelio Cano" data-rel="lightbox" class="overlay" href="images/team/RogelioCano.png">
+                                        <img src="../images/team/RogelioCano.png" alt="Rogelio Cano" data-rel="lightbox" class="overlay" href="images/team/RogelioCano.png">
                                     </div>
                                     <h4>Rogelio Cano</h4>
                                                   
@@ -216,7 +229,7 @@ include("modelo/funciones.php");
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/EstebanCastro.png" alt="Esteban Castro" data-rel="lightbox" class="overlay" href="images/team/EstebanCastro.png">
+                                        <img src="../images/team/EstebanCastro.png" alt="Esteban Castro" data-rel="lightbox" class="overlay" href="images/team/EstebanCastro.png">
                                     </div>
                                     <h4>Esteban Castro</h4>
                                                        
@@ -228,7 +241,7 @@ include("modelo/funciones.php");
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/RodrigoFarias.png" alt="Rodrigo Farias" data-rel="lightbox" class="overlay" href="images/team/RodrigoFarias.png">
+                                        <img src="../images/team/RodrigoFarias.png" alt="Rodrigo Farias" data-rel="lightbox" class="overlay" href="images/team/RodrigoFarias.png">
                                     </div>
                                     <h4>Rodrigo Farias</h4>
                                        
@@ -239,7 +252,7 @@ include("modelo/funciones.php");
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/IgnacioSaavedra.PNG" alt="Ignacio Saavedra" data-rel="lightbox" class="overlay" href="images/team/IgnacioSaavedra.PNG">
+                                        <img src="../images/team/IgnacioSaavedra.PNG" alt="Ignacio Saavedra" data-rel="lightbox" class="overlay" href="images/team/IgnacioSaavedra.PNG">
                                     </div>
                                     <h4>Ignacio Saavedra</h4>
                                                    
@@ -396,7 +409,7 @@ include("modelo/funciones.php");
 
                               echo(   '<div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="'. $x['pro_imagen'] .'" alt="">
+                                    <img src="../'. $x['pro_imagen'] .'" alt="">
                                     <a data-rel="lightbox" class="overlay" href="'. $x['pro_imagen'] .'">
                                         <span>+</span>
                                     </a>
@@ -469,6 +482,10 @@ include("modelo/funciones.php");
                                     <h3 >Noticias</h3>
                                   <!-- /  <p></p>-->
 
+
+
+
+
                                      <?php
                                       $res2 = MuestraNoticias();
                                         foreach ($res2 as $y)
@@ -476,26 +493,27 @@ include("modelo/funciones.php");
                                                   echo(' <div class="row">
                                                           <div class="col-sm-12 ">
                                                             <div class="thumbnail">
-                                                              <img  class="col-sm-4 " style="height: 130px; width: 200px; " src="'.$y['not_imagen'].'" alt="...">
+                                                              <img  class="col-sm-4 " style="height: 130px; width: 200px; " src="../'.$y['not_imagen'].'" alt="...">
                                                               <div class="caption">
                                                                 <h3>'.$y['not_titulo'].'</h3>
                                                                 <p>'.$y['not_subtitulo'].'</p>
 
                                                               </div>
-                                                              <button type="button" class="btn btn-primary" onclick="$(#mimodalN).modal(show)">Seguir Leyendo</a>
+                                                       <a onClick="modalNoticia('.$y['not_id'].')" class="btn btn-sm btn-info"><span
+                            class="glyphicon glyphicon-plus-sign"></span> Ver Mas </a>
                                                             </div>
                                                           </div>
                                                         </div>');
                                         }
                                     ?>
+
                                 </div>
                             </div> <!-- /.col-md-12 -->
 
                         </div> <!-- /#menu-container -->
 
                     </div> <!-- /.col-md-8 -->
-
-        </div> <!-- /.row -->
+                </div> <!-- /.row -->
     </div> <!-- /.container-fluid -->
     
     <div class="container-fluid">   
@@ -508,11 +526,11 @@ include("modelo/funciones.php");
     </div> <!-- /.container-fluid -->
 
    
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-    <script src="js/jquery.easing-1.3.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="../js/jquery.easing-1.3.js"></script>
  
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
     <script type="text/javascript">
             
 			jQuery(function ($) {
@@ -528,13 +546,13 @@ include("modelo/funciones.php");
                     slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
                     slides: [ // Slideshow Images
                         {
-                            image: 'images/fondo/templatemo-slide-1.jpg'
+                            image: '../images/fondo/templatemo-slide-1.jpg'
                         }, {
-                            image: 'images/fondo/templatemo-slide-2.jpg'
+                            image: '../images/fondo/templatemo-slide-2.jpg'
                         }, {
-                            image: 'images/fondo/templatemo-slide-3.jpg'
+                            image: '../images/fondo/templatemo-slide-3.jpg'
                         }, {
-                            image: 'images/fondo/templatemo-slide-4.jpg'
+                            image: '../images/fondo/templatemo-slide-4.jpg'
                         }
                     ]
 
@@ -545,7 +563,7 @@ include("modelo/funciones.php");
     
     	<!-- Google Map -->
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="js/vendor/jquery.gmap3.min.js"></script>
+        <script src="../js/vendor/jquery.gmap3.min.js"></script>
         
         <!-- Google Map Init-->
        <!-- <script type="text/javascript">
@@ -570,5 +588,7 @@ include("modelo/funciones.php");
 
             } 
         </script>-->
+        <div id="divModal">
+            </div>
 </body>
 </html>
