@@ -61,7 +61,7 @@ function buscaProductoDetalle($codigo){
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso,pr.pro_color,pr.pro_talla, subsubcat.cat_nombre
+    $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso,pr.pro_color,pr.pro_talla, subcat.cat_nombre
         FROM productos pr,subcategoria subcat
         WHERE pr.pro_cod = $codigo
         AND pr.subcat_id = subcat.subcat_id";
