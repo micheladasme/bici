@@ -33,7 +33,7 @@ if (isset($_GET['codigo'])) {
                             <tr>
                                 <td class="h6"><strong>Categoria</strong></td>
                                 <td> </td>
-                                <td class="h5"><?php print($b["cat_nombre"]) ?> </td>
+                                <td class="h5"><?php print($b["subcat_nombre"]) ?> </td>
                             </tr>
 
                             <tr>
