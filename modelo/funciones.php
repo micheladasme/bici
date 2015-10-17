@@ -63,8 +63,12 @@ function MuestraNoticiasTodo($codigo)
     $link=conectar();
     $a=array();
     $x=0;
+    $sql = "SELECT noti.not_id, noti.not_titulo, noti.not_subtitulo, noti.not_contenido, noti.not_imagen,
+		                noti.not_fecha, noti.usu_id, usu.usu_id, usu.usu_nombre from noticias noti
+		                inner JOIN usuarios usu ON noti.usu_id = usu.usu_id WHERE not_id = $codigo";
 
-    $sql=("SELECT *  FROM noticias where not_id = $codigo");
+
+   // $sql=("SELECT *  FROM noticias where not_id = $codigo");
     $res=mysql_query($sql,$link);
     while($f=mysql_fetch_array($res))
     {
@@ -80,7 +84,8 @@ function MuestraNoticiasTodo($codigo)
 	function existeCliente($correo)
 	{
 		$link = conectar();
-		$sql = "SELECT * FROM cliente WHERE cli_correo = '$correo'";
+
+        $sql = "SELECT * FROM cliente WHERE cli_correo = '$correo'";
 		$resultado = mysql_query($sql, $link);
 		if(mysql_num_rows($resultado) > 0)
 		{
@@ -88,3 +93,4 @@ function MuestraNoticiasTodo($codigo)
 		}
 		mysql_close($link);
 	}
+?>

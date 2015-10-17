@@ -1,17 +1,17 @@
 Armado de Bicicleta
 
-- MARCO (500x500)
+- MARCO (500x500) listo
 
-- PIÑONES (250x250)
+- PIÑONES (250x250) listo
 	
-- CAMBIO TRASERO (500x500)
+- CAMBIO TRASERO (500x500)listo
 
-- HORQUILLA (70x660) 
+- HORQUILLA (70x660) listo
 
-- sILLIN (680x320)
+- sILLIN (680x320) listo
 	
-- TIJA (120x540)
+- TIJA (120x540) listo
 
 - BIELA (500x500)
 	
-- MANUBRIO (80x50) 
+- MANUBRIO (80x50) listo
