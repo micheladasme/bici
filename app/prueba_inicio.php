@@ -55,7 +55,7 @@
 
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="email" id="txt_usu" name="txt_usu" type="text" class="form-control"  placeholder="Usuario">
+                        <input type="email" id="txt_usu" name="txt_usu" type="text" class="form-control"  placeholder="Email">
                     </div>
 
                     <div style="margin-bottom: 25px" class="input-group">
