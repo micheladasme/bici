@@ -81,7 +81,7 @@ $(function() {
                     cache: false,
                     data: {marco:valor}, // all data will be passed here
                     success: function(data){ 
-                        $("#comp").val(data); 
+                        tablaProductos(data); 
                         
                     }
                 });
