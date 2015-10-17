@@ -37,7 +37,9 @@ include("../modelo/funciones.php");
     function modalNoticia(id){
 
     $.ajax({
-    url: "../modal/modal_detalle_noticia.php", // link of your "whatever" php
+    url: "/biciomatic/modal/modal_detalle_noticia.php", // link of your "whatever" php
+    async: true,
+    cache: false,
     type: "POST",
     data:{codigo:id}, // all data will be passed here
     success: function(data){
