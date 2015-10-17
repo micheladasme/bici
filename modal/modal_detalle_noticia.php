@@ -1,14 +1,16 @@
 <?php
-$dato=$_POST;
+include("../modelo/funciones.php");
+$dato = $_POST;
+
 if (isset($dato['codigo'])) {
-$codigo = $dato['codigo'];
-    $res3 = MuestraNoticiasTodo($dato['codigo']);
+   $cod = $dato['codigo']; 
+$res3 = MuestraNoticiasTodo($cod);
 
 
     foreach ($res3 as $b) {
-        ?>
+        
 
-        <div class="modal fade" id="modalNot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       print( '<div class="modal fade" id="modalNot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -32,7 +34,7 @@ $codigo = $dato['codigo'];
         <script>
 
             $("#modalNot").modal("show");
-        </script>
-    <?php
+        </script>');
+    
     }
 } ?>
