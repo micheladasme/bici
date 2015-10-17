@@ -26,7 +26,7 @@
                     data: data, // all data will be passed here
                     success: function(data){ 
                         //$("#comp").val(data);
-                         tablaProductos(data);
+                        tablaProductos(data);
                         $("#modalRueda").modal("hide");// The data that is echoed from the ajax.php
                     }
                 });
@@ -54,15 +54,15 @@
                             </div>
                             <div id="collapseR1" class="panel-collapse collapse">
                                 <div class="row" id="neumatico">
-                                    <?php foreach ($res2 as $key => $val) { ?>
+                                    <?php foreach ($res2 as $key => $valn) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h5><?php print($val["pro_nombre"]);?></h5>
-                                                        <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
-                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="neumatico" value="<?php print($val['pro_cod'])?>"> Elegir<br> </div></p>
+                                                        <h5><?php print($valn["pro_nombre"]);?></h5>
+                                                        <p>$<?php print($valn["pro_precio_venta"]);?> - <?php print($valn["pro_peso"]);?></p>
+                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="neumatico" value="<?php print($valn['pro_cod'])?>"> Elegir<br> </div></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -83,15 +83,15 @@
                             </div>
                             <div id="collapseR2" class="panel-collapse collapse">
                                 <div class="row">
-                                  <?php foreach ($res1 as $key => $val) { ?>
+                                  <?php foreach ($res1 as $key => $vall) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($val["pro_nombre"]);?></h4>
-                                                        <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="llanta" name="llanta" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                        <h4><?php print($vall["pro_nombre"]);?></h4>
+                                                        <p>$<?php print($vall["pro_precio_venta"]);?></p>
+                                                       <p> <input type="checkbox" id="llanta" name="llanta" value="<?php print($vall['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -111,15 +111,15 @@
                             </div>
                             <div id="collapseR3" class="panel-collapse collapse">
                                 <div class="row">
-                                    <?php foreach ($res3 as $key => $val) { ?>
+                                    <?php foreach ($res3 as $key => $valf) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($val["pro_nombre"]);?></h4>
-                                                        <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="frenoTra" name="frenoTra" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                        <h4><?php print($valf["pro_nombre"]);?></h4>
+                                                        <p>$<?php print($valf["pro_precio_venta"]);?></p>
+                                                       <p> <input type="checkbox" id="frenoTra" name="frenoTra" value="<?php print($valf['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>

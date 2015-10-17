@@ -1,8 +1,9 @@
 <?php
-  $res1 = muestraBarraManubrio(); 
+
   $res1 = muestraManillar();
-  $res2 = muestraFrenosDelanteros();
-  $res3 = muestraMandoCambio();
+  $res2 = muestraGrips(); 
+  $res3 = muestraFrenos();
+  $res4 = muestraMandos();
 
   
 ?>
