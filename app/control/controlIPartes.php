@@ -15,6 +15,8 @@ $cadena = $datos["productos"];
 
 $res = muestraProductosArmado($cadena);
 
+
+
 print("<table class='table'>
         <thead>
         <tr>
@@ -25,10 +27,10 @@ print("<table class='table'>
                 Nombre
             </th>
             <th>
-                Precio Compra
+                Peso
             </th>
             <th>
-                Precio Venta
+                Valor
             </th>
         </tr>
         </thead>
@@ -41,13 +43,20 @@ foreach ($res as $f) {
              
             <td>" . $f['pro_cod'] . "</td>
             <td>" . $f['pro_nombre'] . "</td>
-            <td>$" . $f['pro_precio_compra'] . "</td>
+            <td>" . $f['pro_peso'] . " gr</td>
             <td>$" . $f['pro_precio_venta'] . "</td>
-            </tr>"
-                );
+            </tr>"  );
 }
 
 print("</tbody> </table>");
 
+$precio = 0;
+$peso = 0;
+foreach ($res as $key => $val) {
+    $precio+=$f['pro_precio_venta'];
+    $peso+=$f['pro_peso'];
+}
+ print('<input type="hidden" id="pes" value="'.$peso.'"/>
+    <input type="hidden" id="pre" value="'.$precio.'"/>');
 
 ?>
