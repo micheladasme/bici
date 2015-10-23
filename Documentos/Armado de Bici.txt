@@ -1,0 +1,42 @@
+Armado de Bicicleta
+
+- Ruedas
+	- neumaticos (3)
+	- llantas (3)
+	- Freno Trasero (DISCOS=2, PASTILLA=2)
+
+- MARCO
+	- cambio de suspesion trasera  SI O NO
+		*SI = elegir suspension trasero
+		*NO = no ingresar nada
+
+- PIÑONES (de 9 a 11 engranes)(3)
+	
+- CAMBIO TRASERO (1, NECESITO 1 PARA ARMADO)
+
+- HORQUILLA
+
+- sILLIN (NECESITO 2 PARA ARMADO)
+	
+- TIJA (NECESITO 2 PARA ARMADO)
+
+- BIELA (1, NECESITO 2 MAS PARA 
+ARMADO)
+	- platos (NECESITO 3 MUESTRA)
+	- cadena (NECESITO 3 MUESTRA)
+
+- PEDAL (NECESITO 2 PARA ARMADO)
+	
+- MANUBRIO (NECESITO 2 PARA ARMADO)
+	- manubrio (NECESITO 3 MUESTRA)
+	- manillar (NECESITO 3 PARA MUESTRA)
+	- frenos delanteros (NECESITO 3 PARA MUESTRA)
+	- mandos de cambio (NECESITO 3 PARA MUESTRAS)
+
+- ACCESSORIOS
+ ¿Cuales Son?
+
+
+¿comprar los dos frenos juntos o separados?	
+que tipo de piñon ocupan? de cassette o atornillado/de rosca?
+cuanto engranes de pinon venden?

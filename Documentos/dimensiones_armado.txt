@@ -1,0 +1,17 @@
+Armado de Bicicleta
+
+- MARCO (500x500)
+
+- PIÑONES (250x250)
+	
+- CAMBIO TRASERO (500x500)
+
+- HORQUILLA (70x660) 
+
+- sILLIN (680x320)
+	
+- TIJA (120x540)
+
+- BIELA (500x500)
+	
+- MANUBRIO (80x50) 
