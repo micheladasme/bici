@@ -1,5 +1,5 @@
 <?php 
-  $res1 = muestraBiela();
+ 
   $res2 = muestraPlatos();
   $res3 = muestraCadenas();
 
@@ -7,7 +7,7 @@
 ?>
 
     <script>
-     function agregaRegistro(){
+     function agregaRegistroBi(){
     var url = 'control/RPartes.php';
     //recorremos todos los checkbox seleccionados con .each
     /*$('input[name="rueda[]"]:checked').each(function() {
@@ -16,7 +16,7 @@
      
     });
     alert(checkboxValues);*/
-    var data = $("#iform").serialize(); 
+    var data = $("#bform").serialize(); 
 
                 $.ajax({
                     url: url, // link of your "whatever" php
@@ -25,7 +25,7 @@
                     cache: false,
                     data: data, // all data will be passed here
                     success: function(data){ 
-                        $("#comp").val(data); 
+                          tablaProductos(data);
                         $("#modalBiela").modal("hide");// The data that is echoed from the ajax.php
                     }
                 });
@@ -42,35 +42,9 @@
                     <h3 class="modal-title" id="gridSystemModalLabel">Biela</h3>
                 </div>
                 <div class="modal-body">
-                    <form id="iform" method="POST">
+                    <form id="bform" method="POST">
                    <div class="panel-group" id="accordion"  role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseB1">
-                                        Biela</a>
-                                </h4>
-                            </div>
-                            <div id="collapseB1" class="panel-collapse collapse">
-                                <div class="row">
-                                    <?php foreach ($res1 as $key => $val) { ?>
-                                     <div class="col-md-3">            
-                                                <div class="thumbnail">
-                                                    <div class="caption">
-                                                        <h5><?php print($val["pro_nombre"]);?></h5>
-                                                        <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
-                                                        <p><input type="checkbox" id="biela" name="biela" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
-                                                    </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
-                                                </div>
-                                          </div>
-                                       
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div> 
                        
-
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -86,7 +60,7 @@
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($val["pro_nombre"]);?></h4>
+                                                        <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
                                                        <p> <input type="checkbox" id="platos" name="platos" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
@@ -114,7 +88,7 @@
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($val["pro_nombre"]);?></h4>
+                                                        <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
                                                        <p> <input type="checkbox" id="cadena" name="cadena" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
@@ -134,7 +108,7 @@
                 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistro()"/>
+                    <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistroBi()"/>
                 </div>
            </form>
             </div><!-- /.modal-content -->

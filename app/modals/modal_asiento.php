@@ -4,7 +4,7 @@
 ?>
 
     <script>
-     function agregaRegistro(){
+     function agregaRegistroAs(){
     var url = 'control/RPartes.php';
     //recorremos todos los checkbox seleccionados con .each
     /*$('input[name="rueda[]"]:checked').each(function() {
@@ -22,11 +22,10 @@
                     cache: false,
                     data: data, // all data will be passed here
                     success: function(data){ 
-                        $("#comp").val(data); 
+                           tablaProductos(data);
                         $("#modalSillin").modal("hide");// The data that is echoed from the ajax.php
                     }
-                });
-   
+                });  
     }
    </script>
 
@@ -105,7 +104,7 @@
                 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistro()"/>
+                    <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistroAs()"/>
                 </div>
            </form>
             </div><!-- /.modal-content -->
