@@ -1,7 +1,7 @@
   <?php 
-  $res1 = muestraLlantas();
-  $res2 = muestraNeumaticos();
-  $res3 = muestraFrenos();
+  $res8 = muestraLlantas();
+  $res9 = muestraNeumaticos();
+  $res10 = muestraFrenos();
 
   
 ?>
@@ -39,7 +39,6 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title" id="gridSystemModalLabel">Ruedas</h3>
                 </div>
                 <div class="modal-body">
@@ -54,17 +53,17 @@
                             </div>
                             <div id="collapseR1" class="panel-collapse collapse">
                                 <div class="row" id="neumatico">
-                                    <?php foreach ($res2 as $key => $valn) { ?>
+                                    <?php foreach ($res9 as $key => $valn) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h5><?php print($valn["pro_nombre"]);?></h5>
-                                                        <p>$<?php print($valn["pro_precio_venta"]);?> - <?php print($valn["pro_peso"]);?></p>
-                                                        <p><div id="neuma"> <input type="checkbox" id="neumatico" name="neumatico" value="<?php print($valn['pro_cod'])?>"> Elegir<br> </div></p>
+                                                        <div class="titu"><?php print($valn["pro_nombre"]);?></div>
+                                                        <p>$<?php print($valn["pro_precio_venta"]);?> - <?php print($valn["pro_peso"]);?> grs.</p>
+                                                        <p><div id="neuma" ><input type="checkbox" id="neumatico" name="neumatico" value="<?php print($valn['pro_cod'])?>"> Elegir<br> </div></p>
                                                     </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($valn["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
@@ -83,17 +82,17 @@
                             </div>
                             <div id="collapseR2" class="panel-collapse collapse">
                                 <div class="row">
-                                  <?php foreach ($res1 as $key => $vall) { ?>
+                                  <?php foreach ($res8 as $key => $vall) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($vall["pro_nombre"]);?></h4>
-                                                        <p>$<?php print($vall["pro_precio_venta"]);?></p>
+                                                        <div class="titu"><?php print($vall["pro_nombre"]);?></div>
+                                                        <p>$<?php print($vall["pro_precio_venta"]);?> - <?php print($vall["pro_peso"]);?> grs.</p>
                                                        <p> <input type="checkbox" id="llanta" name="llanta" value="<?php print($vall['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($vall["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
@@ -111,17 +110,17 @@
                             </div>
                             <div id="collapseR3" class="panel-collapse collapse">
                                 <div class="row">
-                                    <?php foreach ($res3 as $key => $valf) { ?>
+                                    <?php foreach ($res10 as $key => $valf) { ?>
                                         
                                     
                                      <div class="col-md-3">            
                                                 <div class="thumbnail">
                                                     <div class="caption">
-                                                        <h4><?php print($valf["pro_nombre"]);?></h4>
-                                                        <p>$<?php print($valf["pro_precio_venta"]);?></p>
+                                                        <div class="titu"><?php print($valf["pro_nombre"]);?></div>
+                                                        <p>$<?php print($valf["pro_precio_venta"]);?> - <?php print($valf["pro_peso"]);?> grs.</p>
                                                        <p> <input type="checkbox" id="frenoTra" name="frenoTra" value="<?php print($valf['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($valf["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
@@ -136,7 +135,6 @@
                  </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistro()"/>
                 </div>
            </form>
