@@ -10,6 +10,7 @@ session_start();
 
 $datos = $_POST; 
 $cadena = "";
+$cadena2 = "";
 
 	if(!isset($_SESSION["bicicleta"]))
 	{
@@ -49,5 +50,14 @@ foreach ($_SESSION["bicicleta"] as $row) {
 (isset($row["accesorios"])?$cadena .=",".$row["accesorios"]:"");
 }
 
-print(trim($cadena,','));
+foreach ($_SESSION["bicicleta"] as $ro) {
+
+(isset($row["neumatico"])?$cadena2 .= $ro["neumatico"]:"");
+(isset($row["llanta"])?$cadena2 .=",".$ro["llanta"]:"");
+(isset($row["pedal"])?$cadena2 .=",".$ro["pedal"]:"");
+
+}
+
+print(trim($cadena,',')."-".trim($cadena2,','));
+
 ?>

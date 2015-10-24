@@ -10,11 +10,13 @@ include_once("../modelo/funciones.php");
 
 $datos = $_POST; 
 
-$cadena = $datos["productos"];
+$cadenaCom = $datos["productos"];
+$cadena = explode("-", $cadenaCom);
 
 
-$res = muestraProductosArmado($cadena);
 
+$res = muestraProductosArmado($cadena[0]);
+$res2 = muestraProductosArmado($cadena[1]);
 
 
 print("<table class='table'>
@@ -35,16 +37,26 @@ print("<table class='table'>
         </tr>
         </thead>
         <tbody>");
-
-foreach ($res as $f) {
-	  
-	  print_r(
-             "<tr>
+foreach ($res2 as $f) {
+     print_r(
              
+             "<tr>
             <td>" . $f['pro_cod'] . "</td>
             <td>" . $f['pro_nombre'] . "</td>
             <td>" . $f['pro_peso'] . " gr</td>
-            <td>$" . $f['pro_precio_venta'] . "</td>
+            <td>$" . $f['pro_precio_venta'] . "</td> </tr>"
+             );
+}
+
+foreach ($res as $k) {
+	  
+	  print_r(
+             
+             
+            "<tr> <td>" . $k['pro_cod'] . "</td>
+            <td>" . $k['pro_nombre'] . "</td>
+            <td>" . $k['pro_peso'] . " gr</td>
+            <td>$" . $k['pro_precio_venta'] . "</td>
             </tr>"  );
 }
 
@@ -52,11 +64,18 @@ print("</tbody> </table>");
 
 $precio = 0;
 $peso = 0;
-foreach ($res as $key => $val) {
-    $precio+=$f['pro_precio_venta'];
-    $peso+=$f['pro_peso'];
+foreach ($res2 as $key => $val2) {
+    $precio+=$val2['pro_precio_venta'];
+    $peso+=$val2['pro_peso'];
 }
- print('<input type="hidden" id="pes" value="'.$peso.'"/>
-    <input type="hidden" id="pre" value="'.$precio.'"/>');
+foreach ($res as $key => $val) {
+    $precio+=$val['pro_precio_venta'];
+    $peso+=$val['pro_peso'];
+}
+
+$total=($precio+($precio*0.15));
+
+ print_r('<input type="hidden" id="pes" value="'.$peso.'"/>
+    <input type="hidden" id="pre" value="'.$total.'"/>');
 
 ?>
