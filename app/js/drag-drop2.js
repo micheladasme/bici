@@ -7,6 +7,8 @@ $(function() {
     $('div', $('#sillines')).draggable({  revert: "valid", helper: "clone" });
     $('div', $('#bielas')).draggable({  revert: "valid", helper: "clone" });
     $('div', $('#manubrios')).draggable({  revert: "valid", helper: "clone" });
+     $('div', $('#pedales')).draggable({  revert: "valid", helper: "clone" });
+     $('div', $('#tijas')).draggable({  revert: "valid", helper: "clone" });
     
 
     $("#cont-rueda").droppable({
@@ -113,7 +115,39 @@ $(function() {
                     cache: false,
                     data: {pinon:valor}, // all data will be passed here
                     success: function(data){ 
-                        $("#comp").val(data); 
+                        tablaProductos(data);
+                        
+                    }
+                });
+            }
+    });
+
+    $("#cont-pedal").droppable({
+        accept: "#pedales div",
+        activeClass: "ui-state-hover",
+        hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+            var width = $(this).width();
+            var height = $(this).height();
+            var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
+            $(ids).addClass("ui-draggable-dragging");
+            $("#cont-pedal").append($(ids));
+            $(ids).css({
+                height: height,
+                width: width,
+                margin: 0,
+                top:0,
+                left:0
+            });
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {pedal:valor}, // all data will be passed here
+                    success: function(data){ 
+                        tablaProductos(data); 
                         
                     }
                 });
@@ -145,7 +179,7 @@ $(function() {
                     cache: false,
                     data: {cambioTra:valor}, // all data will be passed here
                     success: function(data){ 
-                        $("#comp").val(data); 
+                       tablaProductos(data);
                         
                     }
                 });
@@ -177,7 +211,7 @@ $(function() {
                     cache: false,
                     data: {horquilla:valor}, // all data will be passed here
                     success: function(data){ 
-                        $("#comp").val(data); 
+                       tablaProductos(data);
                        
                     }
                 });
@@ -202,8 +236,51 @@ $(function() {
                 top:0,
                 left:0
             });
-             $('#modalSillin').modal('show');
 
+              $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {sillin:valor}, // all data will be passed here
+                    success: function(data){ 
+                       tablaProductos(data);
+                       
+                    }
+                });
+
+        }
+    });
+
+    $("#cont-tija").droppable({
+        accept: "#tijas div",
+        activeClass: "ui-state-hover",
+        hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+            var width = $(this).width();
+            var height = $(this).height();
+            var ids = "#"+($(ui.draggable).attr('id'));
+            var valor = ($(ui.draggable).attr('value'));
+            $(ids).addClass("ui-draggable-dragging");
+            $("#cont-tija").append($(ids));
+            $(ids).css({
+                height: height,
+                width: width,
+                margin: 0,
+                top:0,
+                left:0
+            });
+            $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {tija:valor}, // all data will be passed here
+                    success: function(data){ 
+                       tablaProductos(data);
+                       
+                    }
+                });
         }
     });
 
@@ -225,7 +302,18 @@ $(function() {
                 top:0,
                 left:0
             });
-             $('#modalBiela').modal('show');
+             $.ajax({
+                    url: "control/RPartes.php", // link of your "whatever" php
+                    type: "POST",
+                    async: true,
+                    cache: false,
+                    data: {biela:valor}, // all data will be passed here
+                    success: function(data){ 
+                       tablaProductos(data);
+                        $('#modalBiela').modal('show');
+                    }
+                });
+            
         }
     });
 
