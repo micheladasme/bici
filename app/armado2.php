@@ -48,7 +48,7 @@ $bielas = muestraBiela();
            
     
 
-  /*   $(function() { 
+    $(function() { 
     $("#btnSave").click(function() { 
        html2canvas($("#widget"), {
           onrendered: function(canvas) {
@@ -62,7 +62,7 @@ $bielas = muestraBiela();
                 });
            }
        });
-    }); */
+    }); 
 
     </script>
     <script type="text/javascript">
@@ -103,16 +103,26 @@ $bielas = muestraBiela();
         #productos h4 { line-height: 16px; margin: 0 0 0.4em; }
         #armado { margin:auto; position: relative; width: 50%; }
         #lista {float:left; width: 320px; height: 600px; border: 1px solid black; }
-        #cont-marco { width: 500px; height: 400px; left:80px; top:20px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; border: 1px solid #000000;}
-        #cont-rueda { width: 240px; height: 240px; left:59px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
-        #cont-rueda2 { width: 240px; height: 240px; right:48px; top:210px; z-index: 1; position: absolute; border: 1px solid #000000;}
-        #cont-horquilla { width: 40px; height: 210px; right:200px; top:150px; z-index: 4; position: absolute;
+        #cont-marco { width: 600px; height: 400px; left:65px; top:85px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; /*border: 1px solid;*/}
+        #cont-rueda { width: 270px; height: 270px; left:35px; top:260px; z-index: 1; position: absolute; /*border: 1px solid;*/}
+        #cont-rueda2 { width: 270px; height: 270px; right:0px; top:260px; z-index: 1; position: absolute; /*border: 1px solid;*/}
+        #cont-horquilla { width: 60px; height: 335px; right:157px; top:87px; z-index: 4; position: absolute;
+            -ms-transform: rotate(-23deg); /* IE 9 */
+            -webkit-transform: rotate(-23deg); /* Chrome, Safari, Opera */
+            transform: rotate(-23deg); /*border: 1px solid;*/}
+        #cont-pinones{width:70px; height:70px; left:135px; top:358px; z-index: 4; position: absolute; /*border: 1px solid;*/}    
+        #cont-cambioTra{width:50px; height:65px; left:155px; top:383px; z-index: 5; position: absolute; /*border: 1px solid;*/}
+        #cont-biela{width:115px; height:100px; left:318px; top:345px; z-index: 4; position: absolute; /*border: 1px solid;*/}
+        #cont-sillin{width:145px; height:60px; left:206px; top:95px; z-index: 4; position: absolute; 
             -ms-transform: rotate(-30deg); /* IE 9 */
             -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
-            transform: rotate(-30deg); border: 1px solid #000000;}
-        #cont-biela{width: 100px; height: 100px; left:340px; top:275px; z-index: 4; position: absolute; border: 1px solid #000000;}
-        #cont-sillin{width: 120px; height: 100px; left:230px; top:110px; z-index: 4; position: absolute; border: 1px solid #000000;}
-        #cont-manubrio{width: 70px; height: 70px; right:255px; top:70px; z-index: 4; position: absolute; border: 1px solid #000000;}
+            transform: rotate(-30deg); /*border: 1px solid;*/}
+        #cont-tija{width: 45px; height: 82px; left:300px; top:155px; z-index: 1; position: absolute;
+            -ms-transform: rotate(-30deg); /* IE 9 */
+            -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
+            transform: rotate(-30deg); /*border: 1px solid;*/}
+        #cont-manubrio{width: 80px; height: 80px; right:215px; top:50px; z-index: 4; position: absolute; /*border: 1px solid;*/}
+        #cont-pedal{width: 55px; height: 50px; left:398px; top:372px; z-index: 5; position: absolute; /*border: 1px solid;*/}
 
         #ruedas div { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
         #marcos div { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
@@ -162,6 +172,16 @@ $bielas = muestraBiela();
     color:#fff !important;
     z-index:2;
 }
+
+p{
+    font-size:12px;
+}
+
+.titu{
+
+    font-size:14px;
+}
+
   </style>
     
 </head>
@@ -173,7 +193,7 @@ $bielas = muestraBiela();
 <!-- Draggables -->
 <div class="row" style="margin: 0px 90px;">
 <div class = "well col-xs-12">
-    <form >
+    <form id="myForm">
         <div class="col-xs-4">
         <label> Peso : </label>
         <div class="input-group">
@@ -243,7 +263,7 @@ $bielas = muestraBiela();
                                     <?php foreach ($marcos as $key => $m) { ?>
                                         
                                     <div id="marcos<?php print($m['pro_cod']); ?>" class="ui-widget-content ui-corner-tr" style="display:inline-block" name="marco" value="<?php print($m['pro_cod']); ?>">
-                                        <img src="../<?php print($m['pro_imagen']);?>" style="width:100%; height: 100%"/>
+                                        <img src="../<?php print($m['pro_imagen']);?>" style="width:90%; height: 80%;"/>
                                     </div>    
                                     
 
@@ -324,9 +344,11 @@ $bielas = muestraBiela();
                             </div>
                             <div id="collapse6" class="panel-collapse collapse">
                                 <div id="sillines" class="gallery ui-helper-reset ui-helper-clearfix">
-                                    <div id="sillin1" class="ui-widget-content ui-corner-tr" style="display:inline-block">
-                                        <img src="../imagenes/sillin_fierro_abajo.png" style="width:100%; height: 100%"/>
+                                    <?php foreach ($sillin as $key => $s) { ?>
+                                    <div id="sillin<?php print($s['pro_cod']); ?>" class="ui-widget-content ui-corner-tr" name="sillin" style="display:inline-block" value="<?php print($s['pro_cod']); ?>">
+                                        <img src="../<?php print($s['pro_imagen']); ?>" style="width:100%; height: 100%"/>
                                     </div>
+                                     <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -447,9 +469,7 @@ $bielas = muestraBiela();
 
     <div class="well col-xs-8">
         <h3> Arma Tu Bicicleta Aqui</h3>
-        <hr>
-
-        <div id="widget" style="position: relative; height:500px; border: 1px solid #cccccc; background: white;">
+        <div id="widget" style="position: relative; height:550px; border: 1px solid #cccccc; background: white;">
             <div id="cont-marco" class="ui-widget-header">
 
             </div>
@@ -461,11 +481,27 @@ $bielas = muestraBiela();
 
 
             </div>
+            <div id="cont-pinones" class="ui-widget-header">
+
+
+            </div>
+             <div id="cont-cambioTra" class="ui-widget-header">
+
+
+            </div>
             <div id="cont-horquilla" class="ui-widget-header">
 
 
             </div>
             <div id="cont-biela" class="ui-widget-header">
+
+
+            </div>
+            <div id="cont-pedal" class="ui-widget-header">
+
+
+            </div>
+            <div id="cont-tija" class="ui-widget-header">
 
 
             </div>
@@ -496,9 +532,8 @@ $bielas = muestraBiela();
     <?php
            
            include("modals/modal_rueda.php");
-          // include("modals/modal_asiento.php");
-           //include("modals/modal_biela.php");
-           //include("modals/modal_manubrio.php");
+           include("modals/modal_biela.php");
+           include("modals/modal_manubrio.php");
     ?>
 
 </div>
