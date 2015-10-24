@@ -92,7 +92,7 @@ function muestraMarcos()
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM productos WHERE subcat_id = 18";
+    $sql2 = "SELECT * FROM productos WHERE subcat_id = 19 or subcat_id = 20";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
@@ -111,7 +111,7 @@ function muestraCambioTrasero()
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM productos WHERE subcat_id = 6";
+    $sql2 = "SELECT * FROM productos WHERE subcat_id = 5";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
@@ -188,7 +188,7 @@ function muestraBiela()
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM productos WHERE subcat_id = 20";
+    $sql2 = "SELECT * FROM productos WHERE subcat_id = 21";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
@@ -315,6 +315,7 @@ function muestraGrips()
     return $a;
 
 }
+
 
 function muestraFrenos()
 {
