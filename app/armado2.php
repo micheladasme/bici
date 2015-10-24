@@ -29,11 +29,6 @@ $bielas = muestraBiela();
     <script src="js/jquery.plugin.html2canvas.js"></script>
     <script>
         $( document ).ready(function() {
-             /*$('input[type=checkbox]').on('click', function(){
-        var parent = $(this).parent().attr('id');
-        $('#'+parent+' input[type=checkbox]').removeAttr('checked');
-        $(this).attr('checked', 'checked');
-        });*/
             $("[rel='tooltip']").tooltip();    
             $('.thumbnail').hover(
                 function(){
@@ -41,31 +36,49 @@ $bielas = muestraBiela();
                 },
                 function(){
                     $(this).find('.caption').slideUp(250); //.fadeOut(205)
-                }
-            ); 
+                }); 
        });
+    </script>
+    <script type="text/javascript">
+     $(function(){
+        var bike;
+     $('#btnSave').on('click',function() {
+        html2canvas($("#widget"), {
+            onrendered: function(canvas) {
+                // canvas is the final rendered <canvas> element
+                var bike=canvas.toDataURL("image/png");
+                $('#img_val').val(bike);
+                //window.open(a);
+            }       
+        });
+             var data = $("#myForm").serialize(); 
+         $.ajax({
+                            url: 'control/controlIPartes.php',
+                            type: 'POST',
+                            data: {
+                                data:data 
+                            },
+                            success: function(response){
+                                alert('Bicicleta Ingresada');
+                            },
+                            error: function(response){
+                                alert('Server response error.');
+                            }
+                        });
 
-           
-    
-
-    $(function() { 
-    $("#btnSave").click(function() { 
+     });
+    });
+    /* $("#btnSave").click(function() { 
        html2canvas($("#widget"), {
           onrendered: function(canvas) {
                 //Set hidden field's value to image data (base-64 string)
+                $('#img_val').val(canvas.toDataURL("image/png"));
+                //Submit the form manually
+                //document.getElementById("myForm").submit();
+                };
+           });
+       });*/
 
-            $('#img_val').val(canvas.toDataURL("image/png"));
-
-            //Submit the form manually
-
-            document.getElementById("myForm").submit();
-                });
-           }
-       });
-    }); 
-
-    </script>
-    <script type="text/javascript">
      function tablaProductos(cadena){
 
             $.ajax({
@@ -519,12 +532,14 @@ p{
     <div class="row" style="margin: 0px 0px 0px 100px">
     <div class="well col-xs-11">
         <h4>Detalles</h4>
+        <form id="myForm">
         <div id="comp">
     
         </div>
-    
+        <input type="hidden" id="img_val" name="img_val"/>
+    </form>
     </div>
-     <input type="hidden" name="img_val" id="img_val" value="" />
+     
     </div>
     </br>
     </br>
