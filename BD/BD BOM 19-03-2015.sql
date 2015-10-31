@@ -28,7 +28,7 @@ CREATE TABLE Pedido
   ped_total Int,
   ped_fecha Date,
   ped_mano_obra Int,
-  ped_imagen Varchar(160),
+  ped_imagen Varchar(5000),
   ped_detalle Varchar(500),
   cli_id Int,
   usu_id Int,
@@ -107,7 +107,7 @@ CREATE TABLE Detalle_Pedido
   det_id Int NOT NULL AUTO_INCREMENT,
   det_cantidad Int NOT NULL,
   det_subtotal Int NOT NULL,
-  com_id Int,
+  ped_id Int,
   pro_cod Varchar(14),
  PRIMARY KEY (det_id)
 )
@@ -368,7 +368,7 @@ ALTER TABLE Producto_Ubicacion ADD CONSTRAINT Relationship18 FOREIGN KEY (suc_id
 ALTER TABLE Producto_Ubicacion ADD CONSTRAINT Relationship15 FOREIGN KEY (ubc_id) REFERENCES Ubicacion (ubc_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
-ALTER TABLE Detalle_Pedido ADD CONSTRAINT Relationship13 FOREIGN KEY (com_id) REFERENCES Pedido (ped_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE Detalle_Pedido ADD CONSTRAINT Relationship13 FOREIGN KEY (ped_id) REFERENCES Pedido (ped_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
 
 ALTER TABLE Usuarios ADD CONSTRAINT Relationship11 FOREIGN KEY (suc_id) REFERENCES Sucursal (suc_id) ON DELETE NO ACTION ON UPDATE NO ACTION
