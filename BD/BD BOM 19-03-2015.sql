@@ -229,22 +229,6 @@ CREATE TABLE Estado_Armado
 )
 ;
 
--- Table tmp_armado
-
-CREATE TABLE Tmp_armado
-(
-  arm_id Int NOT NULL AUTO_INCREMENT,
-  arm_codigo Int NOT NULL,
-  arm_nombre Varchar(200) NOT NULL,
-  arm_imagen Varchar(200) NOT NULL,
-  arm_cantidad Int NOT NULL,
-  arm_valor Int NOT NULL,
-  arm_peso Int NOT NULL,
-  arm_subtotal Int NOT NULL,
-  arm_cliente Int,
- PRIMARY KEY (arm_id)
-)
-;
 
 -- Table venta
 
