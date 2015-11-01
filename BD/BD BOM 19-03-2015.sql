@@ -25,6 +25,7 @@ CREATE TABLE Pedido
 (
   ped_id Int NOT NULL AUTO_INCREMENT,
   ped_subtotal Int,
+  ped_peso Int,
   ped_total Int,
   ped_fecha Date,
   ped_mano_obra Int,
