@@ -582,6 +582,7 @@ INSERT INTO `estado_servicio` VALUES
 (3, 'Entregado Y Completado');
 
 INSERT INTO `estado_armado` VALUES
+(0, 'Eliminado'),
 (1, 'Solo Creacion'),
 (2, 'Enviado, Esperando Aprobacion'),
 (3, 'En Proceso de Armado'),
