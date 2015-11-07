@@ -38,7 +38,7 @@ function cryptPass($password, $rounds=9){
 
 }
 
-/*
+
 function validarPass($inputPass, $passwordBD)
 {
 $hashedPass = cryptPass($passwordBD)
@@ -51,6 +51,7 @@ $hashedPass = cryptPass($passwordBD)
 
 }
 
+/*
 // OTRO TIPO DE ENCRIPTACION DE PASSWORD
 function cryptPass($input, $rounds = 9) {
     $salt = mcrypt_create_iv(22, MCRYPT_DEV_URANDOM);
