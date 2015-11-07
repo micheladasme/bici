@@ -1,15 +1,11 @@
 <?php
 session_start();
-include_once('../modelo/modelo_pedidos.php');
-
+include('../modelo/modelo_pedidos.php');
 
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../index.php");}
 
-
-
 $res = muestraPedidos();
-
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +14,6 @@ $res = muestraPedidos();
     <meta charset="utf-8">
     <meta content="text/html" http-equiv="Content-type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Pedidos</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
     <link rel="stylesheet" type="text/css" href="../css/promociones.css"  />
@@ -28,6 +23,32 @@ $res = muestraPedidos();
     <script src="../js/custom.js"></script>
     <script type="text/javascript">
 
+    function sigPaso(id_bici,est){
+
+    $.ajax({
+    url: "../control/controlUPedido.php", // link of your "whatever" php
+    type: "POST",
+    data:{codigo:id_bici,
+          estado:est}, // all data will be passed here
+    success: function(data){
+     alert(data);
+
+    }
+    });
+    }
+
+    function modalDetallePedidos(id_bici){
+
+    $.ajax({
+    url: "../control/controlVPedido.php", // link of your "whatever" php
+    type: "POST",
+    data:{codigo:id_bici}, // all data will be passed here
+    success: function(data){
+        $("#divModal").html(data);
+
+    }
+    });
+    }
 
         function salir(){
             var respuesta=confirm('Desea realmente Cerrar Sesion?');
@@ -45,97 +66,42 @@ $res = muestraPedidos();
 <body>
 
 
-<?php include($_SESSION['header']);  ?>
-<div class="well" style="height:auto;">
-    <h3 class="text-center">Ver Pedidos</h3><hr>
+<?php include($_SESSION['header']); ?>
 
-    <form id="iform" name="iform">
-        <div class="col-xs-6 col-md-4">
-            <div class="input-group">
-                <input type="text" id="txt_consulta" name="txt_consulta" class="form-control" placeholder="Busqueda por Nombre..." required/>
-                <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default" id="btn_consulta">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <br>
-    <br>
-    <br>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>
-                Codigo
-            </th>
-            <th>
-                Nombre Cliente
-            </th>
-            <th>
-                Descripcion
-            </th>
-            <th>
-                Ver Mas
-            </th>
-
-
-        </tr>
-
-        </thead>
-        <tbody>
-        <?php
-        if(isset($_GET['txt_consulta']))
-        {
-            $res2 = buscaCategoriasnom($_GET['txt_consulta']);
-            foreach ($res2 as $f) {
-                echo (
-                    "<tr class='post'>".
-
-                    "<td>".$f['cat_id']."</td>".
-                    "<td>".$f['cat_nombre']."</td>".
-                    "<td>".$f['cat_descripcion']."</td>");
-                echo ("<td><a href=");
-                echo("javascript:window.open('vista_m_categoria.php?codigo=".$f['cat_id']."'".",'nuevo'".",'top=0,left=0,toolbar=no,location=no,status=no,"."menubar=no,scrollbars=no,resizable=no,"."width=500,height=470')");
-                echo("role='button' class='btn btn-sm btn-warning'><span class='glyphicon glyphicon-plus-sign'></span>&nbsp Ver Mas</a></td> </tr>");
-
-
-            }
-        }
-
-        else
-        {
-            if($res==true) {
-
-            // Llenamos la tabla
-            foreach($res as $f)
-            {
-                ?>
-                <tr class="post">
-                    <th style="font-weight:100"><?php echo $f['cat_id']; ?></th>
-                    <th style="font-weight:100"><?php echo $f['cat_nombre']; ?></th>
-                    <th style="font-weight:100"><?php echo $f['cat_descripcion']; ?></th>
-                    <th width="30px"><a href="javascript:window.open('vista_m_categoria.php?codigo=<?php echo $f['cat_id']; ?>', 'nuevo', 'top=0, left=0, toolbar=no,location=no, status=no,menubar=no,scrollbars=no, resizable=no, width=500,height=470')" role="button" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
-
-
-
-                </tr>
-            <?php
-            }
+<div class="row">
+    <div class="well col-md-offset-1 col-md-10">
+    <h3>Pedidos</h3>
+    <hr>
+    <div class="row">
+    <?php foreach ($res as $key => $v) { ?>
+     <div class="col-sm-6 col-md-4" class="post">
+    <div class="thumbnail">
+      <img src="../../app/images/<?php print($v['ped_imagen']); ?>" class="img-responsive" alt="img bici">
+      <div class="caption">
+        <p><span class="label label-primary"><?php print($v['est_nombre']); ?></span></p>
+        <h3>Bicicleta N°<?php print($v['ped_id']); ?></h3>
+        <p>Fecha de Creacion: <?php print($v['ped_fecha']); ?></p>
+        <p>Precio: $<?php print($v['ped_subtotal']); ?>             *Mano de Obra No Incluida</p>
+        <p>Peso: <?php print($v['ped_peso']); ?> grs</p>
+        
+        <p><a href="#" onClick="modalDetallePedidos(<?php print($v['ped_id']);?>)"  class="btn btn-primary" role="button">Ver Mas >></a>
+         <?php 
+          $res2 = siguenteEstado($v['est_id']);  
+         foreach ($res2 as $key => $x) { 
             ?>
-
-        <?php }
-        else
-        {
-            echo ("<tr><td><h4>&nbsp;&nbsp;&nbsp;No hay Categorias</h4></td></tr>");
-        }
-
-        }?>
-        </tbody>
-    </table>
-    <?php include('includes/paginador.php'); ?>
-
+            <a href="#" onClick="sigPaso(<?php print($v['ped_id'].",".$x['est_id']);?>)"  class="btn btn-success" role="button"><?php print($x['est_nombre']." >>");?></a>
+          <?php }?> 
+        </p>
+      </div>
+    </div>
+  </div>
+    <?php } ?>
+</div>
+    </div>
+</div>
+  <div id="divModal">
+  </div>
+   
 <?php include('/includes/footer.php');  ?>
 </body>
 </html>
