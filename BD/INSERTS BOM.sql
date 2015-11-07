@@ -576,6 +576,11 @@ INSERT INTO `ubicacion` VALUES
 (1, 'Tienda'),
 (2, 'Bodega');
 
+INSERT INTO `tipo_gastos` VALUES
+(1, 'Merma'),
+(2, 'Gasto Local'),
+(3, 'Mercaderia');
+
 INSERT INTO `estado_servicio` VALUES
 (1, 'En Reparacion'),
 (2, 'Listo Para Entrega'),

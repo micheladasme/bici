@@ -191,7 +191,6 @@ CREATE TABLE Producto_Ubicacion
   pu_cantidad Int NOT NULL,
   suc_id Int NOT NULL,
   pro_cod Varchar(14) NOT NULL,
-  pu_para Varchar(2) NOT NULL,
   PRIMARY KEY (pu_id)
 
 )
