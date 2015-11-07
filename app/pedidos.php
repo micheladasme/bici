@@ -16,6 +16,17 @@ $res = muestraPedidos($_SESSION['id_usuario']);
 	<title>Bici-O-Matic</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <style type="text/css">
+     body {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("images/armado.jpg");
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover; }
+    </style>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>}
     <script type="text/javascript">
@@ -55,17 +66,7 @@ $res = muestraPedidos($_SESSION['id_usuario']);
     </div>
   </div>
     <?php } ?>
-  	<div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img class="img-responsive" src="..." alt="img bici1">
-      <div class="caption">
-        <h3>Bicicleta 1</h3>
-        <p>...</p>
-        <p><span class="label label-primary">En Proceso</span></p>
-        <p><a href="#" class="btn btn-primary" role="button">Ver Mas >></a></p>
-      </div>
-    </div>
-  </div>
+  
 </div>
 	</div>
 </div>
