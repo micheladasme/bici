@@ -59,7 +59,7 @@ if(!isset($_SESSION['usu_nombre']))
 
 
 
-          <form id="iform"  method="POST" action="../control/superadmin/controlRGastoA.php"  enctype="multipart/form-data">
+          <form id="iform"  method="POST" action="../control/controlRGastoA.php"  enctype="multipart/form-data">
       <p> Tipo Gasto : <select name="sel_tipo" class="form-control"  id="sel_tipo">
                            <option value="1">Merma</option>
                             <option value="2">Gasto Local</option>    
