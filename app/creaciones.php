@@ -16,6 +16,17 @@ $res = muestraCreaciones($_SESSION['id_usuario']);
 	<title>Bici-O-Matic</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <style type="text/css">
+     body {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("images/armado.jpg");
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover; }
+    </style>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
