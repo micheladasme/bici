@@ -152,7 +152,9 @@ function muestraPedidos($id_usu)
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM pedido WHERE cli_id = $id_usu AND est_id IN (2,3,4,5)";
+    $sql2 = "SELECT ped.ped_id,ped.ped_fecha,ped.ped_subtotal,ped.ped_peso,ped.ped_total,ped.ped_imagen,est.est_id,est.est_nombre,usu.usu_nombre FROM pedido ped 
+                INNER JOIN usuarios usu ON ped.suc_id = usu.usu_id 
+                INNER JOIN estado_armado est ON ped.est_id = est.est_id WHERE ped.est_id IN (2,3,4,5)";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
