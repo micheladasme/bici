@@ -8,19 +8,44 @@ function conecta()
 	}
 
 
+function validarPass($inputPass, $passwordBD)
+{
+$hashedPass = cryptPass($inputPass);
+$z=0;
+ if($passwordBD == $hashedPass){
+        //echo "Password Correcta = Logeado";
+      $z=1;
+    }
+    return $z;
+}
+
+function cryptPass($password, $rounds=9){
+    $salt="";
+    $saltChars = array_merge(range('A','Z'), range('a','z'), range(0,9));
+    
+    for($i=0; $i < 22; $i++){
+        $salt.= $saltChars[array_rand($saltChars)];
+    }
+    return crypt($password, sprintf('$2y$%02d$', $rounds). $salt);   
+
+}
+
+
 // Funcion Validador de Usuario Para Login	
 	function validaLogin($nom,$cla)
   	{ 
   
   	$link= conecta();
     $sw=false;
+    $passwordBD="";
     $sql="SELECT * FROM cliente WHERE cli_correo = '$nom' AND cli_pass =  '$cla'";
     $res=mysql_query($sql,$link) or die("Error en: $busqueda: " . mysql_error());
     if($f=mysql_fetch_array($res))
       {     
-
+        
         $sw=$f['cli_id'];
-		
+		    
+
 			}
     mysql_close($link);
 	

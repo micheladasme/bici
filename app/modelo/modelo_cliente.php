@@ -56,7 +56,8 @@ function registraCliente($rut,$nombre, $apellido,$direccion,$telefono,$correo, $
 {
     $x=0;
     $link=conectar();
-    $sql="INSERT INTO cliente (cli_rut,cli_nombre,cli_apellido,cli_direccion,cli_telefono,cli_correo,cli_pass,comu_id) VALUES ('$rut','$nombre', '$apellido','$direccion','$telefono','$correo', '$pass',  '$comuna')";
+   // $cryptpass = cryptPass($pass);
+    $sql="INSERT INTO cliente (cli_rut,cli_nombre,cli_apellido,cli_direccion,cli_telefono,cli_correo,cli_pass,comu_id) VALUES ('$rut','$nombre', '$apellido','$direccion','$telefono','$correo', /*'$cryptpass'*/'$pass',  '$comuna')";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     // Verificamos si se realizo el insert
     if(mysql_affected_rows()>0)
@@ -82,4 +83,19 @@ function buscarClientenom($nombre)
     return $a;
 
 }
+
+function cryptPass($password, $rounds=9){
+    $salt="";
+    $saltChars = array_merge(range('A','Z'), range('a','z'), range(0,9));
+    
+    for($i=0; $i < 22; $i++){
+        $salt.= $saltChars[array_rand($saltChars)];
+    }
+    return crypt($password, sprintf('$2y$%02d$', $rounds). $salt);
+    
+
+}
+
+
+
 ?>
