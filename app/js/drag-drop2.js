@@ -31,6 +31,7 @@ $(function() {
             });
             $(ids).clone().appendTo("#cont-rueda2");
              $('#modalRueda').modal('show');
+              $("#cont-rueda").droppable( "option", "disabled", true );
         }
 
     });
@@ -55,6 +56,7 @@ $(function() {
             });
             $(ids).clone().appendTo("#cont-rueda");
              $('#modalRueda').modal('show');
+              $("#cont-rueda2").droppable( "option", "disabled", true );
         }
     });
 
@@ -87,6 +89,7 @@ $(function() {
                         
                     }
                 });
+             $("#cont-marco").droppable( "option", "disabled", true );
             }
     });
 
@@ -119,6 +122,7 @@ $(function() {
                         
                     }
                 });
+             $("#cont-pinones").droppable( "option", "disabled", true );
             }
     });
 
@@ -140,17 +144,8 @@ $(function() {
                 top:0,
                 left:0
             });
-            $.ajax({
-                    url: "control/RPartes.php", // link of your "whatever" php
-                    type: "POST",
-                    async: true,
-                    cache: false,
-                    data: {pedal:valor}, // all data will be passed here
-                    success: function(data){ 
-                        tablaProductos(data); 
-                        
-                    }
-                });
+             $('#modalPedal').modal('show');
+            $("#cont-pedal").droppable( "option", "disabled", true );
             }
     });
 
@@ -183,6 +178,7 @@ $(function() {
                         
                     }
                 });
+            $("#cont-cambioTra").droppable( "option", "disabled", true );
             }
     });
 
@@ -215,6 +211,7 @@ $(function() {
                        
                     }
                 });
+             $("#cont-horquilla").droppable( "option", "disabled", true );
         }
     });
 
@@ -248,7 +245,7 @@ $(function() {
                        
                     }
                 });
-
+             $("#cont-sillin").droppable( "option", "disabled", true );
         }
     });
 
@@ -281,6 +278,7 @@ $(function() {
                        
                     }
                 });
+             $("#cont-tija").droppable( "option", "disabled", true );
         }
     });
 
@@ -313,7 +311,7 @@ $(function() {
                         $('#modalBiela').modal('show');
                     }
                 });
-            
+             $("#cont-biela").droppable( "option", "disabled", true );
         }
     });
 
@@ -337,6 +335,7 @@ $(function() {
                 left:0
             });
              $('#modalManubrio').modal('show');
+        $("#cont-manubrio").droppable( "option", "disabled", true );
         }
     });
 
