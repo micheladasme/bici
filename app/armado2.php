@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("modelo/funciones.php");
+
+if(!isset($_SESSION['usu_nombre']))
+{header("location:index.php");}
+
 $_SESSION["bicicleta"]=array();
 
 $marcos = muestraMarcos();
@@ -41,32 +45,52 @@ $bielas = muestraBiela();
     </script>
     <script type="text/javascript">
      $(function(){
+        var cad1;
+        var cad2;
         var bike;
+        var arm;
+        var peso;
+        var precio;
+        var output;
+        var filedir;
+
+
      $('#btnSave').on('click',function() {
+        cad1 = $('#cad1').val();
+        cad2 = $('#cad2').val();
+        peso = $('#peso').val();
+        precio = $('#precio').val();
+
         html2canvas($("#widget"), {
             onrendered: function(canvas) {
                 // canvas is the final rendered <canvas> element
-                var bike=canvas.toDataURL("image/png");
-                $('#img_val').val(bike);
-                //window.open(a);
-            }       
-        });
-             var data = $("#myForm").serialize(); 
-         $.ajax({
-                            url: 'control/controlIPartes.php',
+                bike = canvas.toDataURL();
+            
+                 $.ajax({
+                            url: 'control/controlRBici.php',
                             type: 'POST',
                             data: {
-                                data:data 
+                                cade1:cad1,
+                                cade2:cad2,
+                                img:bike,
+                                pesob:peso,
+                                preciob:precio 
                             },
-                            success: function(response){
-                                alert('Bicicleta Ingresada');
-                            },
-                            error: function(response){
-                                alert('Server response error.');
+                            success: function(data){
+                                alert(data);  
+                                //$('#img_fin').val(data);
+                                //window.location.href =  "download.php?path="+ file;
                             }
                         });
+            } 
+           
+        });
+                // bike = $('#img_val').val(); 
+                 //alert(bike);  
+                
 
-     });
+            });
+
     });
     /* $("#btnSave").click(function() { 
        html2canvas($("#widget"), {
@@ -97,6 +121,8 @@ $bielas = muestraBiela();
                     }
                 });
         }
+
+        
     </script>
     <style>
         html{ max-width: none !important; width: 1280px;  }
@@ -215,13 +241,13 @@ p{
         </div>
         </div>
         <div class="col-xs-4 col-xs-offset-1">
-        <label> Precio : </label>
+        <label> * Precio : </label>
         <div class="input-group">
             <div class="input-group-addon">$</div>
-            <input type="text" id="precio" name="precio" class="form-control" value="" disabled>
-
+            <input type="text" id="precio" name="precio" class="form-control" value="" disabled> 
         </div>
-            </div>
+         * No Incluye Precio por Mano de Obra 
+        </div>
         <div class="col-xs-2 col-xs-offset-1">
             <a  id="btn1" class="btn btn-danger"> Limpiar</a>
             <a id="btnSave" class="btn btn-fresh"><span class="glyphicon glyphicon-floppy-saved"> </span> Guardar Creacion</a>
@@ -536,7 +562,7 @@ p{
         <div id="comp">
     
         </div>
-        <input type="hidden" id="img_val" name="img_val"/>
+   
     </form>
     </div>
      
@@ -549,6 +575,7 @@ p{
            include("modals/modal_rueda.php");
            include("modals/modal_biela.php");
            include("modals/modal_manubrio.php");
+           include("modals/modal_pedal.php");
     ?>
 
 </div>

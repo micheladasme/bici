@@ -120,10 +120,10 @@
         </div>-->
         <div class="well text-center col-md-offset-1 col-md-10">
             <img src="images/logo.png" class="pull-left" style="width: 150px; height: 45px;">
-			<button type="button" class="btn btn-hot text-uppercase"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>  Crear Bicicleta</button>
-            <button type="button" class="btn btn-sunny text-uppercase"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>   Creaciones</button>
-            <button type="button" class="btn btn-fresh text-uppercase"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Pedidos</button>
-            <button type="button" class="btn btn-sky text-uppercase pull-right" onclick="salir()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>  Cerrar Sesion</button>
+			<a type="button" class="btn btn-hot text-uppercase" href="armado2.php"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>   Crear Bicicleta</a>
+            <a type="button" class="btn btn-sunny text-uppercase" href="creaciones.php"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>   Creaciones</a>
+            <a type="button" class="btn btn-fresh text-uppercase" href="pedidos.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Pedidos</a>
+            <a type="button" class="btn btn-sky text-uppercase pull-right" onclick="salir()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>  Cerrar Sesion</a>
         </div>
 
 
