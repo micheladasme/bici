@@ -9,6 +9,24 @@
 ?>
 
     <script>
+$(function(){
+    $('input.manillar').on('change', function() {
+    $('input.manillar').not(this).prop('checked', false);  
+    });
+
+    $('input.grips').on('change', function() {
+    $('input.grips').not(this).prop('checked', false);  
+    });
+
+     $('input.frenoDel').on('change', function() {
+    $('input.frenoDel').not(this).prop('checked', false);  
+    });
+
+      $('input.mandoCambioTra').on('change', function() {
+    $('input.mandoCambioTra').not(this).prop('checked', false);  
+    });
+});
+
      function agregaRegistroMa(){
     var url = 'control/RPartes.php';
     //recorremos todos los checkbox seleccionados con .each
@@ -34,7 +52,7 @@
     }
    </script>
 
-  <div class="modal fade" id="modalManubrio" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
+  <div class="modal fade" id="modalManubrio" aria-labelledby="gridSystemModalLabel" data-backdrop="static" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
@@ -62,7 +80,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
-                                                        <p><input type="checkbox" id="manillar" name="manillar" value="<?php print($val['pro_cod'])?>"> Elegir<br> </p>
+                                                        <p><input type="checkbox" id="manillar" name="manillar" class="manillar" value="<?php print($val['pro_cod'])?>"> Elegir<br> </p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -91,7 +109,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="grips" name="grips" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="grips" name="grips" class="grips" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -119,7 +137,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="frenoDel" name="frenoDel" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="frenoDel" name="frenoDel" class="frenoDel" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -147,7 +165,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="mandoCambioTra" name="mandoCambioTra" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="mandoCambioTra" name="mandoCambioTra" class="mandoCambioTra" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -165,7 +183,6 @@
                  </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistroMa()"/>
                 </div>
            </form>

@@ -7,6 +7,21 @@
 ?>
 
     <script>
+
+    $(function(){
+    $('input.llanta').on('change', function() {
+    $('input.llanta').not(this).prop('checked', false);  
+    });
+
+    $('input.neumatico').on('change', function() {
+    $('input.neumatico').not(this).prop('checked', false);  
+    });
+
+     $('input.frenoTra').on('change', function() {
+    $('input.frenoTra').not(this).prop('checked', false);  
+    });
+});
+
      function agregaRegistro(){
     var url = 'control/RPartes.php';
     //recorremos todos los checkbox seleccionados con .each
@@ -34,7 +49,7 @@
     }
    </script>
 
-  <div class="modal fade" id="modalRueda" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
+  <div class="modal fade" id="modalRueda" data-backdrop="static" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
@@ -61,7 +76,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($valn["pro_nombre"]);?></div>
                                                         <p>$<?php print($valn["pro_precio_venta"]);?> - <?php print($valn["pro_peso"]);?> grs.</p>
-                                                        <p><div id="neuma" ><input type="checkbox" id="neumatico" name="neumatico" value="<?php print($valn['pro_cod'])?>"> Elegir<br> </div></p>
+                                                        <p><div id="neuma" ><input type="checkbox" id="neumatico" name="neumatico" class="neumatico" value="<?php print($valn['pro_cod'])?>"> Elegir<br> </div></p>
                                                     </div>
                                                     <img src="../<?php print($valn["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -90,7 +105,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($vall["pro_nombre"]);?></div>
                                                         <p>$<?php print($vall["pro_precio_venta"]);?> - <?php print($vall["pro_peso"]);?> grs.</p>
-                                                       <p> <input type="checkbox" id="llanta" name="llanta" value="<?php print($vall['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="llanta" name="llanta" class="llanta" value="<?php print($vall['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="../<?php print($vall["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -118,7 +133,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($valf["pro_nombre"]);?></div>
                                                         <p>$<?php print($valf["pro_precio_venta"]);?> - <?php print($valf["pro_peso"]);?> grs.</p>
-                                                       <p> <input type="checkbox" id="frenoTra" name="frenoTra" value="<?php print($valf['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="frenoTra" name="frenoTra" class="frenoTra" value="<?php print($valf['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="../<?php print($valf["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>

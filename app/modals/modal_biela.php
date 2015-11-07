@@ -7,6 +7,16 @@
 ?>
 
     <script>
+$(function(){
+    $('input.platos').on('change', function() {
+    $('input.platos').not(this).prop('checked', false);  
+    });
+
+    $('input.cadena').on('change', function() {
+    $('input.cadena').not(this).prop('checked', false);  
+    });
+});
+
      function agregaRegistroBi(){
     var url = 'control/RPartes.php';
     //recorremos todos los checkbox seleccionados con .each
@@ -33,7 +43,7 @@
     }
    </script>
 
-  <div class="modal fade" id="modalBiela" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
+  <div class="modal fade" id="modalBiela" aria-labelledby="gridSystemModalLabel" data-backdrop="static" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
@@ -62,7 +72,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="platos" name="platos" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="platos" name="platos" class="platos" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -90,7 +100,7 @@
                                                     <div class="caption">
                                                         <div class="titu"><?php print($val["pro_nombre"]);?></div>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="cadena" name="cadena" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="cadena" name="cadena" class="cadena" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -107,7 +117,7 @@
                  </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                   
                     <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistroBi()"/>
                 </div>
            </form>

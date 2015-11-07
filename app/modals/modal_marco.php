@@ -32,7 +32,7 @@
     }
    </script>
 
-  <div class="modal fade" id="modalRueda" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
+  <div class="modal fade" id="modalRueda" aria-labelledby="gridSystemModalLabel" data-backdrop="static" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
@@ -106,7 +106,7 @@
                  </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    
                     <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistro()"/>
                 </div>
            </form>

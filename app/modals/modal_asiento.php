@@ -4,6 +4,16 @@
 ?>
 
     <script>
+    $(function(){
+    $('input.tija').on('change', function() {
+    $('input.tija').not(this).prop('checked', false);  
+    });
+
+    $('input.sillin').on('change', function() {
+    $('input.sillin').not(this).prop('checked', false);  
+    });
+});
+
      function agregaRegistroAs(){
     var url = 'control/RPartes.php';
     //recorremos todos los checkbox seleccionados con .each
@@ -29,7 +39,7 @@
     }
    </script>
 
-  <div class="modal fade" id="modalSillin" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
+  <div class="modal fade" id="modalSillin" data-backdrop="static" aria-labelledby="gridSystemModalLabel" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
@@ -57,7 +67,7 @@
                                                     <div class="caption">
                                                         <h5><?php print($val["pro_nombre"]);?></h5>
                                                         <p>$<?php print($val["pro_precio_venta"]);?> - <?php print($val["pro_peso"]);?></p>
-                                                        <p><input type="checkbox" id="tija" name="tija" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                        <p><input type="checkbox" id="tija" name="tija" class="tija" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -86,7 +96,7 @@
                                                     <div class="caption">
                                                         <h4><?php print($val["pro_nombre"]);?></h4>
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
-                                                       <p> <input type="checkbox" id="sillin" name="sillin" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
+                                                       <p> <input type="checkbox" id="sillin" name="sillin" class="sillin" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
                                                     <img src="images/img250.png" alt="Image" class="img-responsive"> 
                                                 </div>
@@ -103,7 +113,6 @@
                  </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-success" value="Ingresar" onclick="agregaRegistroAs()"/>
                 </div>
            </form>
