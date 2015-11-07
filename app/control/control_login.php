@@ -12,6 +12,7 @@ if($sw)
 		
         $_SESSION['header']="";
 
+        print_r($_SESSION['usu_nombre']);
          if($_SESSION['usu_nombre']) {
          	?>
          		 <script>

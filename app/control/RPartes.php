@@ -28,8 +28,6 @@ $cadena2 = "";
 
 foreach ($_SESSION["bicicleta"] as $row) {
 (isset($row["neumatico"])?$cadena .=$row["neumatico"]:"");
-(isset($row["neumatico"])?$cadena .=",".$row["neumatico"]:"");
-(isset($row["llanta"])?$cadena .=",".$row["llanta"]:"");
 (isset($row["llanta"])?$cadena .=",".$row["llanta"]:"");
 (isset($row["frenoTra"])?$cadena .=",".$row["frenoTra"]:"");
 (isset($row["marco"])?$cadena .=",".$row["marco"]:"");
@@ -42,7 +40,6 @@ foreach ($_SESSION["bicicleta"] as $row) {
 (isset($row["platos"])?$cadena .=",".$row["platos"]:"");
 (isset($row["cadena"])?$cadena .=",".$row["cadena"]:"");
 (isset($row["pedal"])?$cadena .=",".$row["pedal"]:"");
-(isset($row["pedal"])?$cadena .=",".$row["pedal"]:"");
 (isset($row["grips"])?$cadena .=",".$row["grips"]:"");
 (isset($row["manillar"])?$cadena .=",".$row["manillar"]:"");
 (isset($row["frenosDel"])?$cadena .=",".$row["frenosDel"]:"");
@@ -52,9 +49,9 @@ foreach ($_SESSION["bicicleta"] as $row) {
 
 foreach ($_SESSION["bicicleta"] as $ro) {
 
-(isset($row["neumatico"])?$cadena2 .= $ro["neumatico"]:"");
-(isset($row["llanta"])?$cadena2 .=",".$ro["llanta"]:"");
-(isset($row["pedal"])?$cadena2 .=",".$ro["pedal"]:"");
+(isset($ro["neumatico"])?$cadena2 .= $ro["neumatico"]:"");
+(isset($ro["llanta"])?$cadena2 .=",".$ro["llanta"]:"");
+(isset($ro["pedal"])?$cadena2 .=",".$ro["pedal"]:"");
 
 }
 
