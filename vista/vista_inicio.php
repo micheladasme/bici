@@ -75,7 +75,7 @@ include("../modelo/funciones.php");
                     </div> <!-- /.logo-wrapper -->
 
                     <div class="menu-wrapper">
-                        <ul class="menu">
+                        <ul class="menu" style="display:block;">
                             <li><a class="show-4" href="#">Inicio</a></li>
                             <li><a class="show-2" href="#">Team</a></li>
                             <li><a class="show-3" href="#">Servicios</a></li>
