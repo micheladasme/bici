@@ -141,7 +141,7 @@ function productosMasVendidos()
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT det.pro_cod, pro.pro_nombre, COUNT(det.pro_cod) as cantidad FROM detalle_compra det INNER JOIN productos pro ON pro.pro_cod = det.pro_cod GROUP BY pro_cod ORDER BY cantidad DESC LIMIT 10");
+    $sql=("SELECT det.pro_cod, pro.pro_nombre as producto, COUNT(det.pro_cod) as cantidad FROM detalle_compra det INNER JOIN productos pro ON pro.pro_cod = det.pro_cod GROUP BY pro_cod ORDER BY cantidad DESC LIMIT 10");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
@@ -214,7 +214,7 @@ function muestraPedidos()
      $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT ped.ped_id, Date_format(ped.ped_fecha,'%d/%m/%Y') as ped_fecha, ped.ped_total, est.est_nombre FROM pedido ped, estado est WHERE ped.est_id = est.est_id ORDER BY ped_id DESC");
+    $sql=("SELECT ped.ped_id, Date_format(ped.ped_fecha,'%d/%m/%Y') as ped_fecha, ped.ped_total, est.est_nombre FROM pedido ped, estado_armado est WHERE ped.est_id = est.est_id ORDER BY ped_id DESC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
