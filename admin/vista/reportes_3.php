@@ -215,27 +215,13 @@ $res2 = productosMasVendidos();
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-offset-1 col-lg-4">
+                    <div class="col-lg-offset-2 col-lg-8">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Productos mas Vendidos</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="mas-vendidos"></div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-offset-2 col-lg-4">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Productos menos Vendidos</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="menos-vendidos"></div>
                                 <div class="text-right">
                                     <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
@@ -282,9 +268,9 @@ $res2 = productosMasVendidos();
      // Bar Chart
     Morris.Bar({
         element: 'mas-vendidos',
-        data: [{
-            device: 'iPhone',
-            geekbench: 136
+        data: <?php echo(json_encode($res2)); ?>/*{
+            producto: 'iPhone',
+            cantidad: 136
         }, {
             device: 'iPhone 3G',
             geekbench: 137
@@ -300,10 +286,10 @@ $res2 = productosMasVendidos();
         }, {
             device: 'iPhone 5',
             geekbench: 1571
-        }],
-        xkey: 'device',
-        ykeys: ['geekbench'],
-        labels: ['Geekbench'],
+        }*/,
+        xkey: 'producto',
+        ykeys: ['cantidad'],
+        labels: ['Cantidad'],
         barRatio: 0.4,
         xLabelAngle: 35,
         hideHover: 'auto',
