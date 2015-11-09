@@ -1,0 +1,2 @@
+Observaciones Documento
+- Carta gantt en forma de tabla: colocar la de BOM actualizada.
