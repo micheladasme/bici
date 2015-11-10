@@ -20,17 +20,11 @@
 
         function valida()
         {
-
             document.forms["loginform"].submit();
-
-
         }
         function alerta()
         {
-
-            alert("Contactese con el Administrador");
-
-
+         alert("Contactese con el Administrador");
         }
 
     </script>

@@ -99,12 +99,20 @@
             outline-offset: 0px;
         }
      </style>
+     <script type="text/javascript">
+     function salir(){
+            var respuesta=confirm('Desea realmente Cerrar Sesion?');
+            if(respuesta==true)
+                window.location="../salir.php";
+            else
+                return 0;
+        }
+     </script>
 	<div class="row">
 		<div class="row">
   			<div class="col-md-4 col-md-offset-7"> <h3 style="color:white;">Bienvenido Sr.(a) <?php echo $_SESSION['usu_nombre']; ?></h3></div>
 		</div>
-    
-    
+
     <!--
         <div class="well text-center">
             <button type="button" class="btn btn-hot text-capitalize btn-xs">hot button</button>
@@ -125,8 +133,6 @@
             <a type="button" class="btn btn-fresh text-uppercase" href="pedidos.php"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Pedidos</a>
             <a type="button" class="btn btn-sky text-uppercase pull-right" onclick="salir()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>  Cerrar Sesion</a>
         </div>
-
-
         <!--
         <div class="well text-center">
             <button type="button" class="btn btn-hot text-uppercase btn-lg">hot button</button>
@@ -134,6 +140,5 @@
             <button type="button" class="btn btn-fresh text-uppercase btn-lg">Fresh button</button>
             <button type="button" class="btn btn-sky text-uppercase btn-lg">Sky button</button>
         </div>
-    -->
-
+        -->
 	</div>
