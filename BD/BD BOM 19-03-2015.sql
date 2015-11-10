@@ -7,13 +7,13 @@
 CREATE TABLE Cliente
 (
   cli_id Int NOT NULL AUTO_INCREMENT,
-  cli_rut Int NOT NULL,
+  cli_rut Varchar(12) NOT NULL,
   cli_nombre Varchar(30) NOT NULL,
   cli_apellido Varchar(30) NOT NULL,
   cli_direccion Varchar(120) NOT NULL,
   cli_telefono Varchar(20) NOT NULL,
   cli_correo Varchar(80),
-  cli_pass Varchar(80) NOT NULL,
+  cli_pass Varchar(100) NOT NULL,
   comu_id Int,
  PRIMARY KEY (cli_id)
 )
@@ -82,9 +82,10 @@ CREATE TABLE Usuarios
 (
   usu_id Int NOT NULL AUTO_INCREMENT,
   usu_nick Varchar(20) NOT NULL,
-  usu_clave Varchar(30) NOT NULL,
+  usu_clave Varchar(100) NOT NULL,
   usu_nombre Varchar(50) NOT NULL,
   usu_apellido Varchar(50) NOT NULL,
+  usu_anulado Int,
   tip_id Int,
   suc_id Int,
  PRIMARY KEY (usu_id)

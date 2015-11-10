@@ -193,12 +193,12 @@ VALUES
 (00115, 'MANDO DE CAMBIO 3',41604,10949, 'imagenes/neumatico1',336,NULL,'BLANCO','DESCRIPCION23',1,7,3);
 
 
-INSERT INTO `usuarios` (`usu_id`, `usu_nick`, `usu_clave`, `usu_nombre`, `usu_apellido`, `tip_id`, `suc_id`) VALUES
-(1, 'mic.adasme', 'mic.adasme', 'Michel', 'Adasme', 1, 1),
-(2, 'ale.llanos', 'ale.llanos', 'Alejandro', 'Llanos', 2, 1),
-(3, 'local', 'local', 'Adm', 'Local', 3, 1),
-(4, 'mecanico', 'mecanico', 'Señor', 'Mecanico', 4, 1),
-(5, 'vendedor', 'vendedor', 'Señor', 'Vendedor', 5, 1);
+INSERT INTO `usuarios` (`usu_id`, `usu_nick`, `usu_clave`, `usu_nombre`, `usu_apellido`,'usu_anulado',`tip_id`, `suc_id`) VALUES
+(1, 'mic.adasme', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Michel', 'Adasme',0, 1, 1),
+(2, 'ale.llanos', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Alejandro', 'Llanos',0, 2, 1),
+(3, 'local', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Adm', 'Local', 1 ,3, 1),
+(4, 'mecanico', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Señor', 'Mecanico', 1 , 4, 1),
+(5, 'vendedor', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Señor', 'Vendedor', 1 , 5, 1);
 
 
 
@@ -570,7 +570,7 @@ INSERT INTO `comuna` (`comu_id`, `comu_nombre`, `region_id`) VALUES
 (346, 'ALTO HOSPICIO', 1);
 
 INSERT INTO `cliente` (`cli_rut`, `cli_nombre`, `cli_apellido`, `cli_direccion`, `cli_telefono`, `cli_correo`, `cli_pass`, `comu_id`) VALUES
-(180647945, 'Michel', 'Adasme', 'Las Guias 7555 - Naltagua', '51194592', 'mic.adasme@gmail.com', '12345', 87);
+(180647945, 'Michel', 'Adasme', 'Las Guias 7555 - Naltagua', '51194592', 'mic.adasme@gmail.com', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 87);
 
 INSERT INTO `ubicacion` VALUES
 (1, 'Tienda'),
