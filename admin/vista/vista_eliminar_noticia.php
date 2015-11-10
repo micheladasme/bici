@@ -4,7 +4,6 @@ include('../modelo/modelo_noticias.php');
 
 if(!isset($_SESSION['usu_nombre']))
 {header("location:../index.php");}
-
 $res = muestraNoticias();
 ?>
 <!DOCTYPE html>
@@ -13,7 +12,6 @@ $res = muestraNoticias();
     <meta charset="utf-8">
     <meta content="text/html" http-equiv="Content-type">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Eliminar Noticias</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"  />
     <script src="../js/jquery-1.11.3.min.js"></script>
@@ -21,7 +19,6 @@ $res = muestraNoticias();
      <script src="../js/paginate.js"></script>
     <script src="../js/custom.js"></script>
     <script type="text/javascript">
-
 
         function salir(){
             var respuesta=confirm('Desea realmente Cerrar Sesion?');
@@ -97,7 +94,6 @@ $res = muestraNoticias();
                     "</tr>"
                 );
 
-
             }
         }
 
@@ -139,6 +135,5 @@ $res = muestraNoticias();
     </table>
     <?php include('/includes/paginador.php');  ?>
     <?php include('/includes/footer.php');  ?>
-
 </body>
 </html>
