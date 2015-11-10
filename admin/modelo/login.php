@@ -14,15 +14,19 @@ function conecta()
   
   	$link= conecta();
     $sw=false;
-    $sql="SELECT * FROM usuarios WHERE usu_nick = '$nom' AND usu_clave =  '$cla'";
+    $sql="SELECT * FROM usuarios WHERE usu_nick = '$nom'";
     $res=mysql_query($sql,$link) or die("Error en: $busqueda: " . mysql_error());
     if($f=mysql_fetch_array($res))
-      {     $sw=$f['usu_id'];
-		
-			}
-    mysql_close($link);
+      {     
+        if (password_verify($cla, $f['usu_clave'])){
+        
+        $sw=$f['usu_id'];
+		  
+      }
+      }
+        mysql_close($link);
 	
-	return $sw;   
+	   return $sw;   
   	}
 	
 	// funcion para mostrar el nombre del usuario.
@@ -40,7 +44,8 @@ function conecta()
 	}
 
 function retornaNombrePorId($id)
-	{$link=conecta();
+	{
+    $link=conecta();
     $sw='';
     $sql="SELECT * FROM usuarios WHERE usu_id= $id";
     $res=mysql_query($sql,$link) or die("Error en: $busqueda: " . mysql_error());
