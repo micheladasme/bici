@@ -1,7 +1,7 @@
 <?php
 include_once("../modelo/funciones.php");
 $link = conectar();
-$consulta = "select com.comu_id , com.comu_nombre from comuna com;";
+$consulta = "select com.comu_id , com.comu_nombre from comuna com order by comu_nombre;";
 $result=mysql_query($consulta , $link);
 ?>
 
