@@ -6,6 +6,9 @@ if(!isset($_SESSION['usu_nombre']))
 {header("location:../../index.php");}
 
 
+$link = conectar();
+$consulta = "select com.comu_id , com.comu_nombre from comuna com order by comu_nombre;";
+$result=mysql_query($consulta , $link);
 $res = muestraCliente();
 
 
@@ -35,6 +38,22 @@ $res = muestraCliente();
       }
       
        $('.dropdown-toggle').dropdown()
+
+    function modalEdit(id){
+
+    $.ajax({
+    url: "/control/controlModalECliente.php", // link of your "whatever" php
+    async: true,
+    cache: false,
+    type: "POST",
+    data:{codigo:id}, // all data will be passed here
+    success: function(data){
+        $("#divModal").html(data);
+
+    }
+    });
+    }
+
 
      </script>
  </head>
@@ -86,7 +105,7 @@ $res = muestraCliente();
                             Usuario
                         </th>
                         <th>
-                            Password
+                            Accion
                         </th>
                     </tr>
 
@@ -106,8 +125,9 @@ $res = muestraCliente();
             "<td>".$f['cli_correo']."</td>".
             "<td>".$f['cli_telefono']."</td>".
             "<td>".$f['cli_direccion']."</td>".
-            "<td>".$f['cli_nick']."</td>".
-            "<td>".$f['cli_pass']."</td>".
+            "<td>".$f['cli_correo']."</td>".
+            "<td><a href='vista_ver_cliente.php?codigo=".$f['cli_rut']."' class='btn btn-sm btn-info'><span
+                            class='glyphicon glyphicon-plus-sign'></span> Modificar </a></td>".
            
 
             "</tr>"
@@ -141,8 +161,9 @@ $res = muestraCliente();
               <th style="font-weight:100"><?php echo $f['cli_correo']; ?></th>
               <th style="font-weight:100"><?php echo $f['cli_telefono']; ?></th>
               <th style="font-weight:100"><?php echo $f['cli_direccion']; ?></th>
-              <th style="font-weight:100"><?php echo $f['cli_nick']; ?></th>
-              <th style="font-weight:100"><?php echo $f['cli_pass']; ?></th>              
+              <th style="font-weight:100"><?php echo $f['cli_correo']; ?></th>
+              <td> <a href='vista_ver_cliente.php?codigo=<?php echo $f['cli_rut']; ?>' class='btn btn-sm btn-info'><span
+                            class='glyphicon glyphicon-plus-sign'></span> Modificar </a>  </td>         
           </tr>
 <?php
     }
@@ -159,5 +180,6 @@ $res = muestraCliente();
            </table>
             <?php include('/includes/paginador.php'); ?>
              <?php include('/includes/footer.php');  ?>
+             <?php include('/modal/modal_modificar_cliente.php'); ?>
   </body>
 </html>

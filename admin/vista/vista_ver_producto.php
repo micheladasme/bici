@@ -116,8 +116,12 @@ $res = muestraProductos();
             <td>" . $f['pro_nombre'] . "</td>
             <td>$" . $f['pro_precio_compra'] . "</td>
             <td>$" . $f['pro_precio_venta'] . "</td>
-            <td>$" . $f['subcat_nombre'] . "</td>
-            </tr>"
+            <td>$" . $f['subcat_nombre'] . "</td> 
+            <td> <a href='vista_ver_producto.php?codigo=".$f['pro_cod'];."'
+                                               class='btn btn-sm btn-info'><span
+                            class='glyphicon glyphicon-plus-sign'></span> Ver Mas </a> </td>"
+             
+            ."</tr>"
                 );
 
 

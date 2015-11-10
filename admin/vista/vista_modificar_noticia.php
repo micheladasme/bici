@@ -104,7 +104,7 @@ $res = muestraNoticias();
                     <th style="font-weight:100"><?php echo $f['not_titulo']; ?></th>
                     <th style="font-weight:100"><?php echo $f['not_subtitulo']; ?></th>
                     <th style="font-weight:100"><?php echo $f['not_fecha']; ?></th>
-                    <th style="font-weight:100"><?php echo $f['usu_id']; ?><th>
+                    <th style="font-weight:100"><?php echo $f['usu_nombre']. ' '.$f['usu_apellido'] ; ?><th>
                     <th width="30px"><a href="vista_modificar_noticia.php?codigo=<?php print($f['not_id'])?>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>&nbsp Modificar</a></th>
                 </tr>
 
