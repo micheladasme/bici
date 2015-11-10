@@ -502,7 +502,7 @@ include("../modelo/funciones.php");
 
                                                               </div>
                                                        <a onClick="modalNoticia('.$y['not_id'].')" class="btn btn-sm btn-info"><span
-                            class="glyphicon glyphicon-plus-sign"></span> Ver Mas </a>
+                                                         class="glyphicon glyphicon-plus-sign"></span> Ver Mas </a>
                                                             </div>
 
                                                           </div>
