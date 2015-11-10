@@ -92,8 +92,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-cog"></span> Sistema <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li> <a href="vista_ver_usuarios.php">Ver Usuario</a></li>
                         <li> <a href="vista_ingresar_usuario.php">Ingresar Usuario</a></li>
-                        <li> <a href="vista_modificar_usuario.php">Modificar Usuario</a></li>
+                        
                         <li class="divider"></li>
                         <li> <a href="vista_ver_cliente.php">Ver Cliente</a></li>
                         <li> <a href="vista_ingresar_cliente.php">Ingresar Cliente</a></li>
