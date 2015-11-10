@@ -12,10 +12,9 @@ if($sw)
 		
         $_SESSION['header']="";
 
-        print_r($_SESSION['usu_nombre']);
-         if($_SESSION['usu_nombre']) {
-         	?>
-         		 <script>
+       // print_r($_SESSION['usu_nombre']);
+         if($_SESSION['usu_nombre']) {?>
+         <script>
 		 location.href='../armado2.php';
 		 alert('Bienvenido a Bici-o-Matic'); 
 
