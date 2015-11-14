@@ -191,7 +191,7 @@ function muestraGasto()
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT gas_fecha, tg_descripcion ,gas_monto,gas_descripcion FROM gastos g, tipo_gastos tg
+    $sql=("SELECT gas_id, gas_fecha, tg_descripcion ,gas_monto,gas_descripcion FROM gastos g, tipo_gastos tg
 			WHERE g.tg_id = tg.tg_id
 			ORDER BY gas_fecha DESC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());

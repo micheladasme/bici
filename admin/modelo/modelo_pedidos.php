@@ -47,6 +47,39 @@ function muestraDetallePedidos($id_bici)
     return $a;
 }
 
+function muestraClientePedido($id_bici)
+{
+    $link = conectar();
+    $a=array();
+    $x=0;
+    $sql2 = "SELECT ped.ped_id, cli.cli_id,cli.cli_rut,cli.cli_nombre,cli.cli_apellido,cli.cli_direccion,cli.cli_telefono,cli.cli_correo,com.comu_id,com.comu_nombre FROM pedido ped INNER JOIN cliente cli ON ped.cli_id = cli.cli_id INNER JOIN comuna com ON cli.comu_id = com.comu_id WHERE ped.ped_id = $id_bici";
+    $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
+    while($f=mysql_fetch_assoc($res2))
+    {
+        $a[$x]=$f;
+        $x++;
+
+    }
+    mysql_close($link);
+    return $a;
+}
+
+function anulaPedido($id_ped)
+{
+    $link = conectar();
+    $a=array();
+    $x=0;
+    $sql2 = "UPDATE pedido SET est_id = 0 WHERE ped_id = $id_ped";
+    $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
+    if (mysql_affected_rows() > 0) {
+        $x = 1;
+    }
+    return $x;
+    mysql_close($link);
+
+
+}
+
 function updateEstado($id_bici,$est){
 
   $link = conectar();

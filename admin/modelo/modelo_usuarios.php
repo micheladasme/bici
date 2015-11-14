@@ -59,7 +59,7 @@ function muestraUsuarios()
 function eliminaUsuario($codigo)
 {
     $link=conectar();
-    $sql="UPDATE productos SET usu_anulado = 1 WHERE usu_id ='$codigo'";
+    $sql="UPDATE usuarios SET usu_anulado = 1 WHERE usu_id ='$codigo'";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     if(mysql_affected_rows()>0)
     {

@@ -64,12 +64,12 @@ function cryptPass($password, $rounds=9){
 
 }
 
-function registraCliente($rut,$nombre, $apellido,$direccion,$telefono,$correo,$nick, $pass, $tipo, $comuna)
+function registraCliente($rut,$nombre, $apellido,$direccion,$telefono,$correo, $pass, $comuna)
 {
     $x=0;
     $link=conectar();
      $cryptpass = cryptPass($pass);
-    $sql="INSERT INTO cliente (cli_rut,cli_nombre,cli_apellido,cli_direccion,cli_telefono,cli_correo,cli_nick,cli_pass,com_id) VALUES ('$rut','$nombre', '$apellido','$direccion','$telefono','$correo','$nick', '$cryptpass', '$tipo', '$comuna')";
+    $sql="INSERT INTO cliente (cli_rut,cli_nombre,cli_apellido,cli_direccion,cli_telefono,cli_correo,cli_pass,comu_id) VALUES ('$rut','$nombre', '$apellido','$direccion','$telefono','$correo', '$cryptpass', '$comuna')";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     // Verificamos si se realizo el insert
     if(mysql_affected_rows()>0)
