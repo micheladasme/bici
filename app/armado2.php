@@ -122,6 +122,11 @@ $bielas = muestraBiela();
                 });
         }
 
+        function vaciarArray(){
+            var cadena = "";
+            tablaProductos(cadena);
+             location.reload();    
+        }
         
     </script>
     <style>
@@ -156,10 +161,10 @@ $bielas = muestraBiela();
             -ms-transform: rotate(-30deg); /* IE 9 */
             -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
             transform: rotate(-30deg); /*border: 1px solid;*/}
-        #cont-tija{width: 45px; height: 82px; left:300px; top:155px; z-index: 1; position: absolute;
-            -ms-transform: rotate(-30deg); /* IE 9 */
-            -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
-            transform: rotate(-30deg); /*border: 1px solid;*/}
+        #cont-tija{width: 45px; height: 82px; left:280px; top:155px; z-index: 1; position: absolute;
+            -ms-transform: rotate(-23deg); /* IE 9 */
+            -webkit-transform: rotate(-23deg); /* Chrome, Safari, Opera */
+            transform: rotate(-23deg); /*border: 1px solid;*/}
         #cont-manubrio{width: 80px; height: 80px; right:215px; top:50px; z-index: 4; position: absolute; /*border: 1px solid;*/}
         #cont-pedal{width: 55px; height: 50px; left:398px; top:372px; z-index: 5; position: absolute; /*border: 1px solid;*/}
 
@@ -249,7 +254,7 @@ p{
          * No Incluye Precio por Mano de Obra 
         </div>
         <div class="col-xs-2 col-xs-offset-1">
-            <a  id="btn1" class="btn btn-danger"> Limpiar</a>
+            <a  id="btn1" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Limpiar</a>
             <a id="btnSave" class="btn btn-fresh"><span class="glyphicon glyphicon-floppy-saved"> </span> Guardar Creacion</a>
 
             </div>

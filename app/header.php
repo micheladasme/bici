@@ -110,7 +110,7 @@
      </script>
 	<div class="row">
 		<div class="row">
-  			<div class="col-md-4 col-md-offset-7"> <h3 style="color:white;">Bienvenido Sr.(a) <?php echo $_SESSION['usu_nombre']; ?></h3></div>
+  			<div class="col-md-4 col-md-offset-7"> <h3 style="color:#eeeeee;">Bienvenido Sr.(a) <?php echo $_SESSION['usu_nombre']; ?></h3></div>
 		</div>
 
     <!--

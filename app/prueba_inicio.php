@@ -1,4 +1,4 @@
-<?php include('/modals/modal_r_usuario.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +13,10 @@
     <script type="text/javascript">
         $(document).ready(function(){
 
-            $('#txt_cod').Rut({
-                on_error: function(){ alert('Rut incorrecto'); }
+                $('#txt_cod').Rut({
+                on_error: function(){ alert('Rut incorrecto');
+                $('#txt_cod').val('');}
+
             });
         });
 
@@ -31,7 +33,7 @@
 </head>
 <body>
 <header>
-    <img src="img/logo.png" style="width:150px;height:50px;"/>
+    <img src="images/logo.png" style="width:150px;height:50px;"/>
 </header>
 <div class="container">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -82,6 +84,6 @@
     </div>
 
 </div>
-
+<?php include('/modals/modal_r_usuario.php'); ?>
 </body>
 </html>
