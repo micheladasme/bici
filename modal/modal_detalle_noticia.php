@@ -22,11 +22,11 @@ $res3 = MuestraNoticiasTodo($cod);
                         <img  class="col-sm-4 " style="height: 130px; width: 200px; " src="../'.$b['not_imagen'].'" alt="...">
                         <p>'.$b["not_contenido"].'</p>
                     </div>
-
+                     <p>Escrito por: '.$b["usu_nombre"].'</p>
                     <div class="modal-footer">
-                            autor: <p>'.$b["usu_nombre"].'</p>
+                   
 
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     </div>
 
                 </div>
