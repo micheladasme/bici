@@ -95,7 +95,7 @@ $res = muestraUsuarios();
               <th style="font-weight:100"><?php echo($f['usu_nombre']." ".$f['usu_apellido']);?></th>
               <th style="font-weight:100"><?php echo $f['usu_nick']; ?></th>
               <th style="font-weight:100"><?php echo $f['tip_descripcion']; ?></th>
-              <th width="30px"><a href="../control/controlEUsuarios.php?codigo=<?php echo $f['usu_id']; ?>" class="btn btn-sm btn-danger" role="button"><span class="glyphicon glyphicon-remove"></span>&nbsp Anular</a></th>
+              <th width="30px"><a href="../control/controlEUsuario.php?codigo=<?php echo $f['usu_id']; ?>" class="btn btn-sm btn-danger" role="button"><span class="glyphicon glyphicon-remove"></span>&nbsp Anular</a></th>
           </tr>
 <?php
     }

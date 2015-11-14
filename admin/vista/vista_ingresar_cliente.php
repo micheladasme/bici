@@ -20,7 +20,17 @@ $result=mysql_query($consulta , $link);
 
       <script src="../js/jquery-1.11.3.min.js"></script>
       <script src="../js/bootstrap.min.js"></script>
+      <script src="../js/jquery.Rut.min.js"></script>
      <script type="text/javascript">
+
+      $(document).ready(function(){
+
+                $('#txt_cod').Rut({
+                on_error: function(){ alert('Rut incorrecto');
+                $('#txt_cod').val('');}
+
+            });
+        });
      
      function ValidaSoloNumeros() {
         var code =event.charCode || event.keyCode;
@@ -59,15 +69,14 @@ $result=mysql_query($consulta , $link);
             
             <div class="row">
         <div class="col-md-4 col-md-offset-4"><!--col-md-6 col-md-offset-3-->        
-          <form id="iform"  method="POST" action="../control/superadmin/controlRCliente.php" enctype="multipart/form-data">
-      <p> RUT : <input type="text" id="txt_cod" name="txt_cod" onkeypress="ValidaSoloNumeros()" class="form-control" required autofocus/>   </p>
+          <form id="iform"  method="POST" action="../control/controlRCliente.php" enctype="multipart/form-data">
+      <p> RUT : <input type="text" id="txt_cod" name="txt_cod" class="form-control" required autofocus/>   </p>
       <p> Nombre :  <input type="text" id="txt_nom" name="txt_nom" class="form-control" required/>    </p>
       <p> Apellido :   <input type="text" id="txt_ape" name="txt_ape" class="form-control" required/>    </p>
       <p> Direccion :  <textarea id="ta_dir" name="ta_dir" class="form-control" rows="2" required > </textarea>    </p>
       <p> Telefono : <input type="text" id="txt_tel" name="txt_tel" class="form-control" required/>   </p>
-      <p> Correo :  <input type="text" id="txt_correo" name="txt_correo" class="form-control" required/>   </p>
-      <p> Nickname :  <input type="text" id="txt_nick" name="txt_nick" class="form-control" required/>  </textarea>   </p>
-      
+      <p> Correo :  <input type="email" id="txt_correo" name="txt_correo" class="form-control" required/>   </p>
+      <p> Contraseña :  <input type="password" id="txt_pass" name="txt_pass" class="form-control" required/>   </p>
       <p> Comuna : <select name="sel_comuna" id="sel_comuna" class="form-control" required>
                                   <option value="">Seleccionar</option>
                                   <?php 

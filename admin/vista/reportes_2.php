@@ -285,9 +285,7 @@ $res6 = muestraServicios();
                               
                                     <div id="chart_div"></div>
                                 
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -312,9 +310,7 @@ $res6 = muestraServicios();
 
                                     </div>
 
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -394,17 +390,17 @@ $res6 = muestraServicios();
       function drawChart2(num) {
 
      var charData = $.ajax({
-      url: "../control/controlPieChart.php",
+      url: "../control/controlPieChart2.php",
       data: "r="+num,
       dataType:"json",
       async:false
      }).responseText;
     
-   
+   alert(charData);
     
     var data = new google.visualization.DataTable();
 
-      data.addColumn('string', 'Mes');
+      data.addColumn('string', 'Titulo');
       data.addColumn('number', 'Ganancias');
       data.addRows(JSON.parse(charData));
 

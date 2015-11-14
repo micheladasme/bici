@@ -93,9 +93,6 @@ $res = muestraNoticias();
                 Sub Titulo
             </th>
             <th>
-                Contenido
-            </th>
-            <th>
                 Fecha
             </th>
             <th>
@@ -114,10 +111,9 @@ $res = muestraNoticias();
              
             <td>" . $f['not_id'] . "</td>
             <td>" . $f['not_titulo'] . "</td>
-            <td>$" . $f['not_subtitulo'] . "</td>
-            <td>$" . $f['not_contenido'] . "</td>
-            <td>$" . $f['not_fecha'] . "</td>
-            <td>$" . $f['usu_id'] . "</td>
+            <td>" . $f['not_subtitulo'] . "</td>
+            <td>" . $f['not_fecha'] . "</td>
+            <td>" . $f['usu_id'] . "</td>
 
 
             </tr>"
@@ -144,7 +140,6 @@ $res = muestraNoticias();
                 <th style="font-weight:100"><?php echo $f['not_id']; ?></th>
                 <th style="font-weight:100"><?php echo $f['not_titulo']; ?></th>
                 <th style="font-weight:100"><?php echo $f['not_subtitulo']; ?></th>
-                <th style="font-weight:100"><?php echo $f['not_contenido']; ?></th>
                 <th style="font-weight:100"><?php echo $f['not_fecha']; ?></th>
                 <th style="font-weight:100"><?php echo $f['usu_nombre']. ' '.$f['usu_apellido'] ; ?></th>
                 <th style="font-weight:100"><a href="vista_ver_noticia.php?codigo=<?php echo $f["not_id"]; ?>"
@@ -158,7 +153,7 @@ $res = muestraNoticias();
         </tbody>
         <?php }
         else {
-            echo("<tr><td><h4>&nbsp;&nbsp;&nbsp;No hay Productos</h4></td></tr>");
+            echo("<tr><td><h4>&nbsp;&nbsp;&nbsp;No hay Noticias </h4></td></tr>");
         }
 
         } ?>

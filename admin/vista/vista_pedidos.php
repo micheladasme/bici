@@ -37,6 +37,20 @@ $res = muestraPedidos();
     });
     }
 
+    function anularBici(id_bici){
+
+    $.ajax({
+    url: "../control/controlEPedido.php", // link of your "whatever" php
+    type: "POST",
+    data:{codigo:id_bici}, // all data will be passed here
+    success: function(data){
+     alert(data);
+     location.reload();
+
+    }
+    });
+    }
+
     function modalDetallePedidos(id_bici){
 
     $.ajax({
@@ -68,12 +82,15 @@ $res = muestraPedidos();
 
 <?php include($_SESSION['header']); ?>
 
-<div class="row">
-    <div class="well col-md-offset-1 col-md-10">
+
+    <div class="well">
     <h3>Pedidos</h3>
     <hr>
     <div class="row">
-    <?php foreach ($res as $key => $v) { ?>
+
+    <?php 
+    if($res==true){
+    foreach ($res as $key => $v) { ?>
      <div class="col-sm-6 col-md-4" class="post">
     <div class="thumbnail">
       <img src="../../app/images/<?php print($v['ped_imagen']); ?>" class="img-responsive" alt="img bici">
@@ -83,22 +100,26 @@ $res = muestraPedidos();
         <p>Fecha de Creacion: <?php print($v['ped_fecha']); ?></p>
         <p>Precio: $<?php print($v['ped_subtotal']); ?>             *Mano de Obra No Incluida</p>
         <p>Peso: <?php print($v['ped_peso']); ?> grs</p>
-        
-        <p><a href="#" onClick="modalDetallePedidos(<?php print($v['ped_id']);?>)"  class="btn btn-primary" role="button">Ver Mas >></a>
+
+        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+        <a href="#" onClick="modalDetallePedidos(<?php print($v['ped_id']);?>)"  class="btn btn-primary" role="button">Ver Mas >></a>
          <?php 
           $res2 = siguenteEstado($v['est_id']);  
          foreach ($res2 as $key => $x) { 
             ?>
             <a href="#" onClick="sigPaso(<?php print($v['ped_id'].",".$x['est_id']);?>)"  class="btn btn-success" role="button"><?php print($x['est_nombre']." >>");?></a>
-          <?php }?> 
-        </p>
+          <?php }?>
+          <a href="#" onClick="anularBici(<?php print($v['ped_id']);?>)"  class="btn btn-danger" role="button">Anular Pedido</a> 
+        
+        </div>
       </div>
     </div>
   </div>
-    <?php } ?>
+    <?php } 
+     } else { echo ("<h4>&nbsp;&nbsp;&nbsp;No hay Pedidos</h4>"); } ?>
 </div>
     </div>
-</div>
+
   <div id="divModal">
   </div>
    

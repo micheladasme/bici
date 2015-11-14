@@ -89,7 +89,7 @@ $res = muestraGasto();
             "<td>".$f['tg_descripcion']."</td>".
             "<td>$".$f['gas_monto']."</td>".
             "<td>$".$f['gas_descripcion']."</td>".
-            "<th><a href='../../control/superadmin/controlEGasto.php?codigo=".$f['gas_id']."'  class='btn btn-sm btn-danger' role='button'><span class='glyphicon glyphicon-trash'></span>&nbsp Eliminar</a>  </th>".
+            "<th><a href='../control/controlEGasto.php?codigo=".$f['gas_id']."'  class='btn btn-sm btn-danger' role='button'><span class='glyphicon glyphicon-trash'></span>&nbsp Eliminar</a>  </th>".
             
             "</tr>"
             );
@@ -117,7 +117,7 @@ $res = muestraGasto();
               <th style="font-weight:100"><?php echo $f['tg_descripcion']; ?></th>
               <th style="font-weight:100">$ <?php echo $f['gas_monto']; ?></th>
               <th style="font-weight:100"><?php echo $f['gas_descripcion']; ?></th>
-              <th><a href="../../control/superadmin/controlEGasto.php?codigo=<?php echo $f['gas_id']; ?>" class="btn btn-sm btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span>&nbsp Eliminar</a>  </th>
+              <th><a href="../control/controlEGasto.php?codigo=<?php echo $f['gas_id']; ?>" class="btn btn-sm btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span>&nbsp Eliminar</a>  </th>
           </tr>
 <?php
     }

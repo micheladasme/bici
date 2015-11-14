@@ -164,7 +164,7 @@ $id = trim($row[0]) + 1;
 				<table>
 					<tr>
 					<th class="nom"> Recibida Por :</th>
-                        <th><input type="text" class="data" name="recibida" />   </th>
+                        <th><input type="text" class="data" name="recibida" required />   </th>
 					</tr>
 				</table>
 
@@ -177,24 +177,24 @@ $id = trim($row[0]) + 1;
 					<th class="nom">Nombre :</th>
 					<td><input type="text" id="nombre" name="nombre" required/></td>
 					<th class="nom">Marca :</th>
-					<th><input type="text" class="data" name="marca" /></th>
+					<th><input type="text" class="data" name="marca" required/></th>
 			</tr>
 
 			<tr>
 					<th class="nom">Telefono :</th>
-					<th><input type="text" class="data" name="tel" id="tel" /></th>
+					<th><input type="text" class="data" name="tel" id="tel" required/></th>
 					<th class="nom">Modelo :</th>
-					<th><input type="text" class="data" name="modelo" /></th>
+					<th><input type="text" class="data" name="modelo" required/></th>
 			</tr>		
 			<tr>
 					<th class="nom">Correo :</th>
-					<th><input type="text" class="data" name="correo" id="correo" /></th>
+					<th><input type="text" class="data" name="correo" id="correo" required /></th>
 					<th class="nom">Color :</th>
-					<th><input type="text" class="data" name="color" /></th>
+					<th><input type="text" class="data" name="color" required/></th>
 			</tr>	
 			<tr>
 					<th class="nom">Direccion :</th>
-					<th><input type="text" class="data" name="direccion" id="direccion"/></th>
+					<th><input type="text" class="data" name="direccion" id="direccion" required/></th>
 					<th class="nom">Fecha de Entrega :</th>
 					<th><input type="date" class="data" id="entrega" name="entrega" required/></th>
 			</tr>	
