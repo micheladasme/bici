@@ -251,7 +251,7 @@ function muestraMarcos()
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM productos WHERE subcat_id = 19 or subcat_id = 20";
+    $sql2 = "SELECT * FROM productos WHERE subcat_id IN (19,20) AND pro_estado = 2";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
@@ -424,7 +424,7 @@ function muestraPedal()
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM productos WHERE subcat_id = 13";
+    $sql2 = "SELECT * FROM productos WHERE subcat_id = 13 AND pro_estado = 1";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
