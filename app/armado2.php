@@ -157,7 +157,7 @@ $bielas = muestraBiela();
         #cont-pinones{width:70px; height:70px; left:135px; top:358px; z-index: 4; position: absolute; /*border: 1px solid;*/}    
         #cont-cambioTra{width:50px; height:65px; left:155px; top:383px; z-index: 5; position: absolute; /*border: 1px solid;*/}
         #cont-biela{width:115px; height:100px; left:318px; top:345px; z-index: 4; position: absolute; /*border: 1px solid;*/}
-        #cont-sillin{width:145px; height:60px; left:206px; top:95px; z-index: 4; position: absolute; 
+        #cont-sillin{width:125px; height:50px; left:206px; top:95px; z-index: 4; position: absolute; 
             -ms-transform: rotate(-30deg); /* IE 9 */
             -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
             transform: rotate(-30deg); /*border: 1px solid;*/}
