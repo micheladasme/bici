@@ -408,7 +408,7 @@ include("../modelo/funciones.php");
                             $res = MuestraProductos();
                             foreach ($res as $x) {
                                 
-
+                             if($x['pro_imagen']!=null){
                               echo(   '<div class="col-md-4 col-ms-6">
                                 <div class="g-item">
                                     <img src="../'. $x['pro_imagen'] .'" alt="">
@@ -417,7 +417,7 @@ include("../modelo/funciones.php");
                                     </a>
                                 </div> <!-- /.g-item --> 
                             </div> <!-- /.col-md-4 -->');
-                            
+                            }
                               
                             }
 
