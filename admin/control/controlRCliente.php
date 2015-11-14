@@ -4,16 +4,18 @@
     
 
 	// Obtenemos los Datos.
+	$rut = $_POST['txt_cod'];
 	$nombre = $_POST['txt_nom'];
 	$apellido = $_POST['txt_ape'];
-	$nick = $_POST['txt_nick'];
+	$direccion = $_POST['ta_dir'];
+	$telefono = $_POST['txt_tel'];
+	$correo = $_POST['txt_correo'];
 	$pass = $_POST['txt_pass'];
-	$pass2  = $_POST['txt_pass2'];
-	$tipo = $_POST['sel_tip'];
-	$suc = $_POST['sel_suc'];
+	$comuna = $_POST['sel_comuna'];
+
 
 	// Verificamos que no esten vacíos.
-	$ingresa = registraCliente($rut,$nombre, $apellido,$direccion,$telefono,$correo,$nick, $pass, $tipo, $comuna);
+	$ingresa = registraCliente($rut,$nombre, $apellido,$direccion,$telefono,$correo, $pass, $comuna);
 	
 	if($ingresa)
 	{

@@ -8,16 +8,25 @@ $id_usuario = $_SESSION["id_usuario"];
 
 
 $res = muestraDetallePedidos($codigo);
+$res2 = muestraClientePedido($codigo);
 
 
 	 print('<div class="modal fade" id="modalPedi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
              <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title" id="myModalLabel">Detalles Bicicleta</h1>
+                        <h2 class="modal-title" id="myModalLabel">Detalles Bicicleta Pedida</h2>
                     </div>
                     <div class="modal-body">
-                    <table class="table">
+                    <h4> Datos del Cliente </h4>');
+                    foreach ($res2 as $key => $c) {
+
+                       print('Rut: '.$c["cli_rut"].'<br>
+                        Nombre: '.$c["cli_nombre"].' '.$c['cli_apellido'].'<br>
+                        Telefono: '.$c["cli_telefono"].' - Correo: '.$c["cli_correo"].'<br>
+                        Direccion: '.$c["cli_direccion"].' , '.$c["comu_nombre"].'<br>');
+                    }
+                    print('<table class="table">
                     <thead>
                     <tr>
                         <th>

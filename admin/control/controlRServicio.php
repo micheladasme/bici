@@ -307,7 +307,10 @@ include_once('../modelo/modelo_servicios.php');
 
 	$rutaDestinopdf=$rutaEnServidorpdf.'/'.$nombrepdf.'.pdf';
 
-	
+	//print_r($id_cliente." ".$_POST['id_cli']);
+	//exit();
+	if(isset($_POST['id_cli']) && $id_cliente!=""){
+
 	$servicio = registraServicio($id_cliente, $rutaDestinopdf, $total, $hoy, $fecha_ent);
 
 	// Verificamos que se hallan insertado los datos.
@@ -332,4 +335,16 @@ include_once('../modelo/modelo_servicios.php');
 		</script>
 		<?php
 }
-		?>
+}else{
+?>
+<script>
+			// Alert informando.
+			alert('El Cliente no esta Registrado en el Sistema, Para Ingresar Servicio debe registrar al Cliente en el Sistema.');
+
+			// Redirigmos a ver Productos.
+			window.location="../vista/vista_ingresar_cliente.php";
+		</script>
+
+<?php
+}
+?>	
