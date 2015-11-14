@@ -9,18 +9,15 @@ $result=mysql_query($consulta , $link);
 
     function pass_match()
     {
-         $pass1=document.getElementById('txt_pass').value;
-         $pass2=document.getElementById('txt_pass2').value;
+         pass1=document.iform.txt_pass.value;
+         pass2=document.iform.txt_pass2.value;
 
-        if($pass1 != $pass2)
-        {
-            alert("las contraseñas no coincide");
-
-
-        }
+        if(pass1==pass2)
+             document.forms["iform"].submit();
         else
         {
-            document.forms["iform"].submit();
+           alert("las contraseñas no coincide");
+
         }
 
 
@@ -39,27 +36,29 @@ $result=mysql_query($consulta , $link);
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                    <form id="iform"  method="POST" action="control/controlRCliente.php" enctype="multipart/form-data">
+                    <form id="iform" name="iform"  method="POST" action="control/controlRCliente.php">
                         <div class="col-md-3"> RUT : <input type="text" id="txt_cod" name="txt_cod" class="form-control" required/>  </div>
-                        <div class="col-md-3  col-md-offset-1"> Nombre :  <input type="text" id="txt_nom" name="txt_nom" class="form-control" required/>    </div>
-                        <div class="col-md-3  col-md-offset-1"> Apellido :   <input type="text" id="txt_ape" name="txt_ape" class="form-control" required/>    </div>
-                        <div> Direccion :  <textarea id="txt_dir" name="txt_dir" class="form-control" rows="2" required > </textarea> </div>
-                        <div> Telefono : <input type="text" id="txt_tel" name="txt_tel" class="form-control" required/>   </div>
-                        <div> Correo :  <input type="email" id="txt_correo" name="txt_correo" class="form-control" required/>   </div>
+                        <div class="col-md-4"> Nombre :  <input type="text" id="txt_nom" name="txt_nom" class="form-control" required/>    </div>
+                        <div class="col-md-4"> Apellido :   <input type="text" id="txt_ape" name="txt_ape" class="form-control" required/>    </div>
+                        <div class="col-md-12"> Direccion :  <textarea id="txt_dir" name="txt_dir" class="form-control" rows="2" required > </textarea> </div>
+                        <div class="col-md-6"> Telefono : <input type="text" id="txt_tel" name="txt_tel" class="form-control" required/>   </div>
+                        <div class="col-md-6"> Correo :  <input type="email" id="txt_correo" name="txt_correo" class="form-control" required/>   </div>
                         <p>
-                        <div class="col-md-5  "> Contraseña :  <input type="password" id="txt_pass" name="txt_pass" class="form-control" required/>  </textarea>   </div>
-                        <div class="col-md-5  col-md-offset-2"> Repita Contraseña :<input type="password" id="txt_pass2" name="txt_pass2" class="form-control" required/>  </textarea>   </div>
+                        <div class="col-md-5"> Contraseña :  <input type="password" id="txt_pass" name="txt_pass" class="form-control" required/>  </textarea>   </div>
+                        <div class="col-md-5"> Repita Contraseña :<input type="password" id="txt_pass2" name="txt_pass2" class="form-control" required/>  </textarea>   </div>
                         </p>
-                        <p> Comuna : <select name="sel_comuna" id="sel_comuna" class="form-control" required>
+
+                        <div class="col-md-12"> Comuna : <select name="sel_comuna" id="sel_comuna" class="form-control" required>
                                 <option value="">Seleccionar</option>
                                 <?php
                                 while($fila=mysql_fetch_row($result)){
                                     echo"<option  value='".$fila['0']."'>".$fila['1']."</option>";
                                 }
                                 ?>
-                            </select></p>
+                            </select></div>
                         <!--<input type="submit" id="btn_ingresar" name="btn_ingresar" class="btn btn-primary btn-lg btn-block" value="Ingresar"/>-->
-
+                        </div>
+                        <br>
                         <div class="modal-footer">
                             <input type="button" id="btn_ingresar" name="btn_ingresar" class="btn btn-primary" value="Ingresar" onclick="pass_match()">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
