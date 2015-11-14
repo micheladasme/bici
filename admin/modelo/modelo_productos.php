@@ -127,7 +127,7 @@ function muestraProductosNom($nombre)
     $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT * FROM productos WHERE pro_nombre LIKE '%$nombre%' AND pro_estado = 1");
+    $sql=("SELECT * FROM productos pro INNER JOIN subcategoria sub ON pro.subcat_id = sub.subcat_id WHERE pro.pro_nombre LIKE '%$nombre%' AND pro_estado = 1");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {

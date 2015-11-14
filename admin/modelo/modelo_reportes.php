@@ -214,7 +214,7 @@ function muestraPedidos()
      $link=conectar();
     $a=array();
     $x=0;
-    $sql=("SELECT ped.ped_id, Date_format(ped.ped_fecha,'%d/%m/%Y') as ped_fecha, ped.ped_total, est.est_nombre FROM pedido ped, estado_armado est WHERE ped.est_id = est.est_id ORDER BY ped_id DESC");
+    $sql=("SELECT ped.ped_id, Date_format(ped.ped_fecha,'%d/%m/%Y') as ped_fecha, ped.ped_subtotal, est.est_nombre FROM pedido ped, estado_armado est WHERE ped.est_id = est.est_id ORDER BY ped_id DESC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
