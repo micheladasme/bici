@@ -341,6 +341,8 @@ $(function() {
 
 $("#btn1").click(function() {
    $(".ui-widget-header").empty();
+   vaciarArray();
+  
 });
 
 });
