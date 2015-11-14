@@ -181,7 +181,7 @@ include("../modelo/funciones.php");
                             <ul class="tabs">
                                 <li class="col-md-4 col-sm-4">
                                     <a href="#tab4" class="icon-item">
-                                        <i class="fa fa-umbrella"></i>
+                                        <i class="fa fa-users"></i>
                                     </a> <!-- /.icon-item -->
                                 </li>
                                 <li class="col-md-4 col-sm-4">
@@ -346,19 +346,19 @@ include("../modelo/funciones.php");
                                 <li class="col-md-4 col-sm-4">
                                     <a href="#tab7" class="icon-item">
                                         <p>Reparacion</p>
-                                        <i class="fa fa-cogs"></i>
+                                        <i class="fa fa-wrench"></i>
                                     </a> <!-- /.icon-item -->
                                 </li>
                                 <li class="col-md-4 col-sm-4">
                                     <a href="#tab8" class="icon-item">
                                         <p>Tuning</p>
-                                        <i class="fa fa-leaf"></i>
+                                        <i class="fa fa-cog"></i>
                                     </a> <!-- /.icon-item -->
                                 </li>
                                 <li class="col-md-4 col-sm-4">
                                     <a href="#tab9" class="icon-item">
                                         <p>Mantenimiento</p>
-                                        <i class="fa fa-users"></i>
+                                        <i class="fa fa-gears"></i>
                                     </a> <!-- /.icon-item -->
                                 </li>
                             </ul> <!-- /.tabs -->
@@ -380,16 +380,16 @@ include("../modelo/funciones.php");
                                     <p>
                                             Una mantención de la bicicleta periódicamente y hecho de la manera correcta y con sus servicios al día trae consigo una perduración del producto a lo largo del tiempo.
                                            <br>Alguno de nuestros servicios son:
-                                           <br>Servicio Full Bicicleta: Consta de un desarme completo de la bicicleta (rígida o doble suspensión), lavado de bicicleta, engrase de masas, dirección, motor, centrado de las ruedas, cambio de piolas y fundas de cambio.
-                                           <br>Servicio medio Bicicleta: Consta de un lavado de bicicleta completo, centrado de ruedas, ajuste de frenos y cambios, con lubricación.
-                                            <br>Servicio de horquilla
-                                            <br>Servicio de shock
-                                            <br>Servicio de frenos
-                                            <br>Sistema tubular
-                                            <br>Lavado de transmisión
-                                            <br>Enrayado de ruedas
-                                           <br> Cambio de rodamientos de masas, cuadros, dirección, etc.
-                                            <br>Servicio de cambio de bujes para shock y pernos mandados hacer a medida.
+                                           <br>- Servicio Full Bicicleta: Consta de un desarme completo de la bicicleta (rígida o doble suspensión), lavado de bicicleta, engrase de masas, dirección, motor, centrado de las ruedas, cambio de piolas y fundas de cambio.
+                                           <br>- Servicio medio Bicicleta: Consta de un lavado de bicicleta completo, centrado de ruedas, ajuste de frenos y cambios, con lubricación.
+                                            <br>- Servicio de horquilla
+                                            <br>- Servicio de shock
+                                            <br>- Servicio de frenos
+                                            <br>- Sistema tubular
+                                            <br>- Lavado de transmisión
+                                            <br>- Enrayado de ruedas
+                                           <br> - Cambio de rodamientos de masas, cuadros, dirección, etc.
+                                            <br>- Servicio de cambio de bujes para shock y pernos mandados hacer a medida.
                                     </p>
                                 </div>
                             </div> <!-- /.col-md-12 -->
@@ -412,8 +412,11 @@ include("../modelo/funciones.php");
                               echo(   '<div class="col-md-4 col-ms-6">
                                 <div class="g-item">
                                     <img src="../'. $x['pro_imagen'] .'" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="'. $x['pro_imagen'] .'">
-                                        <span>+</span>
+                                    <a data-rel="lightbox" class="overlay">
+                                    <p></p>
+                                        <h3 style="background:white;">'.$x["pro_nombre"].'</h3>
+                                        <h5>Peso : $ '.$x["pro_peso"].'</h5>
+                                        <h5>Precio : $ '.$x["pro_precio_venta"].'</h5>
                                     </a>
                                 </div> <!-- /.g-item --> 
                             </div> <!-- /.col-md-4 -->');
