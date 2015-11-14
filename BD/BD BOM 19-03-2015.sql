@@ -223,7 +223,7 @@ CREATE TABLE Tipo_Gastos
 
 CREATE TABLE Estado_Armado
 (
-  est_id Int NOT NULL AUTO_INCREMENT,
+  est_id Int NOT NULL,
   est_nombre Varchar(40) NOT NULL,
  PRIMARY KEY (est_id)
 )

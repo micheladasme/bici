@@ -193,7 +193,7 @@ VALUES
 (00115, 'MANDO DE CAMBIO 3',41604,10949, 'imagenes/neumatico1',336,NULL,'BLANCO','DESCRIPCION23',1,7,3);
 
 
-INSERT INTO `usuarios` (`usu_id`, `usu_nick`, `usu_clave`, `usu_nombre`, `usu_apellido`,'usu_anulado',`tip_id`, `suc_id`) VALUES
+INSERT INTO `usuarios` (`usu_id`, `usu_nick`, `usu_clave`, `usu_nombre`, `usu_apellido`,`usu_anulado`,`tip_id`, `suc_id`) VALUES
 (1, 'mic.adasme', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Michel', 'Adasme',0, 1, 1),
 (2, 'ale.llanos', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Alejandro', 'Llanos',0, 2, 1),
 (3, 'local', '$2y$09$6bYZRPGZ5sbCVpPhlO4pP.4Xlht7S3bQtqjo2tW7b2NPNQDYQioZW', 'Adm', 'Local', 1 ,3, 1),
