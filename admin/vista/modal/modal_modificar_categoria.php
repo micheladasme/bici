@@ -23,7 +23,7 @@ foreach($datos as $d)
                     <h4 class="modal-title" id="gridSystemModalLabel">Modificar Categoria</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="iform"  method="POST" action="../control/controlMNoticia.php" enctype="multipart/form-data">
+                    <form id="iform"  method="POST" action="../control/controlMCategoria.php" enctype="multipart/form-data">
                         <p> Id : <input type="text" id="txt_cod" name="txt_cod"  class="form-control" value="<?php echo $d['cat_id']; ?>" required readonly/>   </p>
                         <p> Nombre :  <input type="text" id="txt_nom" name="txt_nom" class="form-control" value="<?php echo $d['cat_nombre']; ?>" required/>    </p>
                         <p> Descripcion :  <textarea rows="5" id="txt_desc" name="txt_desc"  class="form-control" required> <?php echo $d['cat_descripcion']; ?></textarea>  </p>
