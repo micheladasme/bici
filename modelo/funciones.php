@@ -15,7 +15,7 @@
 		$a=array();
 		$x=0;
 
-		$sql=("SELECT pro_imagen FROM productos");
+		$sql=("SELECT * FROM productos WHERE pro_estado = 1");
 		$res=mysql_query($sql,$link);
 		while($f=mysql_fetch_array($res))
 		{
