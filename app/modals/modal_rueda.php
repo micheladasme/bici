@@ -78,7 +78,7 @@
                                                         <p>$<?php print($valn["pro_precio_venta"]);?> - <?php print($valn["pro_peso"]);?> grs.</p>
                                                         <p><div id="neuma" ><input type="checkbox" id="neumatico" name="neumatico" class="neumatico" value="<?php print($valn['pro_cod'])?>"> Elegir<br> </div></p>
                                                     </div>
-                                                    <img src="../<?php print($valn["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($valn["pro_imagen"]);?>" alt="Image"  class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
@@ -107,7 +107,7 @@
                                                         <p>$<?php print($vall["pro_precio_venta"]);?> - <?php print($vall["pro_peso"]);?> grs.</p>
                                                        <p> <input type="checkbox" id="llanta" name="llanta" class="llanta" value="<?php print($vall['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="../<?php print($vall["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($vall["pro_imagen"]);?>" alt="Image"  class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
@@ -135,7 +135,7 @@
                                                         <p>$<?php print($valf["pro_precio_venta"]);?> - <?php print($valf["pro_peso"]);?> grs.</p>
                                                        <p> <input type="checkbox" id="frenoTra" name="frenoTra" class="frenoTra" value="<?php print($valf['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="../<?php print($valf["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($valf["pro_imagen"]);?>" alt="Image"  class="img-responsive"> 
                                                 </div>
                                           </div>
                                        

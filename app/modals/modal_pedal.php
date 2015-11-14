@@ -45,7 +45,7 @@ $(function(){
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
                     <h3 class="modal-title" id="gridSystemModalLabel">Pedales</h3>
                 </div>
                 <div class="modal-body">
@@ -71,7 +71,7 @@ $(function(){
                                                         <p>$<?php print($ped["pro_precio_venta"]);?></p>
                                                        <p> <input type="checkbox" id="pedal" name="pedal" class="pedal" value="<?php print($ped['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                 <img src="../<?php print($ped["pro_imagen"]);?>"   alt="Image" class="img-responsive"> 
                                                 </div>
                                           </div>
                                        

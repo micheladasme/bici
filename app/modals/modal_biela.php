@@ -48,7 +48,7 @@ $(function(){
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  
                     <h3 class="modal-title" id="gridSystemModalLabel">Biela</h3>
                 </div>
                 <div class="modal-body">
@@ -74,7 +74,7 @@ $(function(){
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
                                                        <p> <input type="checkbox" id="platos" name="platos" class="platos" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                   <img src="../<?php print($val["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
@@ -102,7 +102,7 @@ $(function(){
                                                         <p>$<?php print($val["pro_precio_venta"]);?></p>
                                                        <p> <input type="checkbox" id="cadena" name="cadena" class="cadena" value="<?php print($val['pro_cod'])?>"> Elegir<br></p>
                                                     </div>
-                                                    <img src="images/img250.png" alt="Image" class="img-responsive"> 
+                                                    <img src="../<?php print($val["pro_imagen"]);?>" alt="Image" class="img-responsive"> 
                                                 </div>
                                           </div>
                                        
