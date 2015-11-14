@@ -216,7 +216,7 @@ $res6 = muestraServicios();
                                             <tr class="post3">
                                                 <td><?php print($val['ped_id']); ?></td>
                                                 <td><?php print($val['ped_fecha']); ?></td>
-                                                <td>$<?php print($val['ped_total']); ?></td>
+                                                <td>$<?php print($val['ped_subtotal']); ?></td>
                                                 <td><?php print($val['est_nombre']); ?></td>
                                             </tr>
                                             <?php  }?>

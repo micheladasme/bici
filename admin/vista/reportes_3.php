@@ -223,7 +223,7 @@ $res2 = productosMasVendidos();
                             <div class="panel-body">
                                 <div id="mas-vendidos"></div>
                                 <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                   
                                 </div>
                             </div>
                         </div>

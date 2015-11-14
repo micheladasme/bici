@@ -266,7 +266,7 @@ $res4 = cantidadActividadesHoy();
                                     </table>
                                 </div>
                                 <div class="text-right">
-                                    <a href="#">Ver Todas las Ventas <i class="fa fa-arrow-circle-right"></i></a>
+                                    <a href="reportes_2.php">Ver Todas las Ventas <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
