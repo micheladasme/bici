@@ -11,15 +11,25 @@ include_once("../modelo/funciones.php");
 $datos = $_POST; 
 
 $cadenaCom = $datos["productos"];
+
+if(empty($cadenaCom)){
+
+
+
+}else{
 //print_r($cadenaCom);
 $cadena = explode("-", $cadenaCom);
+}
 
-
-if($cadena[0]!="")
+if(isset($cadena[0]) && $cadena[0]!="")
 {
 $res = muestraProductosArmado($cadena[0]);
 }
-if($cadena[1]!="")
+else
+{
+
+}
+if(isset($cadena[1]) && $cadena[1]!="")
 {
 $res2 = muestraProductosArmado($cadena[1]);
 }
@@ -90,7 +100,10 @@ foreach ($res as $key => $val) {
 
  print_r('<input type="hidden" id="pes" value="'.$peso.'"/>
     <input type="hidden" id="pre" value="'.$precio.'"/>
-    <input type="hidden" id="cad1" value="'.$cadena[0].'"/>
+   ');
+ if(isset($cadena[0])&&isset($cadena[1])){
+    print_r(' <input type="hidden" id="cad1" value="'.  $cadena[0].'"/>
     <input type="hidden" id="cad2" value="'.$cadena[1].'"/>');
+ }
 
 ?>
