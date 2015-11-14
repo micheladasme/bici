@@ -327,7 +327,7 @@ function muestraTija()
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT * FROM productos WHERE subcat_id = 10";
+    $sql2 = "SELECT * FROM productos WHERE subcat_id = 10 AND pro_estado = 2";
     $res2=mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
