@@ -33,7 +33,7 @@ include_once('../modelo/modelo_servicios.php');
 	$valor16 = $_POST['valor16'];
 	$valor17 = $_POST['valor17'];
 	$valor18 = $_POST['valor18'];
-    $servicio_1 = $_POST['servicio_1'];
+    $servicio_1 = (isset($_POST['servicio_1'])? $_POST['servicio_1']:"");
 	$repuestos1 = $_POST['repuestos1'];
 	$repuestos2 = $_POST['repuestos2'];
 	$repuestos3 = $_POST['repuestos3'];
