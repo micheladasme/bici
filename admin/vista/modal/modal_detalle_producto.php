@@ -57,7 +57,7 @@ if (isset($_GET['codigo'])) {
                             <tr>
                                 <td class="h6"><strong>Stock</strong></td>
                                 <td> </td>
-                                <td class="h5">50</td>
+                                <td class="h5"><?php print($b["pu_cantidad"]) ?></td>
                             </tr>
                             <tr>
                                 <td class="h6"><strong>Ubicacion</strong></td>
@@ -68,9 +68,7 @@ if (isset($_GET['codigo'])) {
 
 
                             <tr>
-                                <td class="btn-mais-info text-primary">
-                                    <i class="open_info glyphicon glyphicon-plus"></i> Mas Informacion
-                                </td>
+                               
                                 <td> </td>
                                 <td class="h5"></td>
                             </tr>

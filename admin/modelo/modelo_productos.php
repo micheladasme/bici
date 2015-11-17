@@ -61,10 +61,7 @@ function buscaProductoDetalle($codigo){
     $link = conectar();
     $a=array();
     $x=0;
-    $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso,pr.pro_color,pr.pro_talla, subcat.subcat_nombre
-        FROM productos pr,subcategoria subcat
-        WHERE pr.pro_cod = $codigo
-        AND pr.subcat_id = subcat.subcat_id";
+    $sql2 = "SELECT pr.pro_cod, pr.pro_nombre, pr.pro_precio_venta, pr.pro_precio_compra, pr.pro_imagen, pr.pro_peso,pr.pro_color,pr.pro_talla, subcat.subcat_nombre, pu.pu_cantidad FROM productos pr INNER JOIN subcategoria subcat ON pr.subcat_id = subcat.subcat_id LEFT OUTER JOIN producto_ubicacion pu ON pr.pro_cod = pu.pro_cod WHERE pr.pro_cod = '$codigo'";
     $res2= mysql_query($sql2, $link) or die("Error en: $sql2: " . mysql_error());
     while($f=mysql_fetch_assoc($res2))
     {
@@ -84,6 +81,22 @@ function muestraProductos()
     $a=array();
     $x=0;
     $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, subcat.subcat_nombre FROM productos pro, subcategoria subcat WHERE pro.subcat_id = subcat.subcat_id AND pro_estado = 1 ORDER BY pro_nombre ASC");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+    }
+    mysql_close($link);
+    return $a;
+}
+
+function muestraProductosAnulados()
+{
+    $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT pro.pro_cod, pro.pro_nombre, pro.pro_precio_compra, pro.pro_precio_venta, subcat.subcat_nombre FROM productos pro, subcategoria subcat WHERE pro.subcat_id = subcat.subcat_id AND pro_estado = 0 ORDER BY pro_nombre ASC");
     $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
     while($f=mysql_fetch_assoc($res))
     {
@@ -138,11 +151,39 @@ function muestraProductosNom($nombre)
     return $a;
 }
 
+function muestraProductosAnuladosNom($nombre)
+{
+    $link=conectar();
+    $a=array();
+    $x=0;
+    $sql=("SELECT * FROM productos pro INNER JOIN subcategoria sub ON pro.subcat_id = sub.subcat_id WHERE pro.pro_nombre LIKE '%$nombre%' AND pro_estado = 0");
+    $res=mysql_query($sql, $link) or die("Error en: $sql: " . mysql_error());
+    while($f=mysql_fetch_assoc($res))
+    {
+        $a[$x]=$f;
+        $x++;
+    }
+    mysql_close($link);
+    return $a;
+}
+
 // Función Eliminar Producto.
 function eliminaProducto($codigo)
 {
     $link=conectar();
-    $sql="DELETE FROM productos WHERE pro_cod ='$codigo'";
+    $sql="UPDATE productos SET pro_estado = 0 WHERE pro_cod ='$codigo'";
+    $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
+    if(mysql_affected_rows()>0)
+    {
+        return '1';
+    }
+    mysql_close($link);
+}
+
+function activaProducto($codigo)
+{
+    $link=conectar();
+    $sql="UPDATE productos SET pro_estado = 1 WHERE pro_cod ='$codigo'";
     $res=mysql_query($sql,$link) or die("Error en: $sql: " . mysql_error());
     if(mysql_affected_rows()>0)
     {

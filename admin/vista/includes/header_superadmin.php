@@ -53,6 +53,7 @@
                         <li> <a href="vista_ingresar_producto.php">Ingresar Producto</a></li>
                         <li> <a href="vista_modificar_producto.php">Modificar Producto</a></li>
                         <li> <a href="vista_eliminar_producto.php">Anular Producto</a></li>
+                         <li> <a href="vista_ver_producto_anulado.php">Productos Anulados</a></li>
                     </ul>
                 </li>
 

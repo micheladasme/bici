@@ -79,12 +79,7 @@ $res = muestraStock();
                         </th>
                          <th>
 
-                            Stock Tienda
-
-                        </th>
-                        <th>
-
-                            Stock Bodega
+                            Stock 
 
                         </th>
                         <th>
@@ -137,7 +132,6 @@ $res = muestraStock();
           <tr class = "post">
               <th style="font-weight:100"><?php echo $f['pro_cod']; ?></th>
               <th style="font-weight:100"><?php echo $f['pro_nombre']; ?></th>
-
               <th style="font-weight:100"> <?php echo $f['pu_cantidad']; ?></th>
               <th style="font-weight:100"> <?php echo $f['ubc_descripcion']; ?></th>
           </tr>
