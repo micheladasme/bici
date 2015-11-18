@@ -435,7 +435,7 @@ include("../modelo/funciones.php");
                                     <a data-rel="lightbox" class="overlay">
                                     <p></p>
                                         <h3 style="background:white;">'.$x["pro_nombre"].'</h3>
-                                        <h5>Peso : $ '.$x["pro_peso"].'</h5>
+                                        <h5>Peso : '.$x["pro_peso"].' gramos</h5>
                                         <h5>Precio : $ '.$x["pro_precio_venta"].'</h5>
                                     </a>
                                 </div> <!-- /.g-item --> 
