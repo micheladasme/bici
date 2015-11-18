@@ -58,22 +58,22 @@ include_once('../modelo/modelo_servicios.php');
 	border:1px solid #000000;
     }
 
+    tr{
+    	border:none;
+    }
+
     #factura
     {
 	 border:1px solid #000000;
     }
     #orden
-    { 
-    	float:right;
- 		width:40%;
+    { 	
+ 		margin-left: 30px;
  		margin-bottom: 30px;
     }
 	#logo
 	{
-		float:left;
-		width:40%;
 		text-align: center;
-
 	}
 	img
 	{
@@ -84,6 +84,11 @@ include_once('../modelo/modelo_servicios.php');
 	{
 		margin-top: 20px;
 	}
+	.separador
+	{
+		width:50%;
+
+	}
 	input[type="text"]{
 		
 		width:100%;
@@ -93,10 +98,7 @@ include_once('../modelo/modelo_servicios.php');
 		width:100%;
 	}
 
-	.nom
-	{
-		width: 10%;
-	}
+	
 	.data
 	{
 		  font: caption;
@@ -119,49 +121,52 @@ include_once('../modelo/modelo_servicios.php');
 	}
 	
 	</style> 
-  <div id="factura">
-	
-			<div id="logo">
-				
-				<img src="../img/logo.png" align="middle" class="img-responsive" alt="sccycles logo"/>
-				
-				<h4 style="align:center;">SAAVEDRA Y CASTRO CYCLES LIMITADA</h4>
-				<p>Compra, venta y reparacion de bicicletas y repuestos <br>
-					Av. Las Condes 12.255, Locl 41, Cantagallo<br>
-					(56-2)2417085 - (56-9)8370245
-				</p>
-				<p>www.sccycles.cl        contacto.sccycles@gmail.com</p>	
-			</div>
-	
-			<div id="orden" >
-				<h3>ORDEN DE SERVICIOS</h3><br>
-				<h5> N° Orden : <?php print $num_fac?></h5>
-				<p></p>
-				<table>
-					<tr>
-					<th class="nom">Fecha :</th>
-					<th><?php print $hoy ?></th></tr>
+     <table id="factura">
+      <tr>
+			<td class="separador">
+				<div id="logo">
 					
-				</table> <br><br>
-				<table>
-					<tr>
-					<th class="nom"> Recibida Por :</th>
-                        <th><?php print $recibida?></th>
-					</tr>
-				</table>
-
+					<img src="../img/logo.png" align="middle" class="img-responsive" alt="sccycles logo"/>
+					
+					<h4 style="align:center;">SAAVEDRA Y CASTRO CYCLES LIMITADA</h4>
+					<p>Compra, venta y reparacion de bicicletas y repuestos <br>
+						Av. Las Condes 12.255, Locl 41, Cantagallo<br>
+						(56-2)2417085 - (56-9)8370245
+					</p>
+					<p>www.sccycles.cl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contacto.sccycles@gmail.com</p>	
 				</div>
-
+			</td>
+				
+			<td class="separador">
+				<div id="orden">
+					<h3>ORDEN DE SERVICIOS</h3><br>
+					<h5> N° Orden : <?php print $num_fac?></h5>
+					<p></p>
+					<table>
+						<tr>
+						<th class="nom">Fecha :</th>
+						<th><?php print $hoy ?></th></tr>
+						
+					</table> <br><br>
+					<table>
+						<tr>
+						<th class="nom"> Recibida Por :</th>
+	                        <th><?php print $recibida?></th>
+						</tr>
+					</table>
 	
-	<div id="servicio">
-		<table>
+				</div>
+			</td>
+		</tr>
+    </table>
+    <table> 
+	
 			<tr>
 					<th class="nom">Nombre :</th>
-					<td><?php print $nom_cliente ?></td>
+					<th><?php print $nom_cliente ?></th>
 					<th class="nom">Marca :</th>
 					<th><?php print $marca ?></th>
 			</tr>
-
 			<tr>
 					<th class="nom">Telefono :</th>
 					<th><?php print $tel_cliente ?></th>
@@ -180,9 +185,10 @@ include_once('../modelo/modelo_servicios.php');
 					<th class="nom">Fecha de Entrega :</th>
 					<th><?php print $fecha_ent ?></th>
 			</tr>
-		</table>
+		
+	</table>
 		<br>
-		<table id="contenido" class="contenido">
+      <table id="contenido" class="contenido">
 			<tr>
 				<th class="title vacio"><b></b></th>
 				<th class="title"><b>SERVICIOS</b></th>
@@ -288,14 +294,11 @@ include_once('../modelo/modelo_servicios.php');
                 <th class="title ">TOTAL </th>
                 <td><?php print $total ?></td>
             </tr>
-		
-		</table>
-
-	</div>
-</div> 
+			</table>
 </page>
 
 <?php 
+
 	$rutaEnServidorpdf='pdf';
 	$content=ob_get_clean();
 	require_once('../librerias/html2pdf/html2pdf.class.php');
