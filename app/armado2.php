@@ -150,14 +150,14 @@ $bielas = muestraBiela();
         #cont-marco { width: 600px; height: 400px; left:65px; top:85px; margin: 10px; z-index: 3; position: absolute; padding: 30px 65px 15px 65px; /*border: 1px solid;*/}
         #cont-rueda { width: 270px; height: 270px; left:35px; top:260px; z-index: 1; position: absolute; /*border: 1px solid;*/}
         #cont-rueda2 { width: 270px; height: 270px; right:0px; top:260px; z-index: 1; position: absolute; /*border: 1px solid;*/}
-        #cont-horquilla { width: 60px; height: 335px; right:157px; top:87px; z-index: 4; position: absolute;
+        #cont-horquilla { width: 60px; height: 335px; right:157px; top:87px; z-index: 1; position: absolute;
             -ms-transform: rotate(-23deg); /* IE 9 */
             -webkit-transform: rotate(-23deg); /* Chrome, Safari, Opera */
             transform: rotate(-23deg); /*border: 1px solid;*/}
         #cont-pinones{width:70px; height:70px; left:135px; top:358px; z-index: 4; position: absolute; /*border: 1px solid;*/}    
         #cont-cambioTra{width:50px; height:65px; left:155px; top:383px; z-index: 5; position: absolute; /*border: 1px solid;*/}
         #cont-biela{width:115px; height:100px; left:318px; top:345px; z-index: 4; position: absolute; /*border: 1px solid;*/}
-        #cont-sillin{width:125px; height:50px; left:206px; top:95px; z-index: 4; position: absolute; 
+        #cont-sillin{width:125px; height:50px; left:220px; top:120px; z-index: 4; position: absolute; 
             -ms-transform: rotate(-30deg); /* IE 9 */
             -webkit-transform: rotate(-30deg); /* Chrome, Safari, Opera */
             transform: rotate(-30deg); /*border: 1px solid;*/}
@@ -165,7 +165,7 @@ $bielas = muestraBiela();
             -ms-transform: rotate(-23deg); /* IE 9 */
             -webkit-transform: rotate(-23deg); /* Chrome, Safari, Opera */
             transform: rotate(-23deg); /*border: 1px solid;*/}
-        #cont-manubrio{width: 80px; height: 80px; right:215px; top:50px; z-index: 4; position: absolute; /*border: 1px solid;*/}
+        #cont-manubrio{width: 80px; height: 80px; right:195px; top:60px; z-index: 4; position: absolute; /*border: 1px solid;*/}
         #cont-pedal{width: 55px; height: 50px; left:398px; top:372px; z-index: 5; position: absolute; /*border: 1px solid;*/}
 
         #ruedas div { width: 50px; height:50px; margin:5px; z-index: 20; border: 1px solid;}
