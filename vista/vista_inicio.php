@@ -202,15 +202,23 @@ include("../modelo/funciones.php");
                                 </div>
 
                                 <div class="toggle-content text-center" id="tab5">
-                                    <h3>What We Do</h3>
-                                    <p>Donec quis orci nisl. Integer euismod lacus nec risus sollicitudin molestie vel semper turpis. In varius imperdiet enim quis iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris ac mauris aliquam magna molestie posuere in id elit. Integer semper metus felis, fringilla congue elit commodo a. Donec eget rutrum libero.
-                                    <br><br>Nunc dui elit, vulputate vitae nunc sed, accumsan condimentum nisl. Vestibulum a dui lectus. Vivamus in justo hendrerit est cursus semper sed id nibh. Donec ut dictum lorem, eu molestie nisi. Quisque vulputate quis leo lobortis fermentum. Ut sit amet consectetur dui, vitae porttitor lectus.</p>
+                                    <h3>Eventos</h3>
+                                    <p>
+                                        Dentro de nuestras actividades estan los eventos en que participamos en donde tambien vendemos productos dentro de las mismas competencias y repondemos a cualquier consultan que tengan.
+                                    </p>
                                 </div>
 
                                 <div class="toggle-content text-center" id="tab6">
-                                    <h3>Our Team</h3>
-                                    <p>Aliquam erat volutpat. Vivamus tempus, nisi varius imperdiet molestie, velit mi feugiat felis, sit amet fringilla mi massa sit amet arcu. Mauris dictum nisl id felis lacinia congue. Aliquam lectus nisi, sodales in lacinia quis, lobortis vel sem. Vestibulum elit nisi, placerat eget auctor ut, dictum at libero.
-                                    <br><br>Proin enim odio, eleifend eget euismod vitae, pharetra sed lacus. Donec at sapien nunc. Mauris vehicula quis diam nec dignissim. Nulla consequat nibh mattis metus sodales, at eleifend tortor tempor. Sed auctor lacus felis. </p>
+                                    <h3>Nuestro Team</h3>
+                                    <p>
+                                        Dentro del Team estan:
+                                        <br>-Rogelio Cano
+                                        <br>-Esteban Castro
+                                        <br>-Miguel Castro
+                                        <br>-Ignacio Saavedra
+                                        <br><br>
+                                        Cada uno de nosotros estamos dentro del mismo local y estamos para atender y darte el servicio que mas te acomode y dando una opinion clara y transparente de lo que sea mas conveniente a tus gustos y necesidades.
+                                    </p>
                                 </div>
                             </div> <!-- /.col-md-12 -->
                         </div> <!-- /.row -->
@@ -364,15 +372,27 @@ include("../modelo/funciones.php");
                             </ul> <!-- /.tabs -->
                             <div class="col-md-12 col-sm-12">
                                 <div class="toggle-content text-center" id="tab7">
-                                    <h3>Our Services</h3>
-                                    <p>You can easily change icons by <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-users&quot;&gt;&lt;/i&gt;</strong> In varius eros ac est interdum, quis scelerisque elit semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                    <br><br>Donec mattis enim sit amet nisl faucibus, eu pulvinar nibh facilisis. Aliquam erat volutpat. Vivamus tempus, nisi varius imperdiet molestie, velit mi feugiat felis, sit amet fringilla mi massa sit amet arcu. Mauris dictum nisl id felis lacinia congue. Aliquam lectus nisi, sodales in lacinia quis, lobortis vel sem. Vestibulum elit nisi, placerat eget auctor ut, dictum at libero.</p>
+                                    <h3>Reparación</h3>
+                                    <p>
+                                        Ya sea problemas de frenos, neumaticos, manubrios,cadenas, etc... lo reparamos!.
+                                        <br>
+                                        Contamos con el personal altamente capacitado para poder ayudarte en todo lo que necesites y
+                                        darte toda la información que necesites cuando tu vehiculo este en buenas condiciones, asi sabras que fue
+                                        lo que fallo en un primer lugar y que medidas tomar para prevenirlos.
+                                        <br>
+                                    </p>
                                 </div>
 
                                 <div class="toggle-content text-center" id="tab8">
-                                    <h3>Our Support</h3>
-                                    <p>Nulla consequat nibh mattis metus sodales, at eleifend tortor tempor. Sed auctor lacus felis. Maecenas auctor enim libero, vel viverra nulla fringilla quis. Sed eget aliquet arcu. Suspendisse ac dignissim nunc, id pretium elit. Nunc id neque vel leo semper gravida non ut enim. Cras sed posuere magna.
-                                    <br><br>Morbi eget ante sed felis tristique interdum. In varius eros ac est interdum, quis scelerisque elit semper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                    <h3>Tunning</h3>
+                                    <p>
+                                        Si eres de esas perosnas que no esta conforme con las bicicletas "Standar" o quieres mas potencia,
+                                        velocidad, maniobravilidad, nuetros servicios de tunning son lo que necesitas.
+                                        <br>
+                                        <br>
+                                        Puedes cambiar o rediseñar completamnete tu bicicleta de acuerdo a tus necesidades y nuestro personal
+                                        prestara toda la ayuda dependiendo de lo que necesites y como conseguirlo.
+                                    </p>
                                 </div>
 
                                 <div class="toggle-content text-center" id="tab9">
